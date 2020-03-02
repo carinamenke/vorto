@@ -17,61 +17,51 @@ export default function App() {
     <AppStyled>
       <Card
         vocabImageSrc={DoorImage}
-        vocabImageAltText="A door"
         vocabTitle="The door"
         partOfSpeechCategory="Noun"
       />
       <Card
         vocabImageSrc={WindowImage}
-        vocabImageAltText="A window"
         vocabTitle="The window"
         partOfSpeechCategory="Noun"
       />
       <Card
         vocabImageSrc={ChairImage}
-        vocabImageAltText="A chair"
         vocabTitle="The chair"
         partOfSpeechCategory="Noun"
       />
       <Card
         vocabImageSrc={DefaultImage}
-        vocabImageAltText=""
         vocabTitle="to sit"
         partOfSpeechCategory="Verb"
       />
       <Card
         vocabImageSrc={DrinkImage}
-        vocabImageAltText="to drink"
         vocabTitle="to drink"
-        artOfSpeechCategory="Verb"
+        partOfSpeechCategory="Verb"
       />
       <Card
         vocabImageSrc={CosyImage}
-        vocabImageAltText="cosy"
         vocabTitle="cosy"
         partOfSpeechCategory="Adjective"
       />
       <Card
         vocabImageSrc={PlateImage}
-        vocabImageAltText="A plate"
         vocabTitle="The plate"
         partOfSpeechCategory="Noun"
       />
       <Card
         vocabImageSrc={GlassImage}
-        vocabImageAltText="A glass"
         vocabTitle="The glass"
         partOfSpeechCategory="Noun"
       />
       <Card
         vocabImageSrc={SpaciousImage}
-        vocabImageAltText="A spacious room"
         vocabTitle="spacious"
         partOfSpeechCategory="Adjective"
       />
       <Card
         vocabImageSrc={ForkImage}
-        vocabImageAltText="A fork"
         vocabTitle="The fork"
         partOfSpeechCategory="Noun"
       />

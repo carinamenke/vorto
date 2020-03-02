@@ -1,0 +1,72 @@
+[
+  {
+    "vocabImage": "/images/door.jpg",
+    "vocabTitle": "The door",
+    "vocabTranslation": "La porte",
+    "partOfSpeechCategory": "Noun",
+    "id": "1"
+  },
+  {
+    "vocabImage": "/images/window.jpg",
+    "vocabTitle": "The window",
+    "vocabTranslation": "La fenêtre",
+    "partOfSpeechCategory": "Noun",
+    "id": "2"
+  },
+  {
+    "vocabImage": "/images/chair.jpg",
+    "vocabTitle": "The chair",
+    "vocabTranslation": "La chaise",
+    "partOfSpeechCategory": "Noun",
+    "id": "3"
+  },
+  {
+    "vocabImage": "/images/default.png",
+    "vocabTitle": "To sit",
+    "vocabTranslation": "S'asseoir",
+    "partOfSpeechCategory": "Verb",
+    "id": "4"
+  },
+  {
+    "vocabImage": "/images/drink.jpg",
+    "vocabTitle": "To drink",
+    "vocabTranslation": "Boire",
+    "partOfSpeechCategory": "Verb",
+    "id": "5"
+  },
+  {
+    "vocabImage": "/images/cosy.jpg",
+    "vocabTitle": "cosy",
+    "vocabTranslation": "confortable",
+    "partOfSpeechCategory": "Adjective",
+    "id": "6"
+  },
+  {
+    "vocabImage": "/images/plate.jpg",
+    "vocabTitle": "The plate",
+    "vocabTranslation": "L'assiette",
+    "partOfSpeechCategory": "Noun",
+    "id": "7"
+  },
+  {
+    "vocabImage": "/images/glass.jpg",
+    "vocabTitle": "The glass",
+    "vocabTranslation": "La verre",
+    "partOfSpeechCategory": "Noun",
+    "id": "8"
+  },
+  {
+    "vocabImage": "/images/spacious.jpg",
+    "vocabTitle": "spacious",
+    "vocabTranslation": "spacieux/-ieuse",
+    "partOfSpeechCategory": "Adjective",
+    "id": "9"
+  },
+  {
+    "vocabImage": "/images/fork.jpg",
+    "vocabTitle": "The fork",
+    "vocabTranslation": "La fourchette",
+    "partOfSpeechCategory": "Noun",
+    "id": "10"
+  }
+]

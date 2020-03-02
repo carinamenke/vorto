@@ -1,19 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
 import Card from './Card/Card'
-import DoorImage from './images/door.jpg'
-import WindowImage from './images/window.jpg'
 import ChairImage from './images/chair.jpg'
-import DefaultImage from './images/default.png'
-import DrinkImage from './images/drink.jpg'
 import CosyImage from './images/cosy.jpg'
-import PlateImage from './images/plate.jpg'
-import GlassImage from './images/glass.jpg'
-import SpaciousImage from './images/spacious.jpg'
+import DefaultImage from './images/default.png'
+import DoorImage from './images/door.jpg'
+import DrinkImage from './images/drink.jpg'
 import ForkImage from './images/fork.jpg'
+import GlassImage from './images/glass.jpg'
+import PlateImage from './images/plate.jpg'
+import SpaciousImage from './images/spacious.jpg'
+import WindowImage from './images/window.jpg'
 
 export default function App() {
   return (
-    <>
+    <AppStyled>
       <Card
         vocabImageSrc={DoorImage}
         vocabImageAltText="A door"
@@ -74,6 +75,13 @@ export default function App() {
         vocabTitle="The fork"
         partOfSpeechCategory="Noun"
       />
-    </>
+    </AppStyled>
   )
 }
+
+const AppStyled = styled.div`
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-row-gap: 35px;
+  padding: 60px 0px;
+`

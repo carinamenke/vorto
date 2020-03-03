@@ -1,5 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+Card.propTypes = {
+  vocabImageSrc: PropTypes.string,
+  vocabTitle: PropTypes.string.isRequired,
+  partOfSpeechCategory: PropTypes.string.isRequired,
+}
 
 export default function Card({
   vocabImageSrc,

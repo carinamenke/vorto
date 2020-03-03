@@ -1,70 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Card from './Card/Card'
-import ChairImage from './images/chair.jpg'
-import CosyImage from './images/cosy.jpg'
-import DefaultImage from './images/default.png'
-import DoorImage from './images/door.jpg'
-import DrinkImage from './images/drink.jpg'
-import ForkImage from './images/fork.jpg'
-import GlassImage from './images/glass.jpg'
-import PlateImage from './images/plate.jpg'
-import SpaciousImage from './images/spacious.jpg'
-import WindowImage from './images/window.jpg'
+import data from './cards.json'
 
 export default function App() {
+  const cards = data.cards
   return (
     <AppStyled>
-      <Card
-        vocabImageSrc={DoorImage}
-        vocabTitle="The door"
-        partOfSpeechCategory="Noun"
-      />
-      <Card
-        vocabImageSrc={WindowImage}
-        vocabTitle="The window"
-        partOfSpeechCategory="Noun"
-      />
-      <Card
-        vocabImageSrc={ChairImage}
-        vocabTitle="The chair"
-        partOfSpeechCategory="Noun"
-      />
-      <Card
-        vocabImageSrc={DefaultImage}
-        vocabTitle="to sit"
-        partOfSpeechCategory="Verb"
-      />
-      <Card
-        vocabImageSrc={DrinkImage}
-        vocabTitle="to drink"
-        partOfSpeechCategory="Verb"
-      />
-      <Card
-        vocabImageSrc={CosyImage}
-        vocabTitle="cosy"
-        partOfSpeechCategory="Adjective"
-      />
-      <Card
-        vocabImageSrc={PlateImage}
-        vocabTitle="The plate"
-        partOfSpeechCategory="Noun"
-      />
-      <Card
-        vocabImageSrc={GlassImage}
-        vocabTitle="The glass"
-        partOfSpeechCategory="Noun"
-      />
-      <Card
-        vocabImageSrc={SpaciousImage}
-        vocabTitle="spacious"
-        partOfSpeechCategory="Adjective"
-      />
-      <Card
-        vocabImageSrc={ForkImage}
-        vocabTitle="The fork"
-        partOfSpeechCategory="Noun"
-      />
+      {cards.map(card => (
+        <Card
+          vocabImageSrc={card.vocabImageSrc}
+          vocabTitle={card.vocabTitle}
+          partOfSpeechCategory={card.partOfSpeechCategory}
+          key={card.id}
+        />
+      ))}
     </AppStyled>
   )
 }

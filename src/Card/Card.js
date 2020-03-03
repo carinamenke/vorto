@@ -45,6 +45,7 @@ const CardStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin: 15px 15px 20px;
   }
 
@@ -52,6 +53,8 @@ const CardStyled = styled.div`
     color: #424242;
     margin: 0px;
     font-size: 24px;
+    word-wrap: break-word;
+    max-width: 80%;
   }
 
   .card__content--badge {

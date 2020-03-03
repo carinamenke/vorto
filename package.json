@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "7.8.6",
+    "@babel/preset-env": "7.8.6",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.4.1",
     "@testing-library/user-event": "7.2.1",
+    "prop-types": "15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-test-renderer": "16.13.0",
+    "sass": "1.26.2",
+    "styled-components": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

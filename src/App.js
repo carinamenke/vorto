@@ -23,5 +23,5 @@ const AppStyled = styled.div`
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-row-gap: 35px;
-  padding: 60px 0px;
+  padding: 60px 0;
 `

@@ -27,6 +27,13 @@ export default function Card({
   )
 }
 
+const selectColour = props =>
+  props.partOfSpeechCategory === 'Noun'
+    ? '#f19e20'
+    : props.partOfSpeechCategory === 'Verb'
+    ? '#F08F8F'
+    : '#1E6781'
+
 const CardStyled = styled.div`
   grid-column-start: 2;
   grid-column-end: 3;
@@ -67,18 +74,7 @@ const CardStyled = styled.div`
   .card__content--badge {
     border-radius: 6px;
     padding: 4px 7px 2px;
-    border: solid 1px
-      ${props =>
-        props.partOfSpeechCategory === 'Noun'
-          ? '#f19e20'
-          : props.partOfSpeechCategory === 'Verb'
-          ? '#F08F8F'
-          : '#1E6781'};
-    color: ${props =>
-      props.partOfSpeechCategory === 'Noun'
-        ? '#f19e20'
-        : props.partOfSpeechCategory === 'Verb'
-        ? '#F08F8F'
-        : '#1E6781'};
+    border: solid 1px ${selectColour};
+    color: ${selectColour};
   }
 `

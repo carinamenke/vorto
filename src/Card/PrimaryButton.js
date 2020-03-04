@@ -12,9 +12,10 @@ const PrimaryButtonStyled = styled.button`
   color: white;
   border: none;
   border-radius: 6px;
-  width: auto;
-  margin: 0 auto 20px;
+  max-width: 100%;
+  margin: 20px 15px;
   padding: 5px 7px;
+  word-wrap: break-word;
 
   :active {
     background: #b26565;

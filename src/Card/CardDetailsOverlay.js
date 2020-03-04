@@ -27,15 +27,15 @@ export default function CardDetailsOverlay({
       <div className="card__content">
         <h2 className="card__content--title">{vocabTitle}</h2>
         <Badge partOfSpeechCategory={partOfSpeechCategory} />
-        <h1 className="card__content--translation">{vocabTranslation}</h1>
-        <div className="card__content--buttons">
-          <AudioButton
-            buttonLabel={'Listen to Audio'}
-            vocabAudioSrc={vocabAudioSrc}
-          />
-          <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
-        </div>
       </div>
+      <div className="card__translation">
+        <h1 className="card__translation--title">{vocabTranslation}</h1>
+        <AudioButton
+          buttonLabel={'Listen to Audio'}
+          vocabAudioSrc={vocabAudioSrc}
+        />
+      </div>
+      <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
     </CardDetailsStyled>
   )
 }
@@ -57,27 +57,30 @@ const CardDetailsStyled = styled.div`
     border-bottom: solid #f6f6f6 2px;
   }
 
-  .card__content {
+  .card__content,
+  .card__translation {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    margin: 15px 15px 20px;
+    margin: 15px 15px 0;
   }
 
   .card__content--title {
     color: #ababab;
-    margin: 0;
     font-size: 24px;
+  }
+
+  .card__translation--title {
+    color: #424242;
+    margin: 0;
+  }
+
+  .card__content--title,
+  .card__translation--title {
+    margin: 0;
     word-wrap: break-word;
     max-width: 80%;
-  }
-
-  .card__content--translation {
-    color: #424242;
-  }
-
-  .card__content--buttons {
   }
 `

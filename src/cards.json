@@ -4,7 +4,7 @@
       "vocabImageSrc": "./images/door.jpg",
       "vocabAudioSrc": "./audio/porte.mp3",
       "vocabTitle": "The doooooooooooooooooor",
-      "vocabTranslation": "La porte",
+      "vocabTranslation": "La pooooooooooooooooooorte",
       "partOfSpeechCategory": "Noun",
       "id": "1"
     },
@@ -60,7 +60,7 @@
       "vocabImageSrc": "./images/glass.jpg",
       "vocabAudioSrc": "./audio/verre.mp3",
       "vocabTitle": "The glass",
-      "vocabTranslation": "La verre",
+      "vocabTranslation": "Le verre",
       "partOfSpeechCategory": "Noun",
       "id": "8"
     },

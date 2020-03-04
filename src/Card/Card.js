@@ -1,31 +1,76 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
+import CardDetailsOverlay from './CardDetailsOverlay'
+import Modal from 'react-modal'
 
 Card.propTypes = {
   vocabImageSrc: PropTypes.string,
+  vocabAudioSrc: PropTypes.string,
   vocabTitle: PropTypes.string.isRequired,
+  vocabTranslation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 }
 
 export default function Card({
   vocabImageSrc,
+  vocabAudioSrc,
   vocabTitle,
+  vocabTranslation,
   partOfSpeechCategory,
-  onClick,
 }) {
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const body = document.getElementById('root')
+
+  function openModal() {
+    setIsOpen(true)
+    body.style.height = '100vh'
+    body.style.overflowY = 'hidden'
+  }
+  function closeModal() {
+    setIsOpen(false)
+    body.style.overflowY = 'auto'
+  }
+
   return (
-    <CardStyled vocabImageSrc={vocabImageSrc}>
-      <div className="card__image-container"></div>
-      <div className="card__content">
-        <h1 className="card__content--title">{vocabTitle}</h1>
-        <Badge partOfSpeechCategory={partOfSpeechCategory} />
-      </div>
-      <PrimaryButton onClick={onClick} buttonLabel={'See Translation'} />
-    </CardStyled>
+    <>
+      <CardStyled vocabImageSrc={vocabImageSrc}>
+        <div className="card__image-container"></div>
+        <div className="card__content">
+          <h1 className="card__content--title">{vocabTitle}</h1>
+          <Badge partOfSpeechCategory={partOfSpeechCategory} />
+        </div>
+        <PrimaryButton onClick={openModal} buttonLabel={'See Translation'} />
+      </CardStyled>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={{
+          content: {
+            height: '100vh',
+            borderRadius: 0,
+            position: 'relative',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            padding: 0,
+            margin: '-1px',
+          },
+        }}
+      >
+        <CardDetailsOverlay
+          vocabImageSrc={vocabImageSrc}
+          vocabAudioSrc={vocabAudioSrc}
+          vocabTitle={vocabTitle}
+          partOfSpeechCategory={partOfSpeechCategory}
+          vocabTranslation={vocabTranslation}
+          onClick={closeModal}
+        />
+      </Modal>
+    </>
   )
 }
 

@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function PrimaryButton(props) {
-  return <PrimaryButtonStyled>{props.buttonLabel}</PrimaryButtonStyled>
+export default function PrimaryButton({ onClick, buttonLabel }) {
+  return (
+    <PrimaryButtonStyled onClick={onClick}>{buttonLabel}</PrimaryButtonStyled>
+  )
 }
 
 const PrimaryButtonStyled = styled.button`

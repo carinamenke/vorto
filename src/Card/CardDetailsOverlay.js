@@ -1,51 +1,55 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
 
-Card.propTypes = {
+CardDetailsOverlay.propTypes = {
   vocabImageSrc: PropTypes.string,
-  vocabTitle: PropTypes.string.isRequired,
+  // vocabAudioSrc: PropTypes.string,
+  // vocabTitle: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  vocabTranslation: PropTypes.string.isRequired,
 }
 
-export default function Card({
+export default function CardDetailsOverlay({
   vocabImageSrc,
+  vocabAudioSrc,
   vocabTitle,
   partOfSpeechCategory,
+  vocabTranslation,
   onClick,
 }) {
   return (
-    <CardStyled vocabImageSrc={vocabImageSrc}>
+    <CardDetailsStyled vocabImageSrc={vocabImageSrc}>
       <div className="card__image-container"></div>
       <div className="card__content">
         <h1 className="card__content--title">{vocabTitle}</h1>
         <Badge partOfSpeechCategory={partOfSpeechCategory} />
       </div>
-      <PrimaryButton onClick={onClick} buttonLabel={'See Translation'} />
-    </CardStyled>
+      <PrimaryButton
+        toggleBehaviour={() => console.log(`Button ${vocabTitle} was clicked.`)}
+        buttonLabel={'Close'}
+        onClick={onClick}
+      />
+    </CardDetailsStyled>
   )
 }
 
-const CardStyled = styled.div`
-  grid-column-start: 2;
-  grid-column-end: 3;
+const CardDetailsStyled = styled.div`
   display: flex;
   flex-direction: column;
   background: #fff;
-  height: auto;
-  border-radius: 11px;
-  box-shadow: 0 9px 16px -5px rgba(163, 163, 163, 50);
+  height: 100%;
+  width: 100%;
   font-family: Helvetica, sans-serif;
 
   .card__image-container {
     background: center url(${props => props.vocabImageSrc});
     background-size: cover;
-    height: 350px;
+    margin: 0;
+    height: 60%;
     width: 100%;
-    border-radius: 10px 10px 0 0;
     border-bottom: solid #f6f6f6 2px;
   }
 

@@ -14,7 +14,7 @@ const PrimaryButtonStyled = styled.button`
   border-radius: 6px;
   width: auto;
   margin: 0 auto 20px;
-  padding: 5px 7px 5px;
+  padding: 5px 7px;
 
   :active {
     background: #b26565;

@@ -3,13 +3,14 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
+import AudioButton from './AudioButton'
 
 CardDetailsOverlay.propTypes = {
   vocabImageSrc: PropTypes.string,
-  // vocabAudioSrc: PropTypes.string,
-  // vocabTitle: PropTypes.string.isRequired,
-  partOfSpeechCategory: PropTypes.string.isRequired,
+  vocabAudioSrc: PropTypes.string,
+  vocabTitle: PropTypes.string.isRequired,
   vocabTranslation: PropTypes.string.isRequired,
+  partOfSpeechCategory: PropTypes.string.isRequired,
 }
 
 export default function CardDetailsOverlay({
@@ -24,14 +25,17 @@ export default function CardDetailsOverlay({
     <CardDetailsStyled vocabImageSrc={vocabImageSrc}>
       <div className="card__image-container"></div>
       <div className="card__content">
-        <h1 className="card__content--title">{vocabTitle}</h1>
+        <h2 className="card__content--title">{vocabTitle}</h2>
         <Badge partOfSpeechCategory={partOfSpeechCategory} />
+        <h1 className="card__content--translation">{vocabTranslation}</h1>
+        <div className="card__content--buttons">
+          <AudioButton
+            buttonLabel={'Listen to Audio'}
+            vocabAudioSrc={vocabAudioSrc}
+          />
+          <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
+        </div>
       </div>
-      <PrimaryButton
-        toggleBehaviour={() => console.log(`Button ${vocabTitle} was clicked.`)}
-        buttonLabel={'Close'}
-        onClick={onClick}
-      />
     </CardDetailsStyled>
   )
 }
@@ -63,10 +67,17 @@ const CardDetailsStyled = styled.div`
   }
 
   .card__content--title {
-    color: #424242;
+    color: #ababab;
     margin: 0;
     font-size: 24px;
     word-wrap: break-word;
     max-width: 80%;
+  }
+
+  .card__content--translation {
+    color: #424242;
+  }
+
+  .card__content--buttons {
   }
 `

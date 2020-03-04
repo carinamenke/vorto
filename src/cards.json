@@ -2,7 +2,7 @@
   "cards": [
     {
       "vocabImageSrc": "./images/door.jpg",
-      "vocabAudioSrc": "./audio.porte.mp3",
+      "vocabAudioSrc": "./audio/porte.mp3",
       "vocabTitle": "The doooooooooooooooooor",
       "vocabTranslation": "La porte",
       "partOfSpeechCategory": "Noun",
@@ -10,7 +10,7 @@
     },
     {
       "vocabImageSrc": "./images/window.jpg",
-      "vocabAudioSrc": "./audio.fenetre.mp3",
+      "vocabAudioSrc": "./audio/fenetre.mp3",
       "vocabTitle": "The window",
       "vocabTranslation": "La fenêtre",
       "partOfSpeechCategory": "Noun",
@@ -18,7 +18,7 @@
     },
     {
       "vocabImageSrc": "./images/chair.jpg",
-      "vocabAudioSrc": "./audio.chaise.mp3",
+      "vocabAudioSrc": "./audio/chaise.mp3",
       "vocabTitle": "The chair",
       "vocabTranslation": "La chaise",
       "partOfSpeechCategory": "Noun",
@@ -26,7 +26,7 @@
     },
     {
       "vocabImageSrc": "./images/default.png",
-      "vocabAudioSrc": "./audio.sasseoir.mp3",
+      "vocabAudioSrc": "./audio/sasseoir.mp3",
       "vocabTitle": "To sit",
       "vocabTranslation": "S'asseoir",
       "partOfSpeechCategory": "Verb",
@@ -34,7 +34,7 @@
     },
     {
       "vocabImageSrc": "./images/drink.jpg",
-      "vocabAudioSrc": "./audio.boire.mp3",
+      "vocabAudioSrc": "./audio/boire.mp3",
       "vocabTitle": "To drink",
       "vocabTranslation": "Boire",
       "partOfSpeechCategory": "Verb",
@@ -42,7 +42,7 @@
     },
     {
       "vocabImageSrc": "./images/cosy.jpg",
-      "vocabAudioSrc": "./audio.confortable.mp3",
+      "vocabAudioSrc": "./audio/confortable.mp3",
       "vocabTitle": "cosy",
       "vocabTranslation": "confortable",
       "partOfSpeechCategory": "Adjective",
@@ -50,7 +50,7 @@
     },
     {
       "vocabImageSrc": "./images/plate.jpg",
-      "vocabAudioSrc": "./audio.assiette.mp3",
+      "vocabAudioSrc": "./audio/assiette.mp3",
       "vocabTitle": "The plate",
       "vocabTranslation": "L'assiette",
       "partOfSpeechCategory": "Noun",
@@ -58,7 +58,7 @@
     },
     {
       "vocabImageSrc": "./images/glass.jpg",
-      "vocabAudioSrc": "./audio.verre.mp3",
+      "vocabAudioSrc": "./audio/verre.mp3",
       "vocabTitle": "The glass",
       "vocabTranslation": "La verre",
       "partOfSpeechCategory": "Noun",
@@ -66,7 +66,7 @@
     },
     {
       "vocabImageSrc": "./images/spacious.jpg",
-      "vocabAudioSrc": "./audio.spacieux.mp3",
+      "vocabAudioSrc": "./audio/spacieux.mp3",
       "vocabTitle": "spacious",
       "vocabTranslation": "spacieux/-ieuse",
       "partOfSpeechCategory": "Adjective",
@@ -74,7 +74,7 @@
     },
     {
       "vocabImageSrc": "./images/fork.jpg",
-      "vocabAudioSrc": "./audio.fourchette.mp3",
+      "vocabAudioSrc": "./audio/fourchette.mp3",
       "vocabTitle": "The fork",
       "vocabTranslation": "La fourchette",
       "partOfSpeechCategory": "Noun",

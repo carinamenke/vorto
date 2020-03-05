@@ -10,7 +10,7 @@ export default function App() {
   const cards = data.cards
 
   return (
-    <AppStyled>
+    <AppGrid>
       {cards.map(card => (
         <Card
           vocabImageSrc={card.vocabImageSrc}
@@ -21,11 +21,11 @@ export default function App() {
           key={card.id}
         />
       ))}
-    </AppStyled>
+    </AppGrid>
   )
 }
 
-const AppStyled = styled.div`
+const AppGrid = styled.div`
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-row-gap: 35px;

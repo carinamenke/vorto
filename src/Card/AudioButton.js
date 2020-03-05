@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { FiVolume1 } from 'react-icons/fi'
+import '../common/colors.css'
 
 AudioButton.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
@@ -27,7 +28,7 @@ const AudioButtonStyled = styled.button`
   display: flex;
   border: solid grey 1px;
   border-radius: 4px;
-  background: #fff;
+  background: var(--background-color);
   padding: 6px 8px;
 
   .audio-button__label,
@@ -41,12 +42,12 @@ const AudioButtonStyled = styled.button`
   }
 
   :active {
-    background: rgba(163, 163, 163);
-    border: solid rgba(163, 163, 163) 1px;
+    background: var(--grey-color-mid);
+    border: solid var(--grey-color-mid) 1px;
 
     .audio-button__label,
     .audio-button__icon {
-      color: #fff;
+      color: var(--text-color-white);
     }
   }
 `

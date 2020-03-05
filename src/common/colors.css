@@ -1,0 +1,55 @@
+:root {
+  --background-color: #fff;
+}
+
+:root {
+  --primary-color: #f08f8f;
+}
+
+:root {
+  --primary-color-active: #b26565;
+}
+
+:root {
+  --primary-color-shadow: #ffdddd;
+}
+
+:root {
+  --secondary-color: #f19e20;
+}
+
+:root {
+  --secondary-color-active: #d1891a;
+}
+
+:root {
+  --tertiary-color: #1e6781;
+}
+
+:root {
+  --grey-color-light: #f6f6f6;
+}
+
+:root {
+  --grey-color-mid: #ababab;
+}
+
+:root {
+  --grey-color-dark: #424242;
+}
+
+:root {
+  --grey-color-shadow: rgba(163, 163, 163, 50);
+}
+
+:root {
+  --text-color-white: #fff;
+}
+
+:root {
+  --image-gradient-color-dark: rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --image-gradient-color-light: rgba(0, 0, 0, 0);
+}

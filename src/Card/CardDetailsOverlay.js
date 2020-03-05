@@ -5,6 +5,7 @@ import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
 import AudioButton from './AudioButton'
 import { FiChevronLeft, FiX } from 'react-icons/fi'
+import '../common/colors.css'
 
 CardDetailsOverlay.propTypes = {
   vocabImageSrc: PropTypes.string,
@@ -53,7 +54,7 @@ export default function CardDetailsOverlay({
 const CardDetailsStyled = styled.div`
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--background-color);
   height: 100%;
   width: 100%;
   font-family: Helvetica, sans-serif;
@@ -64,15 +65,18 @@ const CardDetailsStyled = styled.div`
     margin: 0;
     height: 60%;
     width: 100%;
-    border-bottom: solid #f6f6f6 2px;
-    color: #fff;
+    border-bottom: solid 2px var(--grey-color-light);
+    color: var(--text-color-white);
     font-size: 14px;
   }
 
   .card-detail__image-container--overlay {
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    background: linear-gradient(
+      var(--image-gradient-color-dark),
+      var(--image-gradient-color-light)
+    );
   }
 
   .card-detail__backlink {
@@ -119,12 +123,12 @@ const CardDetailsStyled = styled.div`
   }
 
   .card-detail__content--title {
-    color: #ababab;
+    color: var(--grey-color-mid);
     font-size: 24px;
   }
 
   .card-detail__translation--title {
-    color: #424242;
+    color: var(--grey-color-dark);
     margin: 0;
   }
 `

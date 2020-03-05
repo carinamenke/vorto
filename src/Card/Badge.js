@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import '../common/colors.css'
 
 export default function Badge({ partOfSpeechCategory }) {
   return (
@@ -11,10 +12,10 @@ export default function Badge({ partOfSpeechCategory }) {
 
 const selectColour = props =>
   props.partOfSpeechCategory === 'Noun'
-    ? '#f19e20'
+    ? 'var(--secondary-color)'
     : props.partOfSpeechCategory === 'Verb'
-    ? '#F08F8F'
-    : '#1E6781'
+    ? 'var(--primary-color)'
+    : 'var(--tertiary-color)'
 
 const BadgeStyled = styled.span`
   border-radius: 6px;

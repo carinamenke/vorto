@@ -5,6 +5,7 @@ import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
 import CardDetailsOverlay from './CardDetailsOverlay'
 import Modal from 'react-modal'
+import '../common/colors.css'
 
 Card.propTypes = {
   vocabImageSrc: PropTypes.string,
@@ -75,15 +76,15 @@ export default function Card({
   }
 }
 
-const CardStyled = styled.div`
+const CardStyled = styled.section`
   grid-column-start: 2;
   grid-column-end: 3;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--background-color);
   height: auto;
   border-radius: 11px;
-  box-shadow: 0 9px 16px -5px rgba(163, 163, 163, 50);
+  box-shadow: 0 9px 16px -5px var(--grey-color-shadow);
   font-family: Helvetica, sans-serif;
 
   .card__image-container {
@@ -92,7 +93,7 @@ const CardStyled = styled.div`
     height: 350px;
     width: 100%;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid #f6f6f6 2px;
+    border-bottom: solid 2px var(--grey-color-light);
   }
 
   .card__content {
@@ -105,7 +106,7 @@ const CardStyled = styled.div`
   }
 
   .card__content--title {
-    color: #424242;
+    color: var(--grey-color-dark);
     margin: 0;
     font-size: 24px;
     word-wrap: break-word;

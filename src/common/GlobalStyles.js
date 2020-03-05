@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro'
+import '../common/colors.css'
 
 export default createGlobalStyle`
   * {
@@ -7,7 +8,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    background: #fff;
+    background: var(--background-color);
     font-family: sans-serif;
     font-size: 18px;
     line-height: 1.4;

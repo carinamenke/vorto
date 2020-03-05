@@ -23,15 +23,18 @@ export default function Card({
 }) {
   const [modalIsOpen, setIsOpen] = useState(false)
   const body = document.getElementById('root')
-
-  function openModal() {
-    setIsOpen(true)
-    body.style.height = '100vh'
-    body.style.overflowY = 'hidden'
-  }
-  function closeModal() {
-    setIsOpen(false)
-    body.style.overflowY = 'auto'
+  const modalStyle = {
+    content: {
+      height: '100vh',
+      borderRadius: 0,
+      position: 'relative',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      padding: 0,
+      margin: '-1px',
+    },
   }
 
   return (
@@ -47,19 +50,7 @@ export default function Card({
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={{
-          content: {
-            height: '100vh',
-            borderRadius: 0,
-            position: 'relative',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            padding: 0,
-            margin: '-1px',
-          },
-        }}
+        style={modalStyle}
       >
         <CardDetailsOverlay
           vocabImageSrc={vocabImageSrc}
@@ -72,6 +63,16 @@ export default function Card({
       </Modal>
     </>
   )
+
+  function openModal() {
+    setIsOpen(true)
+    body.style.height = '100vh'
+    body.style.overflowY = 'hidden'
+  }
+  function closeModal() {
+    setIsOpen(false)
+    body.style.overflowY = 'auto'
+  }
 }
 
 const CardStyled = styled.div`

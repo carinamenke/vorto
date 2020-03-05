@@ -15,6 +15,7 @@ const PrimaryButtonStyled = styled.button`
   max-width: 100%;
   margin: 20px 15px;
   padding: 5px 7px;
+  box-shadow: 0 5px 4px -2px #ffdddd;
   word-wrap: break-word;
 
   :active {

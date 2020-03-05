@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
 import AudioButton from './AudioButton'
+import { FiChevronLeft, FiX } from 'react-icons/fi'
 
 CardDetailsOverlay.propTypes = {
   vocabImageSrc: PropTypes.string,
@@ -23,13 +24,22 @@ export default function CardDetailsOverlay({
 }) {
   return (
     <CardDetailsStyled vocabImageSrc={vocabImageSrc}>
-      <div className="card__image-container"></div>
-      <div className="card__content">
-        <h2 className="card__content--title">{vocabTitle}</h2>
+      <div className="card-detail__image-container">
+        <div className="card-detail__image-container--overlay"></div>
+        <div onClick={onClick} className="card-detail__backlink">
+          <FiChevronLeft className="card-detail__backlink--icon" />
+          <span className="card-detail__backlink--label">
+            Back to Collection
+          </span>
+        </div>
+        <FiX onClick={onClick} className="card-detail__closing-icon" />
+      </div>
+      <div className="card-detail__content">
+        <h2 className="card-detail__content--title">{vocabTitle}</h2>
         <Badge partOfSpeechCategory={partOfSpeechCategory} />
       </div>
-      <div className="card__translation">
-        <h1 className="card__translation--title">{vocabTranslation}</h1>
+      <div className="card-detail__translation">
+        <h1 className="card-detail__translation--title">{vocabTranslation}</h1>
         <AudioButton
           buttonLabel={'Listen to Audio'}
           vocabAudioSrc={vocabAudioSrc}
@@ -48,17 +58,51 @@ const CardDetailsStyled = styled.div`
   width: 100%;
   font-family: Helvetica, sans-serif;
 
-  .card__image-container {
+  .card-detail__image-container {
     background: center url(${props => props.vocabImageSrc});
     background-size: cover;
     margin: 0;
     height: 60%;
     width: 100%;
     border-bottom: solid #f6f6f6 2px;
+    color: #fff;
+    font-size: 14px;
   }
 
-  .card__content,
-  .card__translation {
+  .card-detail__image-container--overlay {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  }
+
+  .card-detail__backlink {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+
+  .card-detail__backlink--icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-detail__backlink--label {
+    margin-top: 2px;
+  }
+
+  .card-detail__closing-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-detail__content,
+  .card-detail__translation {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -67,20 +111,20 @@ const CardDetailsStyled = styled.div`
     margin: 15px 15px 0;
   }
 
-  .card__content--title {
+  .card-detail__content--title,
+  .card-detail__translation--title {
+    margin: 0;
+    word-wrap: break-word;
+    max-width: 80%;
+  }
+
+  .card-detail__content--title {
     color: #ababab;
     font-size: 24px;
   }
 
-  .card__translation--title {
+  .card-detail__translation--title {
     color: #424242;
     margin: 0;
-  }
-
-  .card__content--title,
-  .card__translation--title {
-    margin: 0;
-    word-wrap: break-word;
-    max-width: 80%;
   }
 `

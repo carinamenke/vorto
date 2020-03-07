@@ -1,0 +1,84 @@
+{
+  "vocabs": [
+    {
+      "imageSrc": "./images/door.jpg",
+      "audioSrc": "./audio/porte.mp3",
+      "wordTitle": "The door",
+      "translation": "La porte",
+      "partOfSpeechCategory": "Noun",
+      "id": "1"
+    },
+    {
+      "imageSrc": "./images/window.jpg",
+      "audioSrc": "./audio/fenetre.mp3",
+      "wordTitle": "The window",
+      "translation": "La fenêtre",
+      "partOfSpeechCategory": "Noun",
+      "id": "2"
+    },
+    {
+      "imageSrc": "./images/chair.jpg",
+      "audioSrc": "./audio/chaise.mp3",
+      "wordTitle": "The chair",
+      "translation": "La chaise",
+      "partOfSpeechCategory": "Noun",
+      "id": "3"
+    },
+    {
+      "imageSrc": "./images/default.png",
+      "audioSrc": "./audio/sasseoir.mp3",
+      "wordTitle": "To sit",
+      "translation": "S'asseoir",
+      "partOfSpeechCategory": "Verb",
+      "id": "4"
+    },
+    {
+      "imageSrc": "./images/drink.jpg",
+      "audioSrc": "./audio/boire.mp3",
+      "wordTitle": "To drink",
+      "translation": "Boire",
+      "partOfSpeechCategory": "Verb",
+      "id": "5"
+    },
+    {
+      "imageSrc": "./images/cosy.jpg",
+      "audioSrc": "./audio/confortable.mp3",
+      "wordTitle": "cosy",
+      "translation": "confortable",
+      "partOfSpeechCategory": "Adjective",
+      "id": "6"
+    },
+    {
+      "imageSrc": "./images/plate.jpg",
+      "audioSrc": "./audio/assiette.mp3",
+      "wordTitle": "The plate",
+      "translation": "L'assiette",
+      "partOfSpeechCategory": "Noun",
+      "id": "7"
+    },
+    {
+      "imageSrc": "./images/glass.jpg",
+      "audioSrc": "./audio/verre.mp3",
+      "wordTitle": "The glass",
+      "translation": "Le verre",
+      "partOfSpeechCategory": "Noun",
+      "id": "8"
+    },
+    {
+      "imageSrc": "./images/spacious.jpg",
+      "audioSrc": "./audio/spacieux.mp3",
+      "wordTitle": "spacious",
+      "translation": "spacieux/-ieuse",
+      "partOfSpeechCategory": "Adjective",
+      "id": "9"
+    },
+    {
+      "imageSrc": "./images/fork.jpg",
+      "audioSrc": "./audio/fourchette.mp3",
+      "wordTitle": "The fork",
+      "translation": "La fourchette",
+      "partOfSpeechCategory": "Noun",
+      "id": "10"
+    }
+  ]
+}

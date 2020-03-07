@@ -3,26 +3,25 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Badge from './Badge'
 import PrimaryButton from './PrimaryButton'
-import CardDetailsOverlay from './CardDetailsOverlay'
+import VocabDetailsOverlay from './VocabDetailsOverlay'
 import Modal from 'react-modal'
-import '../common/colors.css'
 
-Card.propTypes = {
-  vocabImageSrc: PropTypes.string,
-  vocabAudioSrc: PropTypes.string,
-  vocabTitle: PropTypes.string.isRequired,
-  vocabTranslation: PropTypes.string.isRequired,
+Vocab.propTypes = {
+  imageSrc: PropTypes.string,
+  audioSrc: PropTypes.string,
+  wordTitle: PropTypes.string.isRequired,
+  translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
 }
 
-export default function Card({
-  vocabImageSrc,
-  vocabAudioSrc,
-  vocabTitle,
-  vocabTranslation,
+export default function Vocab({
+  imageSrc,
+  audioSrc,
+  wordTitle,
+  translation,
   partOfSpeechCategory,
 }) {
-  const [modalIsOpen, setIsOpen] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const body = document.getElementById('root')
   const modalStyle = {
     content: {
@@ -40,25 +39,25 @@ export default function Card({
 
   return (
     <>
-      <CardStyled vocabImageSrc={vocabImageSrc}>
-        <div className="card__image-container"></div>
-        <div className="card__content">
-          <h1 className="card__content--title">{vocabTitle}</h1>
-          <Badge partOfSpeechCategory={partOfSpeechCategory} />
+      <VocabStyled imageSrc={imageSrc}>
+        <img src={imageSrc} alt={wordTitle} className="image-container" />
+        <div className="content">
+          <h1 className="content-title">{wordTitle}</h1>
+          <Badge label={partOfSpeechCategory} />
         </div>
         <PrimaryButton onClick={openModal} buttonLabel={'See Translation'} />
-      </CardStyled>
+      </VocabStyled>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={modalStyle}
       >
-        <CardDetailsOverlay
-          vocabImageSrc={vocabImageSrc}
-          vocabAudioSrc={vocabAudioSrc}
-          vocabTitle={vocabTitle}
+        <VocabDetailsOverlay
+          imageSrc={imageSrc}
+          audioSrc={audioSrc}
+          wordTitle={wordTitle}
           partOfSpeechCategory={partOfSpeechCategory}
-          vocabTranslation={vocabTranslation}
+          translation={translation}
           onClick={closeModal}
         />
       </Modal>
@@ -66,17 +65,17 @@ export default function Card({
   )
 
   function openModal() {
-    setIsOpen(true)
+    setModalIsOpen(true)
     body.style.height = '100vh'
     body.style.overflowY = 'hidden'
   }
   function closeModal() {
-    setIsOpen(false)
+    setModalIsOpen(false)
     body.style.overflowY = 'auto'
   }
 }
 
-const CardStyled = styled.section`
+const VocabStyled = styled.section`
   grid-column-start: 2;
   grid-column-end: 3;
   display: flex;
@@ -87,16 +86,15 @@ const CardStyled = styled.section`
   box-shadow: 0 9px 16px -5px var(--grey-color-shadow);
   font-family: Helvetica, sans-serif;
 
-  .card__image-container {
-    background: center url(${props => props.vocabImageSrc});
-    background-size: cover;
+  .image-container {
+    object-fit: cover;
     height: 350px;
     width: 100%;
     border-radius: 10px 10px 0 0;
     border-bottom: solid 2px var(--grey-color-light);
   }
 
-  .card__content {
+  .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -105,7 +103,7 @@ const CardStyled = styled.section`
     margin: 15px 15px 20px;
   }
 
-  .card__content--title {
+  .content-title {
     color: var(--grey-color-dark);
     margin: 0;
     font-size: 24px;

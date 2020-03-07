@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Card from './Card'
+import Vocab from './Vocab'
 
-describe('<Card/>', () => {
+describe('<Vocab/>', () => {
   it('should render cards correctly', () => {
     render(
-      <Card
+      <Vocab
         vocabImage="/images/door.jpg"
         vocabTitle="The door"
         vocabTranslation="La porte"

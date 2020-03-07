@@ -1,24 +1,24 @@
 import React from 'react'
-import styled from 'styled-components'
-import Card from './Card/Card'
-import data from './cards.json'
+import styled from 'styled-components/macro'
+import Vocab from './components/Vocab'
+import data from './vocabs.json'
 import Modal from 'react-modal'
 
 Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
-  const cards = data.cards
+  const vocabs = data.vocabs
 
   return (
     <AppGrid>
-      {cards.map(card => (
-        <Card
-          vocabImageSrc={card.vocabImageSrc}
-          vocabAudioSrc={card.vocabAudioSrc}
-          vocabTitle={card.vocabTitle}
-          vocabTranslation={card.vocabTranslation}
-          partOfSpeechCategory={card.partOfSpeechCategory}
-          key={card.id}
+      {vocabs.map(vocab => (
+        <Vocab
+          imageSrc={vocab.imageSrc}
+          audioSrc={vocab.audioSrc}
+          wordTitle={vocab.wordTitle}
+          translation={vocab.translation}
+          partOfSpeechCategory={vocab.partOfSpeechCategory}
+          key={vocab.id}
         />
       ))}
     </AppGrid>

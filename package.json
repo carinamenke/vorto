@@ -11,9 +11,10 @@
     "prop-types": "15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-icons": "3.9.0",
+    "react-modal": "3.11.2",
     "react-scripts": "3.4.0",
     "react-test-renderer": "16.13.0",
-    "sass": "1.26.2",
     "styled-components": "5.0.1"
   },
   "scripts": {

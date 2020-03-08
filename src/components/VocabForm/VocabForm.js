@@ -2,15 +2,22 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import { FiChevronLeft, FiX, FiImage } from 'react-icons/fi'
+import { BrowserRouter as Link } from 'react-router-dom'
 
 export default function VocabForm() {
   return (
     <FormStyled>
-      <div className="backlink">
-        <FiChevronLeft className="backlink-icon" />
-        <span className="backlink-label">Back</span>
-      </div>
-      <FiX className="closing-icon" />
+      <Link to="/">
+        <a href="/" className="backlink">
+          <FiChevronLeft className="backlink-icon" />
+          <span className="backlink-label">Back</span>
+        </a>
+      </Link>
+      <Link to="/">
+        <a href="/" className="closing-icon">
+          <FiX />
+        </a>
+      </Link>
       <form action="">
         <h1>Add a new Vocabulary</h1>
         <label>
@@ -87,7 +94,11 @@ const FormStyled = styled.section`
     display: flex;
     align-items: center;
     font-size: 14px;
-    cursor: default;
+    text-decoration: none;
+
+    :visited {
+      color: var(--grey-color-dark);
+    }
   }
 
   .backlink-icon {
@@ -105,6 +116,10 @@ const FormStyled = styled.section`
     right: 15px;
     width: 20px;
     height: 20px;
+
+    :visited {
+      color: var(--grey-color-dark);
+    }
   }
 
   h1 {

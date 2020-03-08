@@ -15,7 +15,7 @@ const PrimaryButtonStyled = styled.button`
   max-width: 100%;
   margin: 20px 15px;
   padding: 5px 7px;
-  box-shadow: 0 5px 4px -2px var(--primary-color-shadow);
+  box-shadow: 0 5px 4px -2px var(--primary-color-light);
   word-wrap: break-word;
 
   :hover {

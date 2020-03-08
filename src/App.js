@@ -11,23 +11,32 @@ export default function App() {
 
   return (
     <AppGrid>
-      {vocabs.map(vocab => (
-        <Vocab
-          imageSrc={vocab.imageSrc}
-          audioSrc={vocab.audioSrc}
-          wordTitle={vocab.wordTitle}
-          translation={vocab.translation}
-          partOfSpeechCategory={vocab.partOfSpeechCategory}
-          key={vocab.id}
-        />
-      ))}
+      <VocabList>
+        {vocabs.map(vocab => (
+          <Vocab
+            imageSrc={vocab.imageSrc}
+            audioSrc={vocab.audioSrc}
+            wordTitle={vocab.wordTitle}
+            translation={vocab.translation}
+            partOfSpeechCategory={vocab.partOfSpeechCategory}
+            key={vocab.id}
+          />
+        ))}
+      </VocabList>
     </AppGrid>
   )
 }
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-row-gap: 35px;
-  padding: 60px 0;
+  grid-template-rows: 1fr 8fr 1fr;
+`
+
+const VocabList = styled.section`
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  padding: 0 30px 30px;
 `

@@ -76,8 +76,9 @@ export default function Vocab({
 }
 
 const VocabStyled = styled.section`
-  grid-column-start: 2;
-  grid-column-end: 3;
+  flex: 0 0 auto;
+  max-width: 280px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   background: var(--background-color);

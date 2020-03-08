@@ -17,7 +17,7 @@ function selectColour(props) {
 
 const BadgeStyled = styled.span`
   border-radius: 6px;
-  padding: 4px 7px 2px;
-  border: solid 1px ${selectColour};
+  padding: 3px 7px 1px;
+  border: solid 1.5px ${selectColour};
   color: ${selectColour};
 `

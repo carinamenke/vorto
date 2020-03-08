@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Vocab from './components/Vocab'
+import Vocab from './components/Vocab/Vocab'
 import data from './vocabs.json'
 import Modal from 'react-modal'
 

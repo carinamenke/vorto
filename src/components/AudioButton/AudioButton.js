@@ -26,10 +26,10 @@ export default function AudioButton({ buttonLabel, audioSrc }) {
 
 const AudioButtonStyled = styled.button`
   display: flex;
-  border: solid grey 1px;
+  border: solid var(--grey-color-dark) 1.5px;
   border-radius: 4px;
   background: var(--background-color);
-  padding: 6px 8px;
+  padding: 5px 8px;
 
   .label,
   .icon {

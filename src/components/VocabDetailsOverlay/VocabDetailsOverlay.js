@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import Badge from './Badge'
-import PrimaryButton from './PrimaryButton'
-import AudioButton from './AudioButton'
+import Badge from '../Badge/Badge'
+import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import AudioButton from '../AudioButton/AudioButton'
 import { FiChevronLeft, FiX } from 'react-icons/fi'
 
 VocabDetailsOverlay.propTypes = {

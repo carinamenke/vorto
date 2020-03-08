@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import Badge from './Badge'
-import PrimaryButton from './PrimaryButton'
-import VocabDetailsOverlay from './VocabDetailsOverlay'
+import Badge from '../Badge/Badge'
+import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import VocabDetailsOverlay from '../VocabDetailsOverlay/VocabDetailsOverlay'
 import Modal from 'react-modal'
 
 Vocab.propTypes = {

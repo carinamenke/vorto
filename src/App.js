@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import Vocab from './components/Vocab/Vocab'
 import data from './vocabs.json'
 import Modal from 'react-modal'
+import PrimaryButton from './components/PrimaryButton/PrimaryButton'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -23,6 +24,9 @@ export default function App() {
           />
         ))}
       </VocabList>
+      <Navigation>
+        <PrimaryButton buttonLabel="Add new Vocabulary" />
+      </Navigation>
     </AppGrid>
   )
 }
@@ -30,6 +34,7 @@ export default function App() {
 const AppGrid = styled.div`
   display: grid;
   grid-template-rows: 1fr 8fr 1fr;
+  height: 100vh;
 `
 
 const VocabList = styled.section`
@@ -39,4 +44,10 @@ const VocabList = styled.section`
   flex-wrap: nowrap;
   overflow: scroll;
   padding: 0 30px 30px;
+`
+const Navigation = styled.section`
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: center;
 `

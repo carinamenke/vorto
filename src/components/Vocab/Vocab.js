@@ -77,7 +77,7 @@ export default function Vocab({
 
 const VocabStyled = styled.section`
   flex: 0 0 auto;
-  max-width: 280px;
+  width: 280px;
   margin-right: 20px;
   display: flex;
   flex-direction: column;

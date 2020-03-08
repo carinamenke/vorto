@@ -4,6 +4,8 @@ import Vocab from './components/Vocab/Vocab'
 import data from './vocabs.json'
 import Modal from 'react-modal'
 import PrimaryButton from './components/PrimaryButton/PrimaryButton'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import VocabForm from './components/VocabForm/VocabForm'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -11,23 +13,34 @@ export default function App() {
   const vocabs = data.vocabs
 
   return (
-    <AppGrid>
-      <VocabList>
-        {vocabs.map(vocab => (
-          <Vocab
-            imageSrc={vocab.imageSrc}
-            audioSrc={vocab.audioSrc}
-            wordTitle={vocab.wordTitle}
-            translation={vocab.translation}
-            partOfSpeechCategory={vocab.partOfSpeechCategory}
-            key={vocab.id}
-          />
-        ))}
-      </VocabList>
-      <Navigation>
-        <PrimaryButton buttonLabel="Add new Vocabulary" />
-      </Navigation>
-    </AppGrid>
+    <Router>
+      <AppGrid>
+        <Switch>
+          <Route exact path="/">
+            <VocabList>
+              {vocabs.map(vocab => (
+                <Vocab
+                  imageSrc={vocab.imageSrc}
+                  audioSrc={vocab.audioSrc}
+                  wordTitle={vocab.wordTitle}
+                  translation={vocab.translation}
+                  partOfSpeechCategory={vocab.partOfSpeechCategory}
+                  key={vocab.id}
+                />
+              ))}
+            </VocabList>
+            <Navigation>
+              <Link to="/create">
+                <PrimaryButton buttonLabel="Add new Vocabulary" />
+              </Link>
+            </Navigation>
+          </Route>
+          <Route path="/create">
+            <VocabForm />
+          </Route>
+        </Switch>
+      </AppGrid>
+    </Router>
   )
 }
 

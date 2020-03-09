@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Badge from '../Badge/Badge'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import VocabDetailsOverlay from '../VocabDetailsOverlay/VocabDetailsOverlay'
+import VocabDetails from '../VocabDetails/VocabDetails'
 import Modal from 'react-modal'
 
 Vocab.propTypes = {
@@ -52,7 +52,7 @@ export default function Vocab({
         onRequestClose={closeModal}
         style={modalStyle}
       >
-        <VocabDetailsOverlay
+        <VocabDetails
           imageSrc={imageSrc}
           audioSrc={audioSrc}
           wordTitle={wordTitle}

@@ -1,11 +1,14 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import Vocab from './Vocab'
 
 export default {
   title: 'Components/Vocab',
-  decorators: [withKnobs],
   component: Vocab,
+  decorators: [
+    renderVocab => (
+      <div style={{ padding: 20, width: 400 }}>{renderVocab()}</div>
+    ),
+  ],
 }
 
 export const Default_Vocab_Card = () => (

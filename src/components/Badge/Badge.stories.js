@@ -1,23 +1,16 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import Badge from './Badge'
-import BadgeStyled from './Badge'
 
 export default {
   title: 'Components/Badge',
-  decorators: [withKnobs],
   component: Badge,
+  decorators: [
+    renderBadge => (
+      <div style={{ padding: 20, width: 400 }}>{renderBadge()}</div>
+    ),
+  ],
 }
 
-const badgeStyles = {
-  borderRadius: '6px',
-  padding: ' 3px 7px 1px',
-  border: 'solid 1.5px {selectColour}',
-  color: '{selectColour}',
-}
-
-export const Noun_Badge = () => <BadgeStyled label="Noun" style={badgeStyles} />
-export const Verb_Badge = () => <BadgeStyled label="Verb" style={badgeStyles} />
-export const Adjective_Badge = () => (
-  <BadgeStyled label="Adjective" style={badgeStyles} />
-)
+export const Noun_Badge = () => <Badge label="Noun" />
+export const Verb_Badge = () => <Badge label="Verb" />
+export const Adjective_Badge = () => <Badge label="Adjective" />

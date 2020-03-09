@@ -6,7 +6,7 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import AudioButton from '../AudioButton/AudioButton'
 import { FiChevronLeft, FiX } from 'react-icons/fi'
 
-VocabDetailsOverlay.propTypes = {
+VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
   audioSrc: PropTypes.string,
   wordTitle: PropTypes.string.isRequired,
@@ -14,7 +14,7 @@ VocabDetailsOverlay.propTypes = {
   partOfSpeechCategory: PropTypes.string.isRequired,
 }
 
-export default function VocabDetailsOverlay({
+export default function VocabDetails({
   imageSrc,
   audioSrc,
   wordTitle,

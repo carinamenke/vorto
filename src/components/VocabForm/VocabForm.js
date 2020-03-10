@@ -1,25 +1,28 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import { FiChevronLeft, FiX, FiImage } from 'react-icons/fi'
+import { FiX, FiImage } from 'react-icons/fi'
 import { BrowserRouter as Link } from 'react-router-dom'
+import Backlink from '../Backlink/backlink'
 
 export default function VocabForm() {
   return (
-    <FormStyled>
+    <>
       <Link to="/">
-        <a href="/" className="backlink">
-          <FiChevronLeft className="backlink-icon" />
-          <span className="backlink-label">Back</span>
-        </a>
+        <Backlink href="/" />
       </Link>
+
+      {/* Backlink und closing icon getrennt auslagern! */}
+
       <Link to="/">
         <a href="/" className="closing-icon">
           <FiX />
         </a>
       </Link>
-      <form action="">
+
+      <FormStyled action="">
         <h1>Add a new Vocabulary</h1>
+
         <label>
           <div className="imageContainer">
             <FiImage className="imageIcon" />
@@ -32,6 +35,7 @@ export default function VocabForm() {
             className="fileInput"
           />
         </label>
+
         <label>
           VOCABULARY*
           <input
@@ -43,6 +47,7 @@ export default function VocabForm() {
             placeholder="E.g. 'house'"
           />
         </label>
+
         <label>
           TRANSLATION*
           <input
@@ -54,6 +59,7 @@ export default function VocabForm() {
             placeholder="E.g. 'maison'"
           />
         </label>
+
         <label>
           WORD CATEGORY*
           <select name="wordCategory" required>
@@ -63,6 +69,7 @@ export default function VocabForm() {
             <option value="adjective">Adjective</option>
           </select>
         </label>
+
         <label className="fileInputLabel">
           Add Audio
           <input
@@ -72,20 +79,19 @@ export default function VocabForm() {
             className="fileInput"
           />
         </label>
+
         <PrimaryButton buttonLabel="Submit" />
         <small>*Mandatory fields</small>
-      </form>
-    </FormStyled>
+      </FormStyled>
+    </>
   )
 }
 
-const FormStyled = styled.section`
+const FormStyled = styled.form`
   margin: 15px;
-
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+  /* add a grid here */
 
   .backlink {
     position: absolute;
@@ -143,7 +149,7 @@ const FormStyled = styled.section`
   .imageIcon {
     width: 100px;
     height: 100px;
-    stroke-width: 1;
+    stroke-width: 0.5;
   }
 
   label {

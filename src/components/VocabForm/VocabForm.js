@@ -1,87 +1,61 @@
 import React from 'react'
-import styled from 'styled-components/macro'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import { FiX, FiImage } from 'react-icons/fi'
 import { BrowserRouter as Link } from 'react-router-dom'
-import Backlink from '../Backlink/backlink'
+import styled from 'styled-components/macro'
+import AudioUpload from '../AudioUpload/AudioUpload'
+import Backlink from '../Backlink/Backlink'
+import ClosingIcon from '../ClosingIcon/ClosingIcon'
+import Headline from '../Headline/Headline'
+import ImageUpload from '../ImageUpload/ImageUpload'
+import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import SelectInput from '../SelectInput/SelectInput'
+import TextInput from '../TextInput/TextInput'
 
 export default function VocabForm() {
+  const wordCategories = [
+    { value: 'noun', placeholder: 'Noun' },
+    { value: 'verb', placeholder: 'Verb' },
+    { value: 'adjective', placeholder: 'Adjective' },
+  ]
+
   return (
     <>
       <Link to="/">
-        <Backlink href="/" />
+        <Backlink href="/" label="Back" />
       </Link>
-
-      {/* Backlink und closing icon getrennt auslagern! */}
-
       <Link to="/">
-        <a href="/" className="closing-icon">
-          <FiX />
-        </a>
+        <ClosingIcon href="/" />
       </Link>
-
       <FormStyled action="">
-        <h1>Add a new Vocabulary</h1>
-
-        <label>
-          <div className="imageContainer">
-            <FiImage className="imageIcon" />
-            <span className="fileInputLabel">Add Image</span>
-          </div>
-          <input
-            type="file"
-            name="image"
-            accept="image/png, image/jpeg"
-            className="fileInput"
-          />
-        </label>
-
-        <label>
-          VOCABULARY*
-          <input
-            type="text"
-            name="vocab"
-            required
-            minLength="2"
-            maxLength="40"
-            placeholder="E.g. 'house'"
-          />
-        </label>
-
-        <label>
-          TRANSLATION*
-          <input
-            type="text"
-            name="translation"
-            required
-            minLength="2"
-            maxLength="40"
-            placeholder="E.g. 'maison'"
-          />
-        </label>
-
-        <label>
-          WORD CATEGORY*
-          <select name="wordCategory" required>
-            <option value="">Select a category</option>
-            <option value="noun">Noun</option>
-            <option value="verb">Verb</option>
-            <option value="adjective">Adjective</option>
-          </select>
-        </label>
-
-        <label className="fileInputLabel">
-          Add Audio
-          <input
-            type="file"
-            name="audio"
-            accept="audio/mp3"
-            className="fileInput"
-          />
-        </label>
-
+        <Headline text="Add a new Vocabulary" />
+        <ImageUpload />
+        <TextInput
+          label="Vocabulary"
+          required={true}
+          name="vocab"
+          minLength="2"
+          maxLength="40"
+          placeholder="E.g. 'house'"
+        />
+        <TextInput
+          label="Translation"
+          required={false}
+          name="translation"
+          minLength="2"
+          maxLength="40"
+          placeholder="E.g. 'maison'"
+        />
+        <SelectInput
+          label="Word category"
+          name="wordCategory"
+          required="required"
+          placeholder="Select a category"
+          options={wordCategories}
+        />
+        <AudioUpload />
         <PrimaryButton buttonLabel="Submit" />
-        <small>*Mandatory fields</small>
+        <small>
+          <sup>*</sup>Mandatory fields
+        </small>
       </FormStyled>
     </>
   )
@@ -91,97 +65,7 @@ const FormStyled = styled.form`
   margin: 15px;
   display: flex;
   flex-direction: column;
-  /* add a grid here */
-
-  .backlink {
-    position: absolute;
-    top: 15px;
-    left: 12px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    text-decoration: none;
-
-    :visited {
-      color: var(--grey-color-dark);
-    }
-  }
-
-  .backlink-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .backlink-label {
-    margin-top: 2px;
-  }
-
-  .closing-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 20px;
-    height: 20px;
-
-    :visited {
-      color: var(--grey-color-dark);
-    }
-  }
-
-  h1 {
-    margin: 30px 0 0;
-    font-size: 21px;
-    font-weight: 400;
-  }
-
-  .imageContainer {
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    background: var(--grey-color-light);
-    width: auto;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -15px;
-  }
-
-  .imageIcon {
-    width: 100px;
-    height: 100px;
-    stroke-width: 0.5;
-  }
-
-  label {
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  [type='text'],
-  select {
-    border: none;
-    border-radius: 4px;
-    background: var(--grey-color-light);
-    height: 35px;
-    padding: 10px;
-  }
-
-  .fileInput {
-    visibility: hidden;
-  }
-
-  .fileInputLabel {
-    border: none;
-    border-radius: 4px;
-    background: var(--primary-color-light);
-    color: var(--primary-color-active);
-    height: 35px;
-    padding: 10px;
-    width: 50%;
-    text-align: center;
-  }
+  /* add a grid here and take out 20px margins from components */
 
   small {
     font-size: 10px;

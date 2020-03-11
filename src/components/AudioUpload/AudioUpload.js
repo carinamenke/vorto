@@ -27,6 +27,16 @@ const AudioUploadStyled = styled.label`
   width: 50%;
   text-align: center;
 
+  :hover {
+    background: var(--primary-color);
+    color: var(--text-color-white);
+  }
+
+  :active {
+    background: var(--primary-color-hover);
+    color: var(--text-color-white);
+  }
+
   .file-input {
     visibility: hidden;
   }

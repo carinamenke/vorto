@@ -40,13 +40,14 @@ export default function Vocab({
   return (
     <>
       <VocabStyled imageSrc={imageSrc}>
-        <img src={imageSrc} alt={wordTitle} className="image-container" />
+        <div className="image-container"></div>
         <div className="content">
           <h1 className="content-title">{wordTitle}</h1>
           <Badge label={partOfSpeechCategory} />
         </div>
         <PrimaryButton onClick={openModal} buttonLabel={'See Translation'} />
       </VocabStyled>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -88,8 +89,9 @@ const VocabStyled = styled.section`
   font-family: Helvetica, sans-serif;
 
   .image-container {
-    object-fit: cover;
-    height: 350px;
+    background: center url(${props => props.imageSrc});
+    background-size: cover;
+    height: 300px;
     width: 100%;
     border-radius: 10px 10px 0 0;
     border-bottom: solid 2px var(--grey-color-light);

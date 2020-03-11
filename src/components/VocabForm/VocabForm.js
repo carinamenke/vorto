@@ -38,7 +38,7 @@ export default function VocabForm() {
         />
         <TextInput
           label="Translation"
-          required={false}
+          required={true}
           name="translation"
           minLength="2"
           maxLength="40"
@@ -47,7 +47,7 @@ export default function VocabForm() {
         <SelectInput
           label="Word category"
           name="wordCategory"
-          required="required"
+          required={true}
           placeholder="Select a category"
           options={wordCategories}
         />
@@ -62,9 +62,11 @@ export default function VocabForm() {
 }
 
 const FormStyled = styled.form`
+  max-width: 700px;
   margin: 15px;
   display: flex;
   flex-direction: column;
+
   /* add a grid here and take out 20px margins from components */
 
   small {

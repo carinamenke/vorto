@@ -57,7 +57,13 @@ const VocabList = styled.section`
   flex-wrap: nowrap;
   overflow: scroll;
   padding: 0 30px 30px;
+
+  :after {
+    content: '';
+    flex: 0 0 10px;
+  }
 `
+
 const Navigation = styled.section`
   grid-row-start: 3;
   grid-row-end: 4;

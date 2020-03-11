@@ -1,12 +1,12 @@
 import React from 'react'
+import { IoMdImages } from 'react-icons/io'
 import styled from 'styled-components/macro'
-import { FiImage } from 'react-icons/fi'
 
 export default function ImageUpload() {
   return (
     <ImageUploadStyled>
       <div className="image-container">
-        <FiImage className="image-icon" />
+        <IoMdImages className="image-icon" />
         <span className="file-input-label">Add Image</span>
       </div>
       <input
@@ -40,7 +40,6 @@ const ImageUploadStyled = styled.label`
   .image-icon {
     width: 100px;
     height: 100px;
-    stroke-width: 0.5;
   }
 
   .file-input-label {
@@ -52,6 +51,16 @@ const ImageUploadStyled = styled.label`
     padding: 10px;
     width: 50%;
     text-align: center;
+
+    :hover {
+      background: var(--primary-color);
+      color: var(--text-color-white);
+    }
+
+    :active {
+      background: var(--primary-color-hover);
+      color: var(--text-color-white);
+    }
   }
 
   .file-input {

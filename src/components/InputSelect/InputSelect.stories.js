@@ -1,12 +1,12 @@
 import React from 'react'
-import SelectInput from './SelectInput'
+import InputSelect from './InputSelect'
 
 export default {
-  title: 'Components/SelectInput',
-  component: SelectInput,
+  title: 'Components/InputSelect',
+  component: InputSelect,
   decorators: [
-    renderSelectInput => (
-      <div style={{ padding: 20, width: 400 }}>{renderSelectInput()}</div>
+    renderInputSelect => (
+      <div style={{ padding: 20, width: 400 }}>{renderInputSelect()}</div>
     ),
   ],
 }
@@ -18,7 +18,7 @@ const wordCategories = [
 ]
 
 export const Word_Category_Selection = () => (
-  <SelectInput
+  <InputSelect
     label="Word category"
     name="wordCategory"
     required="required"

@@ -1,18 +1,18 @@
 import React from 'react'
-import TextInput from './TextInput'
+import InputText from './InputText'
 
 export default {
-  title: 'Components/TextInput',
-  component: TextInput,
+  title: 'Components/InputText',
+  component: InputText,
   decorators: [
-    renderTextInput => (
-      <div style={{ padding: 20, width: 400 }}>{renderTextInput()}</div>
+    renderInputText => (
+      <div style={{ padding: 20, width: 400 }}>{renderInputText()}</div>
     ),
   ],
 }
 
 export const Mandatory_Text_Input = () => (
-  <TextInput
+  <InputText
     label="Vocabulary"
     required={true}
     name="vocab"
@@ -23,7 +23,7 @@ export const Mandatory_Text_Input = () => (
 )
 
 export const Optional_Text_Input = () => (
-  <TextInput
+  <InputText
     label="Translation"
     required={false}
     name="translation"

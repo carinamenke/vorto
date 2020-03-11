@@ -7,8 +7,8 @@ import ClosingIcon from '../ClosingIcon/ClosingIcon'
 import Headline from '../Headline/Headline'
 import ImageUpload from '../ImageUpload/ImageUpload'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import SelectInput from '../SelectInput/SelectInput'
-import TextInput from '../TextInput/TextInput'
+import InputSelect from '../InputSelect/InputSelect'
+import InputText from '../InputText/InputText'
 
 export default function VocabForm() {
   const wordCategories = [
@@ -28,7 +28,7 @@ export default function VocabForm() {
       <FormStyled action="">
         <Headline text="Add a new Vocabulary" />
         <ImageUpload />
-        <TextInput
+        <InputText
           label="Vocabulary"
           required={true}
           name="vocab"
@@ -36,7 +36,7 @@ export default function VocabForm() {
           maxLength="40"
           placeholder="E.g. 'house'"
         />
-        <TextInput
+        <InputText
           label="Translation"
           required={true}
           name="translation"
@@ -44,7 +44,7 @@ export default function VocabForm() {
           maxLength="40"
           placeholder="E.g. 'maison'"
         />
-        <SelectInput
+        <InputSelect
           label="Word category"
           name="wordCategory"
           required={true}

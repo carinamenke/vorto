@@ -87,6 +87,7 @@ const VocabStyled = styled.section`
   border-radius: 11px;
   box-shadow: 0 9px 16px -5px var(--grey-color-shadow);
   font-family: Helvetica, sans-serif;
+  scroll-snap-align: center;
 
   .image-container {
     background: center url(${props => props.imageSrc});

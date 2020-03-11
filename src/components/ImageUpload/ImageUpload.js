@@ -21,9 +21,6 @@ export default function ImageUpload() {
 
 const ImageUploadStyled = styled.label`
   font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
 
   .image-container {
     display: flex;

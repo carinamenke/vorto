@@ -17,7 +17,7 @@ export default function AudioUpload() {
 
 const AudioUploadStyled = styled.label`
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: 10px;
   border: none;
   border-radius: 4px;
   background: var(--primary-color-light);

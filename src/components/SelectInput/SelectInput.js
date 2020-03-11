@@ -37,10 +37,10 @@ const SelectInputStyled = styled.label`
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
 
   .input-label {
     text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .input {

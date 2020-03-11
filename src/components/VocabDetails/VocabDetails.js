@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
-import Badge from '../Badge/Badge'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import AudioButton from '../AudioButton/AudioButton'
-import { FiChevronLeft, FiX } from 'react-icons/fi'
+import Backlink from '../Backlink/Backlink'
+import Badge from '../Badge/Badge'
+import ClosingIcon from '../ClosingIcon/ClosingIcon'
+import PrimaryButton from '../PrimaryButton/PrimaryButton'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
@@ -26,11 +27,12 @@ export default function VocabDetails({
     <VocabDetailsStyled imageSrc={imageSrc}>
       <div className="image-container">
         <div className="image-container-overlay"></div>
-        <div onClick={onClick} className="backlink">
-          <FiChevronLeft className="backlink-icon" />
-          <span className="backlink-label">Back to Collection</span>
-        </div>
-        <FiX onClick={onClick} className="closing-icon" />
+        <Backlink
+          label="Back to collection"
+          onClick={onClick}
+          color="var(--text-color-white)"
+        />
+        <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
       </div>
       <div className="content">
         <h2 className="content-title">{wordTitle}</h2>
@@ -60,8 +62,6 @@ const VocabDetailsStyled = styled.div`
     height: 60%;
     width: 100%;
     border-bottom: solid 2px var(--grey-color-light);
-    color: var(--text-color-white);
-    font-size: 14px;
   }
 
   .image-container-overlay {
@@ -71,32 +71,6 @@ const VocabDetailsStyled = styled.div`
       var(--image-gradient-color-dark),
       var(--image-gradient-color-light)
     );
-  }
-
-  .backlink {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    display: flex;
-    align-items: center;
-    cursor: default;
-  }
-
-  .backlink-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .backlink-label {
-    margin-top: 2px;
-  }
-
-  .closing-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 20px;
-    height: 20px;
   }
 
   .content,

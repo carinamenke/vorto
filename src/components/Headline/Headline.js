@@ -11,7 +11,7 @@ export default function Headline({ text }) {
 }
 
 const HeadlineStyled = styled.h1`
-  margin: 30px 0 0;
+  margin: 40px 0 0;
   font-size: 21px;
   font-weight: 400;
 `

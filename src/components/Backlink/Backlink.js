@@ -7,11 +7,17 @@ Backlink.propTypes = {
   href: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.string,
 }
 
-export default function Backlink({ href, label, onClick }) {
+export default function Backlink({ href, label, onClick, color }) {
   return (
-    <BacklinkStyled href={href} onClick={onClick} className="backlink">
+    <BacklinkStyled
+      href={href}
+      onClick={onClick}
+      className="backlink"
+      color={color}
+    >
       <FiChevronLeft className="backlink-icon" />
       <span className="backlink-label">{label}</span>
     </BacklinkStyled>
@@ -26,6 +32,8 @@ const BacklinkStyled = styled.a`
   align-items: center;
   font-size: 14px;
   text-decoration: none;
+  cursor: default;
+  color: ${props => props.color};
 
   :visited {
     color: var(--grey-color-dark);

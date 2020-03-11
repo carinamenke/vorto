@@ -6,11 +6,17 @@ import styled from 'styled-components/macro'
 ClosingIcon.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.string,
 }
 
-export default function ClosingIcon({ href, onClick }) {
+export default function ClosingIcon({ href, onClick, color }) {
   return (
-    <ClosingIconStyled href={href} onClick={onClick} className="closing-icon">
+    <ClosingIconStyled
+      href={href}
+      onClick={onClick}
+      className="closing-icon"
+      color={color}
+    >
       <FiX />
     </ClosingIconStyled>
   )
@@ -22,6 +28,8 @@ const ClosingIconStyled = styled.a`
   right: 15px;
   width: 20px;
   height: 20px;
+  cursor: default;
+  color: ${props => props.color};
 
   :visited {
     color: var(--grey-color-dark);

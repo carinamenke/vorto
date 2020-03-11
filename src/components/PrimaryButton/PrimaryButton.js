@@ -11,10 +11,9 @@ const PrimaryButtonStyled = styled.button`
   background: var(--primary-color);
   color: var(--text-color-white);
   border: none;
-  border-radius: 6px;
-  max-width: 100%;
+  border-radius: 4px;
   margin: 20px 15px;
-  padding: 5px 7px;
+  padding: 7px;
   box-shadow: 0 5px 4px -2px var(--primary-color-light);
   word-wrap: break-word;
 

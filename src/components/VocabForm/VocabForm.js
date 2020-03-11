@@ -64,12 +64,11 @@ export default function VocabForm() {
 const FormStyled = styled.form`
   max-width: 700px;
   margin: 15px;
-  display: flex;
-  flex-direction: column;
-
-  /* add a grid here and take out 20px margins from components */
+  display: grid;
+  grid-row-gap: 20px;
 
   small {
     font-size: 10px;
+    margin-top: -10px;
   }
 `

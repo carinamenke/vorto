@@ -4,7 +4,6 @@ import styled from 'styled-components/macro'
 import Badge from '../Badge/Badge'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import VocabDetails from '../VocabDetails/VocabDetails'
-import Modal from 'react-modal'
 
 Vocab.propTypes = {
   imageSrc: PropTypes.string,
@@ -21,21 +20,8 @@ export default function Vocab({
   translation,
   partOfSpeechCategory,
 }) {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [detailsAreOpen, setDetailsAreOpen] = useState(false)
   const body = document.getElementById('root')
-  const modalStyle = {
-    content: {
-      height: '100vh',
-      borderRadius: 0,
-      position: 'relative',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      padding: 0,
-      margin: '-1px',
-    },
-  }
 
   return (
     <>
@@ -45,33 +31,28 @@ export default function Vocab({
           <h1 className="content-title">{wordTitle}</h1>
           <Badge label={partOfSpeechCategory} />
         </div>
-        <PrimaryButton onClick={openModal} buttonLabel={'See Translation'} />
+        <PrimaryButton onClick={openDetails} buttonLabel={'See Translation'} />
       </VocabStyled>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={modalStyle}
-      >
-        <VocabDetails
-          imageSrc={imageSrc}
-          audioSrc={audioSrc}
-          wordTitle={wordTitle}
-          partOfSpeechCategory={partOfSpeechCategory}
-          translation={translation}
-          onClick={closeModal}
-        />
-      </Modal>
+      <VocabDetails
+        isOpen={detailsAreOpen}
+        onRequestClose={closeDetails}
+        imageSrc={imageSrc}
+        audioSrc={audioSrc}
+        wordTitle={wordTitle}
+        partOfSpeechCategory={partOfSpeechCategory}
+        translation={translation}
+        onClick={closeDetails}
+      />
     </>
   )
 
-  function openModal() {
-    setModalIsOpen(true)
+  function openDetails() {
+    setDetailsAreOpen(true)
     body.style.height = '100vh'
     body.style.overflowY = 'hidden'
   }
-  function closeModal() {
-    setModalIsOpen(false)
+  function closeDetails() {
+    setDetailsAreOpen(false)
     body.style.overflowY = 'auto'
   }
 }

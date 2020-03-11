@@ -1,16 +1,16 @@
 import React from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import AudioUpload from '../AudioUpload/AudioUpload'
-import Backlink from '../Backlink/Backlink'
-import ClosingIcon from '../ClosingIcon/ClosingIcon'
-import Headline from '../Headline/Headline'
-import ImageUpload from '../ImageUpload/ImageUpload'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import InputSelect from '../InputSelect/InputSelect'
-import InputText from '../InputText/InputText'
+import AudioUpload from '../components/AudioUpload/AudioUpload'
+import Backlink from '../components/Backlink/Backlink'
+import ClosingIcon from '../components/ClosingIcon/ClosingIcon'
+import Headline from '../components/Headline/Headline'
+import ImageUpload from '../components/ImageUpload/ImageUpload'
+import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
+import InputSelect from '../components/InputSelect/InputSelect'
+import InputText from '../components/InputText/InputText'
 
-export default function VocabForm() {
+export default function FormPage() {
   const wordCategories = [
     { value: 'noun', placeholder: 'Noun' },
     { value: 'verb', placeholder: 'Verb' },
@@ -69,6 +69,6 @@ const FormStyled = styled.form`
 
   small {
     font-size: 10px;
-    margin-top: -10px;
+    margin-top: -30px;
   }
 `

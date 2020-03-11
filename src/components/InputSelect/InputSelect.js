@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import InputStyled from '../InputStyled/InputStyled'
+import { uid } from 'react-uid'
 
 InputSelect.propTypes = {
   label: PropTypes.string.isRequired,
@@ -26,7 +27,9 @@ export default function InputSelect({
       <select name={name} required={required} className="input">
         <option value="">{placeholder}</option>
         {options.map(option => (
-          <option value={option.value}>{option.placeholder}</option>
+          <option key={uid(option)} value={option.value}>
+            {option.placeholder}
+          </option>
         ))}
       </select>
     </InputStyled>

@@ -6,6 +6,7 @@ import Backlink from '../Backlink/Backlink'
 import Badge from '../Badge/Badge'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import Modal from 'react-modal'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
@@ -22,28 +23,46 @@ export default function VocabDetails({
   partOfSpeechCategory,
   translation,
   onClick,
+  isOpen,
+  onRequestClose,
 }) {
+  const modalStyle = {
+    content: {
+      height: '100vh',
+      borderRadius: 0,
+      position: 'relative',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      padding: 0,
+      margin: '-1px',
+    },
+  }
+
   return (
-    <VocabDetailsStyled imageSrc={imageSrc}>
-      <div className="image-container">
-        <div className="image-container-overlay"></div>
-        <Backlink
-          label="Back to collection"
-          onClick={onClick}
-          color="var(--text-color-white)"
-        />
-        <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
-      </div>
-      <div className="content">
-        <h2 className="content-title">{wordTitle}</h2>
-        <Badge label={partOfSpeechCategory} />
-      </div>
-      <div className="translation">
-        <h1 className="translation-title">{translation}</h1>
-        <AudioButton buttonLabel={'Listen to Audio'} audioSrc={audioSrc} />
-      </div>
-      <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
-    </VocabDetailsStyled>
+    <Modal style={modalStyle} isOpen={isOpen} onRequestClose={onRequestClose}>
+      <VocabDetailsStyled imageSrc={imageSrc}>
+        <div className="image-container">
+          <div className="image-container-overlay"></div>
+          <Backlink
+            label="Back to collection"
+            onClick={onClick}
+            color="var(--text-color-white)"
+          />
+          <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
+        </div>
+        <div className="content">
+          <h2 className="content-title">{wordTitle}</h2>
+          <Badge label={partOfSpeechCategory} />
+        </div>
+        <div className="translation">
+          <h1 className="translation-title">{translation}</h1>
+          <AudioButton buttonLabel={'Listen to Audio'} audioSrc={audioSrc} />
+        </div>
+        <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
+      </VocabDetailsStyled>
+    </Modal>
   )
 }
 

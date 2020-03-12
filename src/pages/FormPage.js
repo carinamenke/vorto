@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import AudioUpload from '../components/AudioUpload/AudioUpload'

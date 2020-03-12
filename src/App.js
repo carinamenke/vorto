@@ -6,12 +6,13 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
 import data from './vocabs.json'
+import { loadFromLocal, saveToLocal } from './common/utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
   const defaultVocabs = data.vocabs ? data.vocabs : []
-  const [vocabs, setVocabs] = useState(defaultVocabs)
+  const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
 
   return (
     <AppGrid>
@@ -34,7 +35,9 @@ export default function App() {
   )
 
   function addVocab(newVocab) {
-    setVocabs([newVocab, ...vocabs])
+    const newVocabs = [newVocab, ...vocabs]
+    setVocabs(newVocabs)
+    saveToLocal('vocabs', newVocabs)
   }
 }
 

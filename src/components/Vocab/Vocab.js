@@ -14,7 +14,7 @@ Vocab.propTypes = {
 }
 
 export default function Vocab({
-  imageSrc,
+  imageSrc = './images/default.png',
   audioSrc,
   wordTitle,
   translation,

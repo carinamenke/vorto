@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Vocab from '../components/Vocab/Vocab'
+import { uid } from 'react-uid'
 
 export default function ListPage({ vocabs }) {
   return (
@@ -12,7 +13,7 @@ export default function ListPage({ vocabs }) {
           wordTitle={vocab.wordTitle}
           translation={vocab.translation}
           partOfSpeechCategory={vocab.partOfSpeechCategory}
-          key={vocab.id}
+          key={uid(vocab)}
         />
       ))}
     </VocabList>

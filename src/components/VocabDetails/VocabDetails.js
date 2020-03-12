@@ -17,7 +17,7 @@ VocabDetails.propTypes = {
 }
 
 export default function VocabDetails({
-  imageSrc,
+  imageSrc = './images/default.png',
   audioSrc,
   wordTitle,
   partOfSpeechCategory,

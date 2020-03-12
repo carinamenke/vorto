@@ -74,7 +74,7 @@ export default function FormPage({ onSubmit }) {
       wordTitle: wordTitle.value,
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
-      imageSrc: imageSrc.file,
+      imageSrc: imageSrc.value,
       audioSrc: audioSrc.value,
     })
     history.push('/')

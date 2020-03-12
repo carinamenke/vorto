@@ -7,7 +7,7 @@ export default function AudioUpload() {
       Add Audio
       <input
         type="file"
-        name="audio"
+        name="audioSrc"
         accept="audio/mp3"
         className="file-input"
       />

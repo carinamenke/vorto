@@ -11,7 +11,7 @@ export default function ImageUpload() {
       </div>
       <input
         type="file"
-        name="image"
+        name="imageSrc"
         accept="image/png, image/jpeg"
         className="file-input"
       />

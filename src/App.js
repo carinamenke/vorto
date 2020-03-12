@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
+import styled from 'styled-components/macro'
+import PrimaryButton from './components/PrimaryButton/PrimaryButton'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
 import data from './vocabs.json'
-import PrimaryButton from './components/PrimaryButton/PrimaryButton'
-import styled from 'styled-components/macro'
 
 Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
-  const vocabs = data.vocabs
+  const defaultVocabs = data.vocabs ? data.vocabs : []
+  const [vocabs, setVocabs] = useState(defaultVocabs)
 
   return (
     <AppGrid>
@@ -20,17 +21,21 @@ export default function App() {
             <ListPage vocabs={vocabs} />
           </Route>
           <Route path="/create">
-            <FormPage />
+            <FormPage onSubmit={addVocab} />
           </Route>
         </Switch>
         <Navigation>
           <Link to="/create">
-            <PrimaryButton buttonLabel="Add new Vocabulary" />
+            <PrimaryButton label="Add new Vocabulary" />
           </Link>
         </Navigation>
       </Router>
     </AppGrid>
   )
+
+  function addVocab(newVocab) {
+    setVocabs([newVocab, ...vocabs])
+  }
 }
 
 const AppGrid = styled.div`

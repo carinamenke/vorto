@@ -6,8 +6,8 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import VocabDetails from '../VocabDetails/VocabDetails'
 
 Vocab.propTypes = {
-  imageSrc: PropTypes.string,
-  audioSrc: PropTypes.string,
+  imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
@@ -31,7 +31,7 @@ export default function Vocab({
           <h1 className="content-title">{wordTitle}</h1>
           <Badge label={partOfSpeechCategory} />
         </div>
-        <PrimaryButton onClick={openDetails} buttonLabel={'See Translation'} />
+        <PrimaryButton onClick={openDetails} label={'See Translation'} />
       </VocabStyled>
       <VocabDetails
         isOpen={detailsAreOpen}

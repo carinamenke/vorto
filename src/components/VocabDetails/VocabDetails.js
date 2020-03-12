@@ -9,8 +9,8 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import Modal from 'react-modal'
 
 VocabDetails.propTypes = {
-  imageSrc: PropTypes.string,
-  audioSrc: PropTypes.string,
+  imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
@@ -60,7 +60,7 @@ export default function VocabDetails({
           <h1 className="translation-title">{translation}</h1>
           <AudioButton buttonLabel={'Listen to Audio'} audioSrc={audioSrc} />
         </div>
-        <PrimaryButton buttonLabel={'Close'} onClick={onClick} />
+        <PrimaryButton label={'Close'} onClick={onClick} />
       </VocabDetailsStyled>
     </Modal>
   )

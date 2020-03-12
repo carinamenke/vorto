@@ -1,9 +1,18 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function PrimaryButton({ onClick, buttonLabel }) {
+PrimaryButton.propTypes = {
+  onClick: PropTypes.func,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+}
+
+export default function PrimaryButton({ onClick, label, type }) {
   return (
-    <PrimaryButtonStyled onClick={onClick}>{buttonLabel}</PrimaryButtonStyled>
+    <PrimaryButtonStyled type={type} onClick={onClick}>
+      {label}
+    </PrimaryButtonStyled>
   )
 }
 

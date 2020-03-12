@@ -19,5 +19,5 @@ export const SeeTranslation_Btn = () => (
   />
 )
 export const Close_Btn = () => (
-  <PrimaryButton buttonLabel="Close" onClick={action('Closes Translation')} />
+  <PrimaryButton label="Close" onClick={action('Closes Translation')} />
 )

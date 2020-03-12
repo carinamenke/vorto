@@ -66,17 +66,17 @@ export default function FormPage({ onSubmit }) {
     const wordTitle = form.wordTitle
     const translation = form.translation
     const partOfSpeechCategory = form.partOfSpeechCategory
-    const imageSrc = form.imageSrc
-    const imageData = URL.createObjectURL(imageSrc.files[0])
-    const audioSrc = form.audioSrc
-    const audioData = URL.createObjectURL(audioSrc.files[0])
+    // const imageSrc = form.imageSrc
+    // const imageData = URL.createObjectURL(imageSrc.files[0])
+    // const audioSrc = form.audioSrc
+    // const audioData = URL.createObjectURL(audioSrc.files[0])
     event.preventDefault()
     onSubmit({
       wordTitle: wordTitle.value,
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
-      imageSrc: imageData ? imageData : '',
-      audioSrc: audioData ? audioData : '',
+      // imageSrc: imageData ? imageData : '',
+      // audioSrc: audioData ? audioData : '',
     })
     history.push('/')
   }

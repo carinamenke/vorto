@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Link } from 'react-router-dom'
+import { BrowserRouter as Link, useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import AudioUpload from '../components/AudioUpload/AudioUpload'
 import Backlink from '../components/Backlink/Backlink'
@@ -9,7 +9,6 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
-import { useHistory } from 'react-router-dom'
 
 export default function FormPage({ onSubmit }) {
   const wordCategories = [
@@ -68,14 +67,16 @@ export default function FormPage({ onSubmit }) {
     const translation = form.translation
     const partOfSpeechCategory = form.partOfSpeechCategory
     const imageSrc = form.imageSrc
+    const imageData = URL.createObjectURL(imageSrc.files[0])
     const audioSrc = form.audioSrc
+    const audioData = URL.createObjectURL(audioSrc.files[0])
     event.preventDefault()
     onSubmit({
       wordTitle: wordTitle.value,
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
-      imageSrc: imageSrc.value,
-      audioSrc: audioSrc.value,
+      imageSrc: imageData ? imageData : '',
+      audioSrc: audioData ? audioData : '',
     })
     history.push('/')
   }

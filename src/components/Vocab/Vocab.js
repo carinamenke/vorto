@@ -14,7 +14,7 @@ Vocab.propTypes = {
 }
 
 export default function Vocab({
-  imageSrc = './images/default.png',
+  imageSrc,
   audioSrc,
   wordTitle,
   translation,
@@ -71,7 +71,9 @@ const VocabStyled = styled.section`
   scroll-snap-align: center;
 
   .image-container {
-    background: center url(${props => props.imageSrc});
+    background: center
+      url(${props =>
+        props.imageSrc ? props.imageSrc : './images/default.png'});
     background-size: cover;
     height: 300px;
     width: 100%;

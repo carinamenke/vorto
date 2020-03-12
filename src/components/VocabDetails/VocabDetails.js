@@ -17,7 +17,7 @@ VocabDetails.propTypes = {
 }
 
 export default function VocabDetails({
-  imageSrc = './images/default.png',
+  imageSrc,
   audioSrc,
   wordTitle,
   partOfSpeechCategory,
@@ -75,7 +75,9 @@ const VocabDetailsStyled = styled.div`
   font-family: Helvetica, sans-serif;
 
   .image-container {
-    background: center url(${props => props.imageSrc});
+    background: center
+      url(${props =>
+        props.imageSrc ? props.imageSrc : './images/default.png'});
     background-size: cover;
     margin: 0;
     height: 60%;

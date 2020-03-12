@@ -25,7 +25,7 @@ export default function AudioButton({ buttonLabel, audioSrc }) {
 }
 
 const AudioButtonStyled = styled.button`
-  ${props => (props.audioSrc ? 'display: flex;' : 'display: none;')}
+  ${props => (props.audioSrc ? 'display: flex' : 'display: none')};
   border: solid var(--grey-color-dark) 1.5px;
   border-radius: 4px;
   background: var(--background-color);

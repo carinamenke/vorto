@@ -6,12 +6,13 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
+    margin: 0 auto;
     background: var(--background-color);
     font-family: sans-serif;
     font-size: 18px;
     line-height: 1.4;
     height: 100vh;
+    color: var(--grey-color-dark);
   }
 
   input, button, textarea {
@@ -36,7 +37,7 @@ export default createGlobalStyle`
   }
 
   :root {
-    --primary-color-shadow: #ffdddd;
+    --primary-color-light: #FFCBCB;
   }
 
   :root {

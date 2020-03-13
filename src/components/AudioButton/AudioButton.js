@@ -4,18 +4,17 @@ import PropTypes from 'prop-types'
 import { FiVolume1 } from 'react-icons/fi'
 
 AudioButton.propTypes = {
-  buttonLabel: PropTypes.string.isRequired,
-  audioSrc: PropTypes.string.isRequired,
+  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
 export default function AudioButton({ buttonLabel, audioSrc }) {
   const audioEl = useRef()
 
   return (
-    <AudioButtonStyled onClick={playAudio}>
+    <AudioButtonStyled onClick={playAudio} audioSrc={audioSrc}>
       <FiVolume1 className="icon" />
       <audio ref={audioEl} src={audioSrc} preload="auto"></audio>
-      <span className="label">{buttonLabel}</span>
+      <span className="label">Listen to Audio</span>
     </AudioButtonStyled>
   )
 
@@ -25,11 +24,11 @@ export default function AudioButton({ buttonLabel, audioSrc }) {
 }
 
 const AudioButtonStyled = styled.button`
-  display: flex;
-  border: solid grey 1px;
+  ${props => (props.audioSrc ? 'display: flex' : 'display: none')};
+  border: solid var(--grey-color-dark) 1.5px;
   border-radius: 4px;
   background: var(--background-color);
-  padding: 6px 8px;
+  padding: 5px 8px;
 
   .label,
   .icon {

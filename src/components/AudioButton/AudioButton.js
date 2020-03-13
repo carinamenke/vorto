@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { FiVolume1 } from 'react-icons/fi'
 
 AudioButton.propTypes = {
-  buttonLabel: PropTypes.string.isRequired,
   audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
@@ -15,7 +14,7 @@ export default function AudioButton({ buttonLabel, audioSrc }) {
     <AudioButtonStyled onClick={playAudio} audioSrc={audioSrc}>
       <FiVolume1 className="icon" />
       <audio ref={audioEl} src={audioSrc} preload="auto"></audio>
-      <span className="label">{buttonLabel}</span>
+      <span className="label">Listen to Audio</span>
     </AudioButtonStyled>
   )
 

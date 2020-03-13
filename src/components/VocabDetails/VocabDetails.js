@@ -16,6 +16,10 @@ VocabDetails.propTypes = {
   partOfSpeechCategory: PropTypes.string.isRequired,
 }
 
+VocabDetails.defaultProps = {
+  imageSrc: './images/default.png',
+}
+
 export default function VocabDetails({
   imageSrc,
   audioSrc,
@@ -58,7 +62,7 @@ export default function VocabDetails({
         </div>
         <div className="translation">
           <h1 className="translation-title">{translation}</h1>
-          <AudioButton buttonLabel={'Listen to Audio'} audioSrc={audioSrc} />
+          <AudioButton audioSrc={audioSrc} />
         </div>
         <PrimaryButton label={'Close'} onClick={onClick} />
       </VocabDetailsStyled>
@@ -75,9 +79,7 @@ const VocabDetailsStyled = styled.div`
   font-family: Helvetica, sans-serif;
 
   .image-container {
-    background: center
-      url(${props =>
-        props.imageSrc ? props.imageSrc : './images/default.png'});
+    background: center url(${props => props.imageSrc});
     background-size: cover;
     margin: 0;
     height: 60%;

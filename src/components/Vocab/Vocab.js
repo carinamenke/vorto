@@ -13,6 +13,10 @@ Vocab.propTypes = {
   partOfSpeechCategory: PropTypes.string.isRequired,
 }
 
+Vocab.defaultProps = {
+  imageSrc: './images/default.png',
+}
+
 export default function Vocab({
   imageSrc,
   audioSrc,
@@ -71,9 +75,7 @@ const VocabStyled = styled.section`
   scroll-snap-align: center;
 
   .image-container {
-    background: center
-      url(${props =>
-        props.imageSrc ? props.imageSrc : './images/default.png'});
+    background: center url(${props => props.imageSrc});
     background-size: cover;
     height: 300px;
     width: 100%;

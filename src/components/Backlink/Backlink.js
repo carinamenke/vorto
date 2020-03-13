@@ -5,8 +5,8 @@ import styled from 'styled-components/macro'
 
 Backlink.propTypes = {
   href: PropTypes.string,
-  label: PropTypes.string,
   onClick: PropTypes.func,
+  label: PropTypes.string.isRequired,
   color: PropTypes.string,
 }
 

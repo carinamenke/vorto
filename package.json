@@ -26,6 +26,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "cypress": "cypress open",
     "deploy": "npm run build && firebase deploy --only hosting"
   },
   "eslintConfig": {
@@ -50,6 +51,7 @@
     "@storybook/addon-links": "5.3.14",
     "@storybook/addons": "5.3.14",
     "@storybook/preset-create-react-app": "2.0.0",
-    "@storybook/react": "5.3.14"
+    "@storybook/react": "5.3.14",
+    "cypress": "4.1.0"
   }
 }

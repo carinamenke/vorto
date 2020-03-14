@@ -1,3 +1,14 @@
+# vorto app
+
+The vorto app allows you to create a digital stack of vocabulary learning cards. Expand your vocabulary for any foreign language with those words which are relevant for **you**.
+
+- Set up vocabulary cards including images and audio files
+- Manage your vocabulary learning progress by moving those words that you have successfully learned to a separate stack
+- Search for vocabulary
+- Set up a separate space for every language you are learning
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

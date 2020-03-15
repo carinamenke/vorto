@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import PrimaryButton from './components/PrimaryButton/PrimaryButton'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { loadFromLocal, saveToLocal } from './common/utils'
+import Navigation from './components/Navigation/Navigation'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
+import SearchPage from './pages/SearchPage'
 import data from './vocabs.json'
-import { loadFromLocal, saveToLocal } from './common/utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -24,12 +25,11 @@ export default function App() {
           <Route path="/create">
             <FormPage onSubmit={addVocab} />
           </Route>
+          <Route path="/search">
+            <SearchPage></SearchPage>
+          </Route>
         </Switch>
-        <Navigation>
-          <Link to="/create">
-            <PrimaryButton label="Add new Vocabulary" />
-          </Link>
-        </Navigation>
+        <Navigation />
       </Router>
     </AppGrid>
   )
@@ -45,11 +45,4 @@ const AppGrid = styled.div`
   display: grid;
   grid-template-rows: 1fr 8fr 1fr;
   height: 100vh;
-`
-
-const Navigation = styled.section`
-  grid-row-start: 3;
-  grid-row-end: 4;
-  display: flex;
-  justify-content: center;
 `

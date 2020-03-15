@@ -1,6 +1,8 @@
 describe('Create a vocab card', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/create')
+    cy.visit('http://localhost:3000')
+
+    cy.get('nav > a:nth-child(2)').click()
 
     cy.get('input[name="wordTitle"]').type('Das Haus')
 

@@ -12,9 +12,9 @@ node_modules
 /build
 
 # firebase
- 	firebase.json
-	.firebaserc
-	/.firebase
+firebase.json
+.firebaserc
+/.firebase
 
 # misc
 .DS_Store

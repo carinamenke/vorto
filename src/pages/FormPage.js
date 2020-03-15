@@ -83,10 +83,12 @@ export default function FormPage({ onSubmit }) {
 }
 
 const FormStyled = styled.form`
+  grid-row: 1 / 3;
   max-width: 700px;
-  margin: 15px;
+  margin: 15px 15px 0;
   display: grid;
   grid-row-gap: 20px;
+  overflow-y: scroll;
 
   small {
     font-size: 10px;

@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { loadFromLocal, saveToLocal } from './common/utils'
+import Header from './components/Header/Header'
 import Navigation from './components/Navigation/Navigation'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
@@ -29,6 +30,7 @@ export default function App() {
             <SearchPage></SearchPage>
           </Route>
         </Switch>
+        <Header />
         <Navigation />
       </Router>
     </AppGrid>
@@ -43,6 +45,6 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
   height: 100vh;
 `

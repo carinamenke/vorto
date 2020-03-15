@@ -2,25 +2,21 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import Vocab from '../components/Vocab/Vocab'
 import { uid } from 'react-uid'
-import Header from '../components/Header/Header'
 
 export default function ListPage({ vocabs }) {
   return (
-    <>
-      <Header />
-      <VocabList>
-        {vocabs.map(vocab => (
-          <Vocab
-            imageSrc={vocab.imageSrc}
-            audioSrc={vocab.audioSrc}
-            wordTitle={vocab.wordTitle}
-            translation={vocab.translation}
-            partOfSpeechCategory={vocab.partOfSpeechCategory}
-            key={uid(vocab)}
-          />
-        ))}
-      </VocabList>
-    </>
+    <VocabList>
+      {vocabs.map(vocab => (
+        <Vocab
+          imageSrc={vocab.imageSrc}
+          audioSrc={vocab.audioSrc}
+          wordTitle={vocab.wordTitle}
+          translation={vocab.translation}
+          partOfSpeechCategory={vocab.partOfSpeechCategory}
+          key={uid(vocab)}
+        />
+      ))}
+    </VocabList>
   )
 }
 

@@ -86,7 +86,11 @@ export default createGlobalStyle`
   }
 
   :root {
-    --grey-color-shadow: rgba(163, 163, 163, 50);
+    --grey-color-shadow: rgba(200, 200, 200, 50);
+  }
+
+  :root {
+    --grey-color-shadow-light: rgba(240, 240, 240, 50);
   }
 
   :root {

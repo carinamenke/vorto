@@ -7,7 +7,7 @@ AudioButton.propTypes = {
   audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
-export default function AudioButton({ buttonLabel, audioSrc }) {
+export default function AudioButton({ audioSrc }) {
   const audioEl = useRef()
 
   return (
@@ -24,7 +24,7 @@ export default function AudioButton({ buttonLabel, audioSrc }) {
 }
 
 const AudioButtonStyled = styled.button`
-  ${props => (props.audioSrc ? 'display: flex' : 'display: none')};
+  display: flex;
   border: solid var(--grey-color-dark) 1.5px;
   border-radius: 4px;
   background: var(--background-color);

@@ -62,7 +62,7 @@ export default function VocabDetails({
         </div>
         <div className="translation">
           <h1 className="translation-title">{translation}</h1>
-          <AudioButton audioSrc={audioSrc} />
+          {audioSrc && <AudioButton audioSrc={audioSrc} />}
         </div>
         <PrimaryButton label={'Close'} onClick={onClick} />
       </VocabDetailsStyled>

@@ -20,9 +20,8 @@ export default function ListPage({ vocabs }) {
   )
 }
 
-const VocabList = styled.section`
-  grid-row-start: 2;
-  grid-row-end: 3;
+const VocabList = styled.main`
+  grid-row: 2 / 3;
   display: flex;
   flex-wrap: nowrap;
   overflow: scroll;

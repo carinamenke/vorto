@@ -1,18 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import PrimaryButton from './components/PrimaryButton/PrimaryButton'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { loadFromLocal, saveToLocal } from './common/utils'
+import Header from './components/Header/Header'
+import Navigation from './components/Navigation/Navigation'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
+import SearchPage from './pages/SearchPage'
 import data from './vocabs.json'
-import { loadFromLocal, saveToLocal } from './common/utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
   const defaultVocabs = data.vocabs ? data.vocabs : []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
+
+  useEffect(() => {
+    saveToLocal('vocabs', vocabs)
+  }, [vocabs])
 
   return (
     <AppGrid>
@@ -24,12 +30,12 @@ export default function App() {
           <Route path="/create">
             <FormPage onSubmit={addVocab} />
           </Route>
+          <Route path="/search">
+            <SearchPage></SearchPage>
+          </Route>
         </Switch>
-        <Navigation>
-          <Link to="/create">
-            <PrimaryButton label="Add new Vocabulary" />
-          </Link>
-        </Navigation>
+        <Header />
+        <Navigation />
       </Router>
     </AppGrid>
   )
@@ -37,19 +43,11 @@ export default function App() {
   function addVocab(newVocab) {
     const newVocabs = [newVocab, ...vocabs]
     setVocabs(newVocabs)
-    saveToLocal('vocabs', newVocabs)
   }
 }
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-rows: 50px auto 50px;
   height: 100vh;
-`
-
-const Navigation = styled.section`
-  grid-row-start: 3;
-  grid-row-end: 4;
-  display: flex;
-  justify-content: center;
 `

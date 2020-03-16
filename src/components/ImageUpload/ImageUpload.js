@@ -14,7 +14,6 @@ export default function ImageUpload() {
         name="imageSrc"
         accept="image/png, image/jpeg"
         className="file-input"
-        capture
       />
     </ImageUploadStyled>
   )

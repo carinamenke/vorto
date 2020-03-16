@@ -22,7 +22,7 @@ export default function InputSelect({
     <InputSelectStyled>
       <div className="input-label">
         {label}
-        {{ required } ? <sup>*</sup> : ''}
+        {required && <sup>*</sup>}
       </div>
       <select name={name} required={required} className="input">
         <option value="">{placeholder}</option>

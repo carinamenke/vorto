@@ -5,18 +5,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  @media screen and (orientation: landscape) { 
-  html { 
-    transform: rotate(-90deg); 
-    transform-origin: left top;
-    width: 100vh; 
-    overflow-x: hidden; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-  }
-}
-
   body {
     margin: 0 auto;
     background: var(--background-color);
@@ -26,7 +14,6 @@ export default createGlobalStyle`
     height: 100vh;
     color: var(--grey-color-dark);
   }
-
 
   input, button, textarea {
     font-size: 1em;

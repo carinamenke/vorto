@@ -23,7 +23,7 @@ export default function InputText({
     <InputTextStyled>
       <div className="input-label">
         {label}
-        {{ required } ? <sup>*</sup> : ''}
+        {required && <sup>*</sup>}
       </div>
       <input
         type="text"

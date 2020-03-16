@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
@@ -15,6 +15,10 @@ Modal.setAppElement(document.getElementById('root'))
 export default function App() {
   const defaultVocabs = data.vocabs ? data.vocabs : []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
+
+  useEffect(() => {
+    saveToLocal('vocabs', vocabs)
+  }, [vocabs])
 
   return (
     <AppGrid>
@@ -39,7 +43,6 @@ export default function App() {
   function addVocab(newVocab) {
     const newVocabs = [newVocab, ...vocabs]
     setVocabs(newVocabs)
-    saveToLocal('vocabs', newVocabs)
   }
 }
 

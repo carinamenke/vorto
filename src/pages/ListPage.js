@@ -20,7 +20,7 @@ export default function ListPage({ vocabs }) {
   )
 }
 
-const VocabList = styled.section`
+const VocabList = styled.main`
   grid-row: 2 / 3;
   display: flex;
   flex-wrap: nowrap;

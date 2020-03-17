@@ -24,7 +24,7 @@ export default function Navigation() {
 }
 
 const NavigationStyled = styled.nav`
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   display: flex;
   box-shadow: 0 -1px 18px 0 var(--grey-color-shadow-light);
 `

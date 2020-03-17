@@ -73,7 +73,7 @@ export default function FormPage({ onSubmit }) {
 }
 
 const FormStyled = styled.form`
-  grid-row: 2 / 3;
+  grid-row: 2 / 4;
   max-width: 700px;
   padding: 0 15px 0;
   display: grid;

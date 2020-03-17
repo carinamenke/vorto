@@ -1,6 +1,6 @@
 # vorto app
 
-<img src="public/images/vorto_logo.png"  alt="vorto app">
+<img src="public/images/vorto_logo.png"  alt="vorto app" width="200" height="100">
 
 The vorto app allows you to create **a digital stack of vocabulary learning cards**. Expand your vocabulary for any foreign language with those words which are relevant for you.
 
@@ -21,7 +21,7 @@ Install dependencies:
 
 Run the app:
 
-`npm run client`
+`npm run start`
 
 ---
 

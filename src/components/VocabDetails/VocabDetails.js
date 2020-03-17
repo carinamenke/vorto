@@ -14,6 +14,10 @@ VocabDetails.propTypes = {
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
+  learned: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
 }
 
 VocabDetails.defaultProps = {
@@ -26,6 +30,7 @@ export default function VocabDetails({
   wordTitle,
   partOfSpeechCategory,
   translation,
+  learned,
   onClick,
   isOpen,
   onRequestClose,

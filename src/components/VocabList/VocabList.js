@@ -13,6 +13,7 @@ export default function VocabList({ vocabs }) {
           wordTitle={vocab.wordTitle}
           translation={vocab.translation}
           partOfSpeechCategory={vocab.partOfSpeechCategory}
+          learned={vocab.learned}
           key={uid(vocab)}
         />
       ))}

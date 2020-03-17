@@ -11,6 +11,7 @@ Vocab.propTypes = {
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
+  learned: PropTypes.bool.isRequired,
 }
 
 Vocab.defaultProps = {
@@ -23,6 +24,7 @@ export default function Vocab({
   wordTitle,
   translation,
   partOfSpeechCategory,
+  learned,
 }) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
   const body = document.getElementById('root')
@@ -45,6 +47,7 @@ export default function Vocab({
         wordTitle={wordTitle}
         partOfSpeechCategory={partOfSpeechCategory}
         translation={translation}
+        learned={learned}
         onClick={closeDetails}
       />
     </>

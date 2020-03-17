@@ -65,6 +65,7 @@ export default function FormPage({ onSubmit }) {
       wordTitle: wordTitle.value,
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
+      learned: false,
       // imageSrc: imageData ? imageData : '',
       // audioSrc: audioData ? audioData : '',
     })

@@ -23,6 +23,8 @@ export default function Search({
         <IoIosSearch />
         <input
           type="search"
+          name="q"
+          aria-label="Search for vocabularies"
           value={searchInput}
           placeholder="Enter a vocabulary"
           className="search-input"
@@ -67,9 +69,16 @@ const SearchFieldStyled = styled.div`
     background: var(--grey-color-light);
     padding: 10px;
     margin-right: 10px;
+    outline: none;
+    -webkit-appearance: textfield;
+
+    ::-webkit-search-decoration,
+    ::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
   }
 `
-const ClearButtonStyled = styled.div`
+const ClearButtonStyled = styled.span`
   width: 20px;
   height: 20px;
   border: none;

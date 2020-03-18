@@ -6,7 +6,7 @@ export default function ImageUpload() {
   return (
     <ImageUploadStyled>
       <div className="image-container">
-        <IoMdImages className="image-icon" />
+        <ImageIcon />
         <span className="file-input-label">Add Image</span>
       </div>
       <input
@@ -34,11 +34,6 @@ const ImageUploadStyled = styled.label`
     margin-bottom: -15px;
   }
 
-  .image-icon {
-    width: 100px;
-    height: 100px;
-  }
-
   .file-input-label {
     border: none;
     border-radius: 4px;
@@ -63,4 +58,9 @@ const ImageUploadStyled = styled.label`
   .file-input {
     visibility: hidden;
   }
+`
+
+const ImageIcon = styled(IoMdImages)`
+  width: 100px;
+  height: 100px;
 `

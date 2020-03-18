@@ -42,7 +42,7 @@ const AudioButtonStyled = styled.button`
 
   :hover {
     background: var(--grey-color-mid1);
-    border: solid var(--grey-color-mid1) 1px;
+    border: solid var(--grey-color-mid1) 1.5px;
 
     .label,
     .icon {
@@ -52,6 +52,6 @@ const AudioButtonStyled = styled.button`
 
   :active {
     background: var(--grey-color-mid2);
-    border: solid var(--grey-color-mid2) 1px;
+    border: solid var(--grey-color-mid2) 1.5px;
   }
 `

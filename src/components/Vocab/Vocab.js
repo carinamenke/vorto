@@ -89,7 +89,7 @@ const VocabStyled = styled.section`
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: 15px 15px 20px;
+    margin: 15px 15px 5px;
   }
 
   .content-title {

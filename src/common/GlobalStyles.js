@@ -26,73 +26,26 @@ export default createGlobalStyle`
 
   :root {
     --background-color: #fff;
-  }
-  
-  :root {
+
     --primary-color: #f08f8f;
-  }
-
-  :root {
     --primary-color-hover: #DB7F7F;
-  }
-
-  :root {
     --primary-color-active: #b26565;
-  }
-
-  :root {
     --primary-color-light: #FFCBCB;
-  }
 
-  :root {
     --secondary-color: #f19e20;
-  }
-
-  :root {
     --secondary-color-hover: #d1891a;
-  }
-
-  :root {
     --secondary-color-active: #C17E19;
-  } 
 
-  :root {
     --tertiary-color: #1e6781;
-  }
-
-  :root {
+    
     --grey-color-light: #f6f6f6;
-  }
-
-  :root {
     --grey-color-mid1: #ababab;
-  }
-
-  :root {
     --grey-color-mid2: #928F8F;
-  }
-
-  :root {
     --grey-color-dark: #424242;
-  }
-
-  :root {
     --grey-color-shadow: rgba(200, 200, 200, 50);
-  }
-
-  :root {
     --grey-color-shadow-light: rgba(240, 240, 240, 50);
-  }
-
-  :root {
     --text-color-white: #fff;
-  }
-
-  :root {
     --image-gradient-color-dark: rgba(0, 0, 0, 0.3);
-  }
-
-  :root {
     --image-gradient-color-light: rgba(0, 0, 0, 0);
   }
 `

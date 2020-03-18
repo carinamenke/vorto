@@ -21,9 +21,9 @@ const PrimaryButtonStyled = styled.button`
   color: var(--text-color-white);
   border: none;
   border-radius: 4px;
-  margin: 15px 15px;
+  margin: 15px;
   padding: 7px;
-  min-height: 35px;
+  height: 35px;
   box-shadow: 0 5px 4px -2px var(--primary-color-light);
   word-wrap: break-word;
 

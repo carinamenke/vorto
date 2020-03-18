@@ -18,7 +18,7 @@ export default function Backlink({ href, label, onClick, color }) {
       className="backlink"
       color={color}
     >
-      <FiChevronLeft className="backlink-icon" />
+      <BacklinkIcon />
       <span className="backlink-label">{label}</span>
     </BacklinkStyled>
   )
@@ -42,12 +42,11 @@ const BacklinkStyled = styled.a`
     color: var(--primary-color);
   }
 
-  .backlink-icon {
-    width: 20px;
-    height: 20px;
-  }
-
   .backlink-label {
     margin-top: 2px;
   }
+`
+const BacklinkIcon = styled(FiChevronLeft)`
+  width: 20px;
+  height: 20px;
 `

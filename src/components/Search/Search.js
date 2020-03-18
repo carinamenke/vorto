@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import { IoIosSearch } from 'react-icons/io'
+import React from 'react'
 import { FiX } from 'react-icons/fi'
+import { IoIosSearch } from 'react-icons/io'
+import styled from 'styled-components/macro'
 
 Search.propTypes = {
   searchInput: PropTypes.string,
@@ -56,10 +56,6 @@ const SearchFieldStyled = styled.div`
   border-radius: 4px;
   height: 35px;
   background: var(--grey-color-light);
-
-  .search-icon {
-    color: var(--text-color-white);
-  }
 
   .search-input {
     border: none;

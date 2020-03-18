@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
@@ -7,6 +8,10 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
+
+FormPage.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+}
 
 export default function FormPage({ onSubmit }) {
   const wordCategories = [

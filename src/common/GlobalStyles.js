@@ -19,6 +19,10 @@ export default createGlobalStyle`
     font-size: 1em;
   }
 
+  button {
+    outline: none;
+  }
+
 
   :root {
     --background-color: #fff;

@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 import Search from '../components/Search/Search'
 import VocabList from '../components/VocabList/VocabList'
+
+SearchPage.propTypes = {
+  vocabs: PropTypes.array.isRequired,
+}
 
 export default function SearchPage({ vocabs }) {
   const [searchInput, setSearchInput] = useState('')
@@ -45,7 +50,9 @@ export default function SearchPage({ vocabs }) {
     setSearchInput(event.target.value)
   }
 
-  function handleReset() {
+  function handleReset(event) {
+    const inputField = event.target
+    inputField.focus()
     return setSearchInput('')
   }
 }

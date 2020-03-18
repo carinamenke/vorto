@@ -31,7 +31,7 @@ export default function App() {
             <FormPage onSubmit={addVocab} />
           </Route>
           <Route path="/search">
-            <SearchPage></SearchPage>
+            <SearchPage vocabs={vocabs}></SearchPage>
           </Route>
         </Switch>
         <Header />

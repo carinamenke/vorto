@@ -1,7 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
+import { uid } from 'react-uid'
 import styled from 'styled-components/macro'
 import Vocab from '../Vocab/Vocab'
-import { uid } from 'react-uid'
+
+VocabList.propTypes = {
+  vocabs: PropTypes.array.isRequired,
+}
 
 export default function VocabList({ vocabs }) {
   return (

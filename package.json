@@ -1,5 +1,7 @@
 {
-  "name": "capstone-project",
+  "name": "vorto",
+  "description": "Vorto is an individualized vocabulary learning app. It is my capstone project for the neuefische coding bootcamp",
+  "author": "Carina Menke",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

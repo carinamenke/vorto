@@ -1,17 +1,41 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function LearnStatusFilter() {
+LearnStatusFilter.propTypes = {
+  learnStatus: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  toBeLearnedVocabs: PropTypes.array.isRequired,
+  learnedVocabs: PropTypes.array.isRequired,
+}
+
+LearnStatusFilter.defaultProps = {
+  learnStatus: false,
+}
+
+export default function LearnStatusFilter({
+  learnStatus,
+  onClick,
+  toBeLearnedVocabs,
+  learnedVocabs,
+}) {
   return (
     <FilterSectionStyled>
-      <FilterStyled>
-        To be learned<CounterStyled>(20)</CounterStyled>
+      <FilterStyled
+        active={learnStatus === false}
+        onClick={() => onClick(false)}
+      >
+        To be learned<CounterStyled>({toBeLearnedVocabs.length})</CounterStyled>
       </FilterStyled>
-      <FilterStyled>
-        Learned<CounterStyled>(30)</CounterStyled>
+      <FilterStyled active={learnStatus === true} onClick={() => onClick(true)}>
+        Learned<CounterStyled>({learnedVocabs.length})</CounterStyled>
       </FilterStyled>
     </FilterSectionStyled>
   )
+}
+
+function select(propName, first, second) {
+  return props => (props[propName] ? first : second)
 }
 
 const FilterSectionStyled = styled.section`
@@ -28,7 +52,8 @@ const FilterStyled = styled.button`
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: left;
-  color: var(--grey-color-mid1);
+  color: ${select('active', 'var(--primary-color)', 'var(--grey-color-mid1)')};
+  text-decoration: ${select('active', 'underline 2px', 'none')};
 `
 
 const CounterStyled = styled.span`

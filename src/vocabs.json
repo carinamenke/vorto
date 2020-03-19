@@ -6,7 +6,7 @@
       "wordTitle": "The door",
       "translation": "La porte",
       "partOfSpeechCategory": "Noun",
-      "learned": false,
+      "learned": true,
       "id": "1"
     },
     {
@@ -15,7 +15,7 @@
       "wordTitle": "The window",
       "translation": "La fenêtre",
       "partOfSpeechCategory": "Noun",
-      "learned": false,
+      "learned": true,
       "id": "2"
     },
     {
@@ -24,7 +24,7 @@
       "wordTitle": "The chair",
       "translation": "La chaise",
       "partOfSpeechCategory": "Noun",
-      "learned": false,
+      "learned": true,
       "id": "3"
     },
     {
@@ -33,7 +33,7 @@
       "wordTitle": "To sit",
       "translation": "S'asseoir",
       "partOfSpeechCategory": "Verb",
-      "learned": false,
+      "learned": true,
       "id": "4"
     },
     {
@@ -42,7 +42,7 @@
       "wordTitle": "To drink",
       "translation": "Boire",
       "partOfSpeechCategory": "Verb",
-      "learned": false,
+      "learned": true,
       "id": "5"
     },
     {
@@ -51,7 +51,7 @@
       "wordTitle": "cosy",
       "translation": "confortable",
       "partOfSpeechCategory": "Adjective",
-      "learned": true,
+      "learned": false,
       "id": "6"
     },
     {
@@ -60,7 +60,7 @@
       "wordTitle": "The plate",
       "translation": "L'assiette",
       "partOfSpeechCategory": "Noun",
-      "learned": true,
+      "learned": false,
       "id": "7"
     },
     {
@@ -69,7 +69,7 @@
       "wordTitle": "The glass",
       "translation": "Le verre",
       "partOfSpeechCategory": "Noun",
-      "learned": true,
+      "learned": false,
       "id": "8"
     },
     {
@@ -78,7 +78,7 @@
       "wordTitle": "spacious",
       "translation": "spacieux/-ieuse",
       "partOfSpeechCategory": "Adjective",
-      "learned": true,
+      "learned": false,
       "id": "9"
     },
     {

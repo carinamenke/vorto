@@ -8,6 +8,7 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
+import { uid } from 'react-uid'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -49,7 +50,7 @@ export default function FormPage({ onSubmit }) {
         options={wordCategories}
       />
       <AudioUpload />
-      <PrimaryButton label="Submit" type="submit" />
+      <PrimaryButton label="Submit" type="submit" width="100%" />
       <small>
         <sup>*</sup>Mandatory fields
       </small>
@@ -71,6 +72,7 @@ export default function FormPage({ onSubmit }) {
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
       learned: false,
+      id: uid,
       // imageSrc: imageData ? imageData : '',
       // audioSrc: audioData ? audioData : '',
     })

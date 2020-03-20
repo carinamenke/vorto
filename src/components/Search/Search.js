@@ -36,7 +36,11 @@ export default function Search({
           </ClearButtonStyled>
         )}
       </SearchFieldStyled>
-      {searchInput && <span>{searchResult.length} vocabularies found:</span>}
+      {searchInput && (
+        <span>
+          <strong>{searchResult.length}</strong> vocabularies found:
+        </span>
+      )}
     </SearchStyled>
   )
 }

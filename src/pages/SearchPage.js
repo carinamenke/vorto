@@ -5,9 +5,15 @@ import VocabList from '../components/VocabList/VocabList'
 
 SearchPage.propTypes = {
   vocabs: PropTypes.array.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
+  learnStatus: PropTypes.bool.isRequired,
 }
 
-export default function SearchPage({ vocabs }) {
+export default function SearchPage({
+  vocabs,
+  onLearnStatusClick,
+  learnStatus,
+}) {
   const [searchInput, setSearchInput] = useState('')
   const [searchResult, setSearchResult] = useState([])
 
@@ -19,6 +25,8 @@ export default function SearchPage({ vocabs }) {
         wordTitle: vocab.wordTitle.toLowerCase(),
         translation: vocab.translation.toLowerCase(),
         partOfSpeechCategory: vocab.partOfSpeechCategory,
+        learned: vocab.learned,
+        id: vocab.id,
       }
     })
     if (searchInput !== '') {
@@ -42,7 +50,13 @@ export default function SearchPage({ vocabs }) {
         handleReset={handleReset}
         searchResult={searchResult}
       />
-      {searchResult && <VocabList vocabs={searchResult} />}
+      {searchResult && (
+        <VocabList
+          vocabs={searchResult}
+          onLearnStatusClick={onLearnStatusClick}
+          learnStatus={learnStatus}
+        />
+      )}
     </>
   )
 

@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import Modal from 'react-modal'
 import styled from 'styled-components/macro'
 import AudioButton from '../AudioButton/AudioButton'
 import Backlink from '../Backlink/Backlink'
 import Badge from '../Badge/Badge'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
+import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
-import Modal from 'react-modal'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
@@ -14,7 +15,8 @@ VocabDetails.propTypes = {
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
-  learned: PropTypes.bool.isRequired,
+  learnStatus: PropTypes.bool.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired,
@@ -30,7 +32,8 @@ export default function VocabDetails({
   wordTitle,
   partOfSpeechCategory,
   translation,
-  learned,
+  learnStatus,
+  onLearnStatusClick,
   onClick,
   isOpen,
   onRequestClose,
@@ -69,7 +72,13 @@ export default function VocabDetails({
           <h1 className="translation-title">{translation}</h1>
           {audioSrc && <AudioButton audioSrc={audioSrc} />}
         </div>
-        <PrimaryButton label={'Close'} onClick={onClick} />
+        <div className="actions">
+          <LearnStatusButton
+            onLearnStatusClick={onLearnStatusClick}
+            learnStatus={learnStatus}
+          />
+          <PrimaryButton label={'Close'} onClick={onClick} width="50%" />
+        </div>
       </VocabDetailsStyled>
     </Modal>
   )
@@ -126,5 +135,10 @@ const VocabDetailsStyled = styled.div`
   .translation-title {
     color: var(--grey-color-dark);
     margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    margin: 10px 15px;
   }
 `

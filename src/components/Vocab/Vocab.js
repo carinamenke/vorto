@@ -11,7 +11,8 @@ Vocab.propTypes = {
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
-  learned: PropTypes.bool.isRequired,
+  learnStatus: PropTypes.bool.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
 }
 
 Vocab.defaultProps = {
@@ -24,7 +25,8 @@ export default function Vocab({
   wordTitle,
   translation,
   partOfSpeechCategory,
-  learned,
+  learnStatus,
+  onLearnStatusClick,
 }) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
   const body = document.getElementById('root')
@@ -37,7 +39,11 @@ export default function Vocab({
           <h1 className="content-title">{wordTitle}</h1>
           <Badge label={partOfSpeechCategory} />
         </div>
-        <PrimaryButton onClick={openDetails} label={'See Translation'} />
+        <PrimaryButton
+          onClick={openDetails}
+          label={'See Translation'}
+          width="90%"
+        />
       </VocabStyled>
       <VocabDetails
         isOpen={detailsAreOpen}
@@ -47,7 +53,8 @@ export default function Vocab({
         wordTitle={wordTitle}
         partOfSpeechCategory={partOfSpeechCategory}
         translation={translation}
-        learned={learned}
+        learnStatus={learnStatus}
+        onLearnStatusClick={onLearnStatusClick}
         onClick={closeDetails}
       />
     </>

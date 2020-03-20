@@ -1,33 +1,38 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import VocabList from '../components/VocabList/VocabList'
 import LearnStatusFilter from '../components/LearnStatusFilter/LearnStatusFilter'
 
 ListPage.propTypes = {
   vocabs: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
+  learnStatus: PropTypes.bool.isRequired,
+  learnedVocabs: PropTypes.array.isRequired,
+  toBeLearnedVocabs: PropTypes.array.isRequired,
 }
 
-export default function ListPage({ vocabs }) {
-  const [learnStatus, setlearnStatus] = useState(false)
-  const learnedVocabs = vocabs.filter(vocab => vocab.learned === true)
-  const toBeLearnedVocabs = vocabs.filter(vocab => vocab.learned === false)
-
-  const vocabsByLearnStatus =
-    learnStatus === false ? toBeLearnedVocabs : learnedVocabs
-
+export default function ListPage({
+  vocabs,
+  onClick,
+  learnStatus,
+  onLearnStatusClick,
+  learnedVocabs,
+  toBeLearnedVocabs,
+}) {
   return (
     <>
       <LearnStatusFilter
-        onClick={selectLearnStatus}
+        onClick={onClick}
         learnStatus={learnStatus}
         learnedVocabs={learnedVocabs}
         toBeLearnedVocabs={toBeLearnedVocabs}
       />
-      <VocabList vocabs={vocabsByLearnStatus} />
+      <VocabList
+        vocabs={vocabs}
+        onLearnStatusClick={onLearnStatusClick}
+        learnStatus={learnStatus}
+      />
     </>
   )
-
-  function selectLearnStatus(learnStatus) {
-    return setlearnStatus(learnStatus)
-  }
 }

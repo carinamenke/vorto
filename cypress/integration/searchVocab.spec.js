@@ -4,9 +4,9 @@ describe('Search for a vocab card', () => {
 
     cy.get('nav > a:nth-child(3)').click()
 
-    cy.get('input[name="q"]').type('The doOr')
+    cy.get('input[name="q"]').type('tHe plATe')
 
-    cy.get('.content-title').contains('the door')
+    cy.get('.content-title').contains('the plate')
   })
 
   it('displays no search results when the search input is cleared', () => {

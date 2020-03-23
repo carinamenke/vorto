@@ -18,6 +18,7 @@ export default function LearnStatusButton({
     <ToggleButtonStyled
       onClick={() => onLearnStatusClick(id)}
       active={learnStatus}
+      data-cy="status-btn"
     >
       {learnStatus ? (
         <FiRotateCcw className="icon" />

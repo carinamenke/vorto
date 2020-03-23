@@ -33,10 +33,10 @@ export default function Vocab({
 
   return (
     <>
-      <VocabStyled imageSrc={imageSrc}>
+      <VocabStyled imageSrc={imageSrc} data-cy="vocab">
         <div className="image-container"></div>
         <div className="content">
-          <h1 className="content-title">{wordTitle}</h1>
+          <h2 className="content-title">{wordTitle}</h2>
           <Badge label={partOfSpeechCategory} />
         </div>
         <PrimaryButton

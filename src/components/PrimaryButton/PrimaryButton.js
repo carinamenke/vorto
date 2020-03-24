@@ -6,11 +6,12 @@ PrimaryButton.propTypes = {
   onClick: PropTypes.func,
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
+  width: PropTypes.string.isRequired,
 }
 
-export default function PrimaryButton({ onClick, label, type }) {
+export default function PrimaryButton({ onClick, label, type, width }) {
   return (
-    <PrimaryButtonStyled type={type} onClick={onClick}>
+    <PrimaryButtonStyled type={type} onClick={onClick} width={width}>
       {label}
     </PrimaryButtonStyled>
   )
@@ -21,9 +22,10 @@ const PrimaryButtonStyled = styled.button`
   color: var(--text-color-white);
   border: none;
   border-radius: 4px;
-  margin: 15px;
+  margin: 15px auto;
   padding: 7px;
   height: 35px;
+  width: ${props => props.width};
   box-shadow: 0 5px 4px -2px var(--primary-color-light);
   word-wrap: break-word;
 

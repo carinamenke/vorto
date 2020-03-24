@@ -31,6 +31,9 @@ export default createGlobalStyle`
     --primary-color-hover: #DB7F7F;
     --primary-color-active: #b26565;
     --primary-color-light: #FFCBCB;
+    --primary-color-mid: #FFB7B7;
+    --primary-color-shadow: #FDE3E3;
+
 
     --secondary-color: #f19e20;
     --secondary-color-hover: #d1891a;

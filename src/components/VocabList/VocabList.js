@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { uid } from 'react-uid'
 import styled from 'styled-components/macro'
 import Vocab from '../Vocab/Vocab'
 
 VocabList.propTypes = {
   vocabs: PropTypes.array.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
 }
 
-export default function VocabList({ vocabs }) {
+export default function VocabList({ vocabs, onLearnStatusClick }) {
   return (
     <VocabListStyled>
       {vocabs.map(vocab => (
@@ -18,7 +18,9 @@ export default function VocabList({ vocabs }) {
           wordTitle={vocab.wordTitle}
           translation={vocab.translation}
           partOfSpeechCategory={vocab.partOfSpeechCategory}
-          key={uid(vocab)}
+          learnStatus={vocab.learned}
+          onLearnStatusClick={() => onLearnStatusClick(vocab.id)}
+          key={vocab.id}
         />
       ))}
     </VocabListStyled>

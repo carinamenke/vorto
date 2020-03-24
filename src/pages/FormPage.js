@@ -8,6 +8,7 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
+import { v4 as uuidv4 } from 'uuid'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -49,7 +50,7 @@ export default function FormPage({ onSubmit }) {
         options={wordCategories}
       />
       <AudioUpload />
-      <PrimaryButton label="Submit" type="submit" />
+      <PrimaryButton label="Submit" type="submit" width="100%" />
       <small>
         <sup>*</sup>Mandatory fields
       </small>
@@ -70,6 +71,8 @@ export default function FormPage({ onSubmit }) {
       wordTitle: wordTitle.value,
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
+      learned: false,
+      id: uuidv4(),
       // imageSrc: imageData ? imageData : '',
       // audioSrc: audioData ? audioData : '',
     })

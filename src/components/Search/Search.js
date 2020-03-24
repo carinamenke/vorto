@@ -8,7 +8,7 @@ Search.propTypes = {
   searchInput: PropTypes.string,
   handleSearch: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
-  searchResult: PropTypes.array,
+  searchResult: PropTypes.array.isRequired,
 }
 
 export default function Search({
@@ -36,7 +36,11 @@ export default function Search({
           </ClearButtonStyled>
         )}
       </SearchFieldStyled>
-      {searchInput && <span>{searchResult.length} vocabularies found:</span>}
+      {searchInput && (
+        <span>
+          <strong>{searchResult.length}</strong> vocabularies found:
+        </span>
+      )}
     </SearchStyled>
   )
 }

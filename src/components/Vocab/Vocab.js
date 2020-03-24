@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Badge from '../Badge/Badge'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import VocabDetails from '../VocabDetails/VocabDetails'
 
 Vocab.propTypes = {
-  imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  imageSrc: PropTypes.string,
+  audioSrc: PropTypes.string,
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,
+  learnStatus: PropTypes.bool.isRequired,
+  onLearnStatusClick: PropTypes.func.isRequired,
 }
 
 Vocab.defaultProps = {
@@ -23,19 +25,25 @@ export default function Vocab({
   wordTitle,
   translation,
   partOfSpeechCategory,
+  learnStatus,
+  onLearnStatusClick,
 }) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
-  const body = document.getElementById('root')
+  const body = useRef(document.body)
 
   return (
     <>
-      <VocabStyled imageSrc={imageSrc}>
+      <VocabStyled imageSrc={imageSrc} data-cy="vocab">
         <div className="image-container"></div>
         <div className="content">
-          <h1 className="content-title">{wordTitle}</h1>
+          <h2 className="content-title">{wordTitle}</h2>
           <Badge label={partOfSpeechCategory} />
         </div>
-        <PrimaryButton onClick={openDetails} label={'See Translation'} />
+        <PrimaryButton
+          onClick={openDetails}
+          label={'See Translation'}
+          width="90%"
+        />
       </VocabStyled>
       <VocabDetails
         isOpen={detailsAreOpen}
@@ -45,6 +53,8 @@ export default function Vocab({
         wordTitle={wordTitle}
         partOfSpeechCategory={partOfSpeechCategory}
         translation={translation}
+        learnStatus={learnStatus}
+        onLearnStatusClick={onLearnStatusClick}
         onClick={closeDetails}
       />
     </>
@@ -52,12 +62,12 @@ export default function Vocab({
 
   function openDetails() {
     setDetailsAreOpen(true)
-    body.style.height = '100vh'
-    body.style.overflowY = 'hidden'
+    body.current.style.height = '100vh'
+    body.current.style.overflowY = 'hidden'
   }
   function closeDetails() {
     setDetailsAreOpen(false)
-    body.style.overflowY = 'auto'
+    body.current.style.overflowY = 'auto'
   }
 }
 

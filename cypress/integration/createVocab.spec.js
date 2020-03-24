@@ -14,7 +14,7 @@ describe('Create a vocab card', () => {
   })
 
   it('displays the correct submitted information in the new card', () => {
-    cy.get('section:first-child > button').click()
+    cy.get('[data-cy="vocab"]:first-child > button').click()
 
     cy.get('.content-title').contains('Das Haus')
 

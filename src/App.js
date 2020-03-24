@@ -15,6 +15,11 @@ Modal.setAppElement(document.getElementById('root'))
 export default function App() {
   const defaultVocabs = data.vocabs ? data.vocabs : []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
+  const [learnStatus, setlearnStatus] = useState(false)
+  const learnedVocabs = vocabs.filter(vocab => vocab.learned)
+  const toBeLearnedVocabs = vocabs.filter(vocab => !vocab.learned)
+  const vocabsByLearnStatus =
+    learnStatus === false ? toBeLearnedVocabs : learnedVocabs
 
   useEffect(() => {
     saveToLocal('vocabs', vocabs)
@@ -25,13 +30,24 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <ListPage vocabs={vocabs} />
+            <ListPage
+              vocabs={vocabsByLearnStatus}
+              onLearnStatusClick={handleLearnStatusClick}
+              onClick={selectLearnStatus}
+              learnStatus={learnStatus}
+              learnedVocabs={learnedVocabs}
+              toBeLearnedVocabs={toBeLearnedVocabs}
+            />
           </Route>
           <Route path="/create">
             <FormPage onSubmit={addVocab} />
           </Route>
           <Route path="/search">
-            <SearchPage vocabs={vocabs}></SearchPage>
+            <SearchPage
+              vocabs={vocabsByLearnStatus}
+              onLearnStatusClick={handleLearnStatusClick}
+              learnStatus={learnStatus}
+            ></SearchPage>
           </Route>
         </Switch>
         <Header />
@@ -43,6 +59,22 @@ export default function App() {
   function addVocab(newVocab) {
     const newVocabs = [newVocab, ...vocabs]
     setVocabs(newVocabs)
+  }
+
+  function handleLearnStatusClick(id) {
+    const index = vocabs.findIndex(vocab => vocab.id === id)
+    const updatedVocab = {
+      ...vocabs[index],
+      learned: !vocabs[index].learned,
+    }
+    setVocabs([
+      updatedVocab,
+      ...vocabs.slice(0, index),
+      ...vocabs.slice(index + 1),
+    ])
+  }
+  function selectLearnStatus(learnStatus) {
+    return setlearnStatus(learnStatus)
   }
 }
 

@@ -16,8 +16,8 @@ export default function App() {
   const defaultVocabs = data.vocabs ? data.vocabs : []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
   const [learnStatus, setlearnStatus] = useState(false)
-  const learnedVocabs = vocabs.filter(vocab => vocab.learned === true)
-  const toBeLearnedVocabs = vocabs.filter(vocab => vocab.learned === false)
+  const learnedVocabs = vocabs.filter(vocab => vocab.learned)
+  const toBeLearnedVocabs = vocabs.filter(vocab => !vocab.learned)
   const vocabsByLearnStatus =
     learnStatus === false ? toBeLearnedVocabs : learnedVocabs
 

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Badge from '../Badge/Badge'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
@@ -29,7 +29,7 @@ export default function Vocab({
   onLearnStatusClick,
 }) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
-  const body = document.getElementById('root')
+  const body = useRef(document.body)
 
   return (
     <>
@@ -62,12 +62,12 @@ export default function Vocab({
 
   function openDetails() {
     setDetailsAreOpen(true)
-    body.style.height = '100vh'
-    body.style.overflowY = 'hidden'
+    body.current.style.height = '100vh'
+    body.current.style.overflowY = 'hidden'
   }
   function closeDetails() {
     setDetailsAreOpen(false)
-    body.style.overflowY = 'auto'
+    body.current.style.overflowY = 'auto'
   }
 }
 

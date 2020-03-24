@@ -8,7 +8,7 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
-import { uid } from 'react-uid'
+import { v4 as uuidv4 } from 'uuid'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -72,7 +72,7 @@ export default function FormPage({ onSubmit }) {
       translation: translation.value,
       partOfSpeechCategory: partOfSpeechCategory.value,
       learned: false,
-      id: uid,
+      id: uuidv4(),
       // imageSrc: imageData ? imageData : '',
       // audioSrc: audioData ? audioData : '',
     })

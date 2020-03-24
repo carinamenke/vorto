@@ -6,8 +6,8 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import VocabDetails from '../VocabDetails/VocabDetails'
 
 Vocab.propTypes = {
-  imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  imageSrc: PropTypes.string,
+  audioSrc: PropTypes.string,
   wordTitle: PropTypes.string.isRequired,
   translation: PropTypes.string.isRequired,
   partOfSpeechCategory: PropTypes.string.isRequired,

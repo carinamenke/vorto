@@ -20,13 +20,9 @@ export default function SearchPage({
   useEffect(() => {
     let allVocabs = vocabs.map(vocab => {
       return {
-        imageSrc: vocab.imageSrc,
-        audioSrc: vocab.audioSrc,
+        ...vocab,
         wordTitle: vocab.wordTitle.toLowerCase(),
         translation: vocab.translation.toLowerCase(),
-        partOfSpeechCategory: vocab.partOfSpeechCategory,
-        learned: vocab.learned,
-        id: vocab.id,
       }
     })
     if (searchInput !== '') {

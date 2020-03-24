@@ -8,7 +8,7 @@ Search.propTypes = {
   searchInput: PropTypes.string,
   handleSearch: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
-  searchResult: PropTypes.array,
+  searchResult: PropTypes.array.isRequired,
 }
 
 export default function Search({

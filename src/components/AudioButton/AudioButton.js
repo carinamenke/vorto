@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { FiVolume1 } from 'react-icons/fi'
 
 AudioButton.propTypes = {
-  audioSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  audioSrc: PropTypes.string,
 }
 
 export default function AudioButton({ audioSrc }) {

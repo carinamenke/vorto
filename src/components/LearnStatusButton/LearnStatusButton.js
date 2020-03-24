@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 LearnStatusButton.propTypes = {
   onLearnStatusClick: PropTypes.func.isRequired,
   learnStatus: PropTypes.bool.isRequired,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  id: PropTypes.string,
 }
 
 export default function LearnStatusButton({
@@ -59,7 +59,6 @@ const ToggleButtonStyled = styled.button`
   :active {
     background: ${props =>
       props.active ? 'var(--grey-color-dark)' : 'var(--primary-color)'};
-    color: ${props =>
-      props.active ? 'var(--text-color-white)' : 'var(--text-color-white)'};
+    color: var(--text-color-white);
   }
 `

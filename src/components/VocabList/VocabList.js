@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { uid } from 'react-uid'
 import styled from 'styled-components/macro'
 import Vocab from '../Vocab/Vocab'
 
@@ -21,7 +20,7 @@ export default function VocabList({ vocabs, onLearnStatusClick }) {
           partOfSpeechCategory={vocab.partOfSpeechCategory}
           learnStatus={vocab.learned}
           onLearnStatusClick={() => onLearnStatusClick(vocab.id)}
-          key={uid(vocab)}
+          key={vocab.id}
         />
       ))}
     </VocabListStyled>

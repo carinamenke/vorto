@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { uid } from 'react-uid'
+import { v4 as uuidv4 } from 'uuid'
 import styled from 'styled-components/macro'
 
 InputSelect.propTypes = {
@@ -27,7 +27,7 @@ export default function InputSelect({
       <select name={name} required={required} className="input">
         <option value="">{placeholder}</option>
         {options.map(option => (
-          <option key={uid(option)} value={option.value}>
+          <option key={uuidv4(option)} value={option.value}>
             {option.placeholder}
           </option>
         ))}

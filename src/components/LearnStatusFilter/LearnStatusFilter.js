@@ -54,6 +54,7 @@ const FilterStyled = styled.button`
   text-align: left;
   color: ${select('active', 'var(--primary-color)', 'var(--grey-color-mid1)')};
   text-decoration: ${select('active', 'underline 2px', 'none')};
+  text-underline-position: ${select('active', 'under', 'none')};
 `
 
 const CounterStyled = styled.span`

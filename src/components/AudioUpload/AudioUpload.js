@@ -16,7 +16,6 @@ export default function AudioUpload() {
 }
 
 const AudioUploadStyled = styled.label`
-  font-size: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 4px;
@@ -26,6 +25,7 @@ const AudioUploadStyled = styled.label`
   padding: 10px;
   width: 50%;
   text-align: center;
+  font-size: 12px;
 
   :hover {
     background: var(--primary-color);

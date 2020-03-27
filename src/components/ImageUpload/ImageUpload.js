@@ -62,10 +62,12 @@ const ImageUploadStyled = styled.label`
     color: var(--primary-color-active);
     height: 35px;
     padding: 10px;
-    text-align: center;
     position: relative;
     top: 10px;
-    width: 50%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     :hover {
       background: var(--primary-color);

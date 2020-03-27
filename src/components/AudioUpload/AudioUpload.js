@@ -9,35 +9,48 @@ AudioUpload.propTypes = {
 
 export default function AudioUpload({ onChange, previewAudio }) {
   return (
-    <AudioUploadStyled>
-      Select Audio
-      <input
-        type="file"
-        name="audioSrc"
-        accept="audio/mp3"
-        className="file-input"
-        onChange={onChange}
-      />
+    <WrapperStyled>
+      <AudioUploadStyled>
+        Select Audio
+        <input
+          type="file"
+          name="audioSrc"
+          accept="audio/mp3"
+          className="file-input"
+          onChange={onChange}
+        />
+      </AudioUploadStyled>
       {previewAudio.audioUrl && (
         <span className="audio-upload-status">
           {previewAudio.audioName} was selected.
         </span>
       )}
-    </AudioUploadStyled>
+    </WrapperStyled>
   )
 }
 
-const AudioUploadStyled = styled.label`
+const WrapperStyled = styled.div`
   margin-top: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  .audio-upload-status {
+    color: var(--grey-color-dark);
+    word-wrap: break-word;
+    margin-left: 10px;
+  }
+`
+
+const AudioUploadStyled = styled.label`
   border: none;
   border-radius: 4px;
   background: var(--primary-color-light);
   color: var(--primary-color-active);
   height: 35px;
   padding: 10px;
-  width: 50%;
+  width: 40%;
   text-align: center;
-  font-size: 12px;
 
   :hover {
     background: var(--primary-color);
@@ -51,10 +64,5 @@ const AudioUploadStyled = styled.label`
 
   .file-input {
     visibility: hidden;
-  }
-
-  .audio-upload-status {
-    color: var(--grey-color-dark);
-    display: inline;
   }
 `

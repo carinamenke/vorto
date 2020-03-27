@@ -1,22 +1,26 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { IoMdImages } from 'react-icons/io'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
 
 ImageUpload.propTypes = {
   onChange: PropTypes.func.isRequired,
   previewImage: PropTypes.object,
+  loadProgress: PropTypes.string,
 }
 
-export default function ImageUpload({ onChange, previewImage }) {
+export default function ImageUpload({ onChange, previewImage, loadProgress }) {
   return (
     <ImageUploadStyled>
       {previewImage.imageUrl ? (
-        <img className="image-container" src={previewImage.imageUrl} alt="" />
+        <ImageContainer src={previewImage.imageUrl} alt="" />
       ) : (
-        <div className="image-placeholder">
+        <ImagePlaceholder>
           <ImageIcon />
-        </div>
+        </ImagePlaceholder>
+      )}
+      {loadProgress > 0 && (
+        <span>Upload is {Math.trunc(loadProgress)}% done</span>
       )}
       <span className="file-input-label">Select Image</span>
       <input
@@ -33,27 +37,6 @@ export default function ImageUpload({ onChange, previewImage }) {
 const ImageUploadStyled = styled.label`
   font-size: 12px;
   margin-bottom: 15px;
-
-  .image-placeholder {
-    background: var(--grey-color-light);
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    width: auto;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .image-container {
-    background: center url(${props => props.image});
-    object-fit: cover;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    width: 100%;
-    height: 300px;
-  }
 
   .file-input-label {
     border: none;
@@ -83,6 +66,26 @@ const ImageUploadStyled = styled.label`
   .file-input {
     visibility: hidden;
   }
+`
+
+const ImagePlaceholder = styled.div`
+  background: var(--grey-color-light);
+  display: flex;
+  border-radius: 4px;
+  width: auto;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+`
+
+const ImageContainer = styled.img`
+  background: center url(${props => props.image});
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  width: 100%;
+  height: 300px;
 `
 
 const ImageIcon = styled(IoMdImages)`

@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import { v4 as uuidv4 } from 'uuid'
 import AudioUpload from '../components/AudioUpload/AudioUpload'
 import Headline from '../components/Headline/Headline'
 import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
-import { v4 as uuidv4 } from 'uuid'
 import { storage } from '../firebase'
 
 FormPage.propTypes = {
@@ -21,6 +21,7 @@ export default function FormPage({ onSubmit }) {
     audioUrl: '',
     audioName: '',
   })
+  const [loadProgress, setLoadProgress] = useState('')
   const wordCategories = [
     { value: 'Noun', placeholder: 'Noun' },
     { value: 'Verb', placeholder: 'Verb' },
@@ -35,6 +36,7 @@ export default function FormPage({ onSubmit }) {
         name="imageSrc"
         onChange={handleImageUpload}
         previewImage={previewImage}
+        loadProgress={loadProgress}
       />
       <InputText
         label="Vocabulary"
@@ -75,9 +77,12 @@ export default function FormPage({ onSubmit }) {
     const uploadTask = storage.ref(`images/${image.name}`).put(image, metadata)
     uploadTask.on(
       'state_changed',
-      snapshot => {},
+      snapshot => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        setLoadProgress(progress)
+      },
       error => {
-        console.error(error)
+        alert('An error occurred, please try again.')
       },
       () => {
         storage
@@ -86,6 +91,7 @@ export default function FormPage({ onSubmit }) {
           .getDownloadURL()
           .then(url => {
             setPreviewImage({ imageUrl: url })
+            setLoadProgress('')
           })
       }
     )
@@ -101,7 +107,7 @@ export default function FormPage({ onSubmit }) {
       'state_changed',
       snapshot => {},
       error => {
-        console.error(error)
+        alert('An error occurred, please try again.')
       },
       () => {
         storage

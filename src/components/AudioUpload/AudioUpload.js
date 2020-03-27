@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
 
 AudioUpload.propTypes = {
   onChange: PropTypes.func.isRequired,
@@ -22,7 +22,7 @@ export default function AudioUpload({ onChange, previewAudio }) {
       </AudioUploadStyled>
       {previewAudio.audioUrl && (
         <span className="audio-upload-status">
-          {previewAudio.audioName} was selected.
+          &#10004; {previewAudio.audioName} was selected.
         </span>
       )}
     </WrapperStyled>

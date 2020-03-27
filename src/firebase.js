@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import 'firebase/firebase-storage'
 
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,3 +12,5 @@ var firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig)
+
+export const storage = firebase.storage()

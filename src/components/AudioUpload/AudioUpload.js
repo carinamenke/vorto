@@ -1,16 +1,28 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function AudioUpload() {
+AudioUpload.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  previewAudio: PropTypes.object,
+}
+
+export default function AudioUpload({ onChange, previewAudio }) {
   return (
     <AudioUploadStyled>
-      Add Audio
+      Select Audio
       <input
         type="file"
         name="audioSrc"
         accept="audio/mp3"
         className="file-input"
+        onChange={onChange}
       />
+      {previewAudio.audioUrl && (
+        <span className="audio-upload-status">
+          {previewAudio.audioName} was selected.
+        </span>
+      )}
     </AudioUploadStyled>
   )
 }
@@ -39,5 +51,10 @@ const AudioUploadStyled = styled.label`
 
   .file-input {
     visibility: hidden;
+  }
+
+  .audio-upload-status {
+    color: var(--grey-color-dark);
+    display: inline;
   }
 `

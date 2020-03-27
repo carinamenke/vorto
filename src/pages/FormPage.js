@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import AudioUpload from '../components/AudioUpload/AudioUpload'
@@ -9,12 +9,18 @@ import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
 import { v4 as uuidv4 } from 'uuid'
+import { storage } from '../firebase'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
 
 export default function FormPage({ onSubmit }) {
+  const [previewImage, setPreviewImage] = useState({ imageUrl: '' })
+  const [previewAudio, setPreviewAudio] = useState({
+    audioUrl: '',
+    audioName: '',
+  })
   const wordCategories = [
     { value: 'Noun', placeholder: 'Noun' },
     { value: 'Verb', placeholder: 'Verb' },
@@ -25,7 +31,11 @@ export default function FormPage({ onSubmit }) {
   return (
     <FormStyled action="" onSubmit={handleSubmit}>
       <Headline text="Add a new Vocabulary" />
-      <ImageUpload name="imageSrc" />
+      <ImageUpload
+        name="imageSrc"
+        onChange={handleImageUpload}
+        previewImage={previewImage}
+      />
       <InputText
         label="Vocabulary"
         required={true}
@@ -49,7 +59,7 @@ export default function FormPage({ onSubmit }) {
         placeholder="Select a category"
         options={wordCategories}
       />
-      <AudioUpload />
+      <AudioUpload onChange={handleAudioUpload} previewAudio={previewAudio} />
       <PrimaryButton label="Submit" type="submit" width="100%" />
       <small>
         <sup>*</sup>Mandatory fields
@@ -57,15 +67,59 @@ export default function FormPage({ onSubmit }) {
     </FormStyled>
   )
 
+  function handleImageUpload(event) {
+    const image = event.target.files[0]
+    const metadata = {
+      name: image.name,
+    }
+    const uploadTask = storage.ref(`images/${image.name}`).put(image, metadata)
+    uploadTask.on(
+      'state_changed',
+      snapshot => {},
+      error => {
+        console.error(error)
+      },
+      () => {
+        storage
+          .ref('images')
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            setPreviewImage({ imageUrl: url })
+          })
+      }
+    )
+  }
+
+  function handleAudioUpload(event) {
+    const audio = event.target.files[0]
+    const metadata = {
+      name: audio.name,
+    }
+    const uploadTask = storage.ref(`audio/${audio.name}`).put(audio, metadata)
+    uploadTask.on(
+      'state_changed',
+      snapshot => {},
+      error => {
+        console.error(error)
+      },
+      () => {
+        storage
+          .ref('audio')
+          .child(audio.name)
+          .getDownloadURL()
+          .then(url => {
+            setPreviewAudio({ audioUrl: url, audioName: audio.name })
+          })
+      }
+    )
+  }
+
   function handleSubmit(event) {
     const form = event.target
     const wordTitle = form.wordTitle
     const translation = form.translation
     const partOfSpeechCategory = form.partOfSpeechCategory
-    // const imageSrc = form.imageSrc
-    // const imageData = URL.createObjectURL(imageSrc.files[0])
-    // const audioSrc = form.audioSrc
-    // const audioData = URL.createObjectURL(audioSrc.files[0])
     event.preventDefault()
     onSubmit({
       wordTitle: wordTitle.value,
@@ -73,10 +127,12 @@ export default function FormPage({ onSubmit }) {
       partOfSpeechCategory: partOfSpeechCategory.value,
       learned: false,
       id: uuidv4(),
-      // imageSrc: imageData ? imageData : '',
-      // audioSrc: audioData ? audioData : '',
+      imageSrc: previewImage && previewImage.imageUrl,
+      audioSrc: previewAudio && previewAudio.audioUrl,
     })
     history.push('/')
+    setPreviewImage({ imageUrl: '' })
+    setPreviewAudio({ audioUrl: '', audioName: '' })
   }
 }
 

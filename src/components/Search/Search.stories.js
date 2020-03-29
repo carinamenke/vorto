@@ -12,9 +12,36 @@ export default {
   ],
 }
 
-export const Default_Search = () => (
+export const Empty_Search_Field = () => (
   <Search
     handleSearch={action('Searches for search term')}
     handleReset={action('Clears search field')}
+    searchInput={''}
+    searchResult={[]}
+  />
+)
+export const Filled_Search_Field = () => (
+  <Search
+    handleSearch={action('Searches for search term')}
+    handleReset={action('Clears search field')}
+    searchInput={'The door'}
+    searchResult={[
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+    ]}
   />
 )

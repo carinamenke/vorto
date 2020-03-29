@@ -12,15 +12,71 @@ export default {
   ],
 }
 
-export const Learned_Filter = () => (
-  <LearnStatusFilter
-    learnStatus="true"
-    onClick={action('Switch to stack of learned vocab cards')}
-  />
-)
 export const To_Be_Learned_Filter = () => (
   <LearnStatusFilter
-    learnStatus="false"
+    learnStatus={false}
     onClick={action('Switch to stack of vocab cards that are to be learned')}
+    toBeLearnedVocabs={[
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+    ]}
+    learnedVocabs={[
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+    ]}
+  />
+)
+export const Learned_Filter = () => (
+  <LearnStatusFilter
+    learnStatus={true}
+    onClick={action('Switch to stack of learned vocab cards')}
+    toBeLearnedVocabs={[
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+    ]}
+    learnedVocabs={[
+      {
+        imageSrc: './images/door.jpg',
+        audioSrc: './audio/porte.mp3',
+        wordTitle: 'The door',
+        translation: 'La porte',
+        partOfSpeechCategory: 'Noun',
+        learned: 'false',
+      },
+    ]}
   />
 )

@@ -13,9 +13,5 @@ export default {
 }
 
 export const Default_Audio_Button = () => (
-  <AudioButton
-    buttonLabel="Listen to Audio"
-    audioSrc="./audio/porte.mp3"
-    onClick={action('Audio plays')}
-  />
+  <AudioButton audioSrc="./audio/porte.mp3" onClick={action('Audio plays')} />
 )

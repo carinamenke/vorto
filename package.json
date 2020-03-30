@@ -57,6 +57,7 @@
     "@storybook/addons": "5.3.14",
     "@storybook/preset-create-react-app": "2.0.0",
     "@storybook/react": "5.3.14",
-    "cypress": "4.1.0"
+    "cypress": "4.1.0",
+    "cypress-file-upload": "4.0.4"
   }
 }

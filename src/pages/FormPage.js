@@ -21,7 +21,7 @@ export default function FormPage({ onSubmit }) {
     audioUrl: '',
     audioName: '',
   })
-  const [loadProgress, setLoadProgress] = useState('')
+  const [loadProgress, setLoadProgress] = useState()
   const wordCategories = [
     { value: 'Noun', placeholder: 'Noun' },
     { value: 'Verb', placeholder: 'Verb' },
@@ -91,7 +91,7 @@ export default function FormPage({ onSubmit }) {
           .getDownloadURL()
           .then(url => {
             setPreviewImage({ imageUrl: url })
-            setLoadProgress('')
+            setLoadProgress()
           })
       }
     )

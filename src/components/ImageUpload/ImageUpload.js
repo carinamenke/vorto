@@ -6,7 +6,7 @@ import styled from 'styled-components/macro'
 ImageUpload.propTypes = {
   onChange: PropTypes.func.isRequired,
   previewImage: PropTypes.object,
-  loadProgress: PropTypes.string,
+  loadProgress: PropTypes.number,
 }
 
 export default function ImageUpload({ onChange, previewImage, loadProgress }) {

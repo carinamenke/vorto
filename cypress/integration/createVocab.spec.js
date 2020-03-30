@@ -1,5 +1,5 @@
 describe('Create a vocab card', () => {
-  beforeEach(() => {
+  it('displays the correct submitted information in the new card', () => {
     cy.visit('http://localhost:3000')
 
     cy.get('nav > a:nth-child(2)').click()
@@ -11,9 +11,7 @@ describe('Create a vocab card', () => {
     cy.get('select[name="partOfSpeechCategory"]').select('Noun')
 
     cy.get('form > button').click()
-  })
 
-  it('displays the correct submitted information in the new card', () => {
     cy.get('[data-cy="vocab"]:first-child > button').click()
 
     cy.get('.content-title').contains('Das Haus')

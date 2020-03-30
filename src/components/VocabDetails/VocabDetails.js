@@ -8,6 +8,7 @@ import Badge from '../Badge/Badge'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
 import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import DeleteButton from '../DeleteButton/DeleteButton'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
@@ -60,21 +61,24 @@ export default function VocabDetails({
           />
           <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
         </div>
-        <div className="content">
+        <section className="content">
           <h2 className="content-title">{wordTitle}</h2>
           <Badge label={partOfSpeechCategory} />
-        </div>
-        <div className="translation">
+        </section>
+        <section className="translation">
           <h1 className="translation-title">{translation}</h1>
           {audioSrc && <AudioButton audioSrc={audioSrc} />}
-        </div>
-        <div className="actions">
+        </section>
+        <section className="primary-actions">
           <LearnStatusButton
             onLearnStatusClick={onLearnStatusClick}
             learnStatus={learnStatus}
           />
           <PrimaryButton label={'Close'} onClick={onClick} width="50%" />
-        </div>
+        </section>
+        <section className="secondary-actions">
+          <DeleteButton />
+        </section>
       </VocabDetailsStyled>
     </Modal>
   )
@@ -135,8 +139,13 @@ const VocabDetailsStyled = styled.div`
     margin: 0;
   }
 
-  .actions {
+  .primary-actions {
     display: flex;
     margin: 10px 15px;
+  }
+
+  .secondary-actions {
+    display: flex;
+    justify-content: center;
   }
 `

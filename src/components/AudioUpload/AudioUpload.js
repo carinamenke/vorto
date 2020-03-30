@@ -15,7 +15,7 @@ export default function AudioUpload({ onChange, previewAudio }) {
         <input
           type="file"
           name="audioSrc"
-          accept="audio/mp3"
+          accept="audio/*"
           className="file-input"
           onChange={onChange}
         />

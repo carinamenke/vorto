@@ -26,7 +26,7 @@ export default function ImageUpload({ onChange, previewImage, loadProgress }) {
       <input
         type="file"
         name="imageSrc"
-        accept="image/png, image/jpeg"
+        accept="image/*"
         className="file-input"
         onChange={onChange}
       />

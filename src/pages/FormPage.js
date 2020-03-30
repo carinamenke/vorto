@@ -4,11 +4,11 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid'
 import AudioUpload from '../components/AudioUpload/AudioUpload'
+import Button from '../components/Button/Button'
 import Headline from '../components/Headline/Headline'
 import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
-import PrimaryButton from '../components/PrimaryButton/PrimaryButton'
 import { storage } from '../firebase'
 
 FormPage.propTypes = {
@@ -62,7 +62,7 @@ export default function FormPage({ onSubmit }) {
         options={wordCategories}
       />
       <AudioUpload onChange={handleAudioUpload} previewAudio={previewAudio} />
-      <PrimaryButton label="Submit" type="submit" width="100%" />
+      <Button label="Submit" type="submit" width="100%" degree="primary" />
       <small>
         <sup>*</sup>Mandatory fields
       </small>

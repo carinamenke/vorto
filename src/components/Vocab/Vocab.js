@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Badge from '../Badge/Badge'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import Button from '../Button/Button'
 import VocabDetails from '../VocabDetails/VocabDetails'
 
 Vocab.propTypes = {
@@ -35,10 +35,11 @@ export default function Vocab({
           <h2 className="content-title">{wordTitle}</h2>
           <Badge label={partOfSpeechCategory} />
         </div>
-        <PrimaryButton
+        <Button
           onClick={openDetails}
           label={'See Translation'}
           width="90%"
+          degree="primary"
         />
       </VocabStyled>
       <VocabDetails

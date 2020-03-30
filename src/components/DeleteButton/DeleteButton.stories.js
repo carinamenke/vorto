@@ -6,8 +6,8 @@ export default {
   title: 'Components/DeleteButton',
   component: DeleteButton,
   decorators: [
-    renderClosingIcon => (
-      <div style={{ padding: 20, width: 400 }}>{renderClosingIcon()}</div>
+    renderDeleteButton => (
+      <div style={{ padding: 20, width: 400 }}>{renderDeleteButton()}</div>
     ),
   ],
 }

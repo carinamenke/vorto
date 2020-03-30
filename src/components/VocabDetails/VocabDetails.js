@@ -5,10 +5,10 @@ import styled from 'styled-components/macro'
 import AudioButton from '../AudioButton/AudioButton'
 import Backlink from '../Backlink/Backlink'
 import Badge from '../Badge/Badge'
+import Button from '../Button/Button'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
-import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
 import DeleteButton from '../DeleteButton/DeleteButton'
+import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
@@ -74,7 +74,12 @@ export default function VocabDetails({
             onLearnStatusClick={onLearnStatusClick}
             learnStatus={learnStatus}
           />
-          <PrimaryButton label={'Close'} onClick={onClick} width="50%" />
+          <Button
+            label={'Close'}
+            onClick={onClick}
+            width="50%"
+            degree="primary"
+          />
         </section>
         <section className="secondary-actions">
           <DeleteButton />

@@ -1,4 +1,5 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import AudioUpload from './AudioUpload'
 
 export default {
@@ -11,4 +12,15 @@ export default {
   ],
 }
 
-export const Default_Audio_Upload = () => <AudioUpload />
+export const Default_Audio_Upload = () => (
+  <AudioUpload
+    onChange={action('Uploads audio file')}
+    previewAudio={{ audioUrl: '', audioName: '' }}
+  />
+)
+export const Finished_Audio_Upload = () => (
+  <AudioUpload
+    onChange={action('Uploads audio file')}
+    previewAudio={{ audioUrl: 'AudioUrl', audioName: 'Audio file name' }}
+  />
+)

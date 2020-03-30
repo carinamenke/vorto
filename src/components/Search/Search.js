@@ -49,6 +49,11 @@ const SearchStyled = styled.section`
   grid-row: 2 / 3;
   margin: 10px 15px;
   font-size: 14px;
+
+  @media screen and (min-width: 700px) {
+    width: 700px;
+    margin: 10px auto;
+  }
 `
 
 const SearchFieldStyled = styled.div`

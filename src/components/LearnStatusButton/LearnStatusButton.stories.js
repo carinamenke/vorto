@@ -14,13 +14,13 @@ export default {
 
 export const Learned_Button = () => (
   <LearnStatusButton
-    learnStatus="false"
+    learnStatus={false}
     onLearnStatusClick={action('Move vocab card to stack of learned cards')}
   />
 )
 export const To_Be_Learned_Button = () => (
   <LearnStatusButton
-    learnStatus="true"
+    learnStatus={true}
     onLearnStatusClick={action(
       'Move vocab card to stack of cards that are to be learned'
     )}

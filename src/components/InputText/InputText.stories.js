@@ -1,10 +1,12 @@
 import React from 'react'
 import InputText from './InputText'
+import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/InputText',
   component: InputText,
   decorators: [
+    withKnobs,
     renderInputText => (
       <div style={{ padding: 20, width: 400 }}>{renderInputText()}</div>
     ),
@@ -13,22 +15,22 @@ export default {
 
 export const Mandatory_Text_Input = () => (
   <InputText
-    label="Vocabulary"
-    required={true}
+    label={text('Label', 'Vocabulary')}
+    required={boolean('Mandatory field', true)}
     name="vocab"
     minLength="2"
     maxLength="40"
-    placeholder="E.g. 'house'"
+    placeholder={text('Placeholder', 'E.g. house')}
   />
 )
 
 export const Optional_Text_Input = () => (
   <InputText
-    label="Translation"
-    required={false}
+    label={text('Label', 'Translation')}
+    required={boolean('Mandatory field', false)}
     name="translation"
     minLength="2"
     maxLength="40"
-    placeholder="E.g. 'maison'"
+    placeholder={text('Placeholder', 'E.g. maison')}
   />
 )

@@ -58,17 +58,18 @@ const LinkStyled = styled(NavLink)`
   }
 `
 
-const AddButtonStyled = styled.a`
+const AddButtonStyled = styled.button`
   width: 65px;
   height: 65px;
   border-radius: 50%;
   border: solid 8px var(--background-color);
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--grey-color-mid1);
+  color: var(--text-color-white);
 
   :active {
     background: var(--primary-color);

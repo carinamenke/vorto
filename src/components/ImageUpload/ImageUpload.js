@@ -1,19 +1,34 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { IoMdImages } from 'react-icons/io'
 import styled from 'styled-components/macro'
 
-export default function ImageUpload() {
+ImageUpload.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  previewImage: PropTypes.object,
+  loadProgress: PropTypes.number,
+}
+
+export default function ImageUpload({ onChange, previewImage, loadProgress }) {
   return (
     <ImageUploadStyled>
-      <div className="image-container">
-        <ImageIcon />
-        <span className="file-input-label">Add Image</span>
-      </div>
+      {previewImage.imageUrl ? (
+        <ImageContainer src={previewImage.imageUrl} alt="" />
+      ) : (
+        <ImagePlaceholder>
+          <ImageIcon />
+        </ImagePlaceholder>
+      )}
+      {loadProgress > 0 && (
+        <span>Upload is {Math.trunc(loadProgress)}% done</span>
+      )}
+      <span className="file-input-label">Select Image</span>
       <input
         type="file"
         name="imageSrc"
         accept="image/png, image/jpeg"
         className="file-input"
+        onChange={onChange}
       />
     </ImageUploadStyled>
   )
@@ -21,18 +36,7 @@ export default function ImageUpload() {
 
 const ImageUploadStyled = styled.label`
   font-size: 12px;
-
-  .image-container {
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    background: var(--grey-color-light);
-    width: auto;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -15px;
-  }
+  margin-bottom: 15px;
 
   .file-input-label {
     border: none;
@@ -41,8 +45,12 @@ const ImageUploadStyled = styled.label`
     color: var(--primary-color-active);
     height: 35px;
     padding: 10px;
-    width: 50%;
-    text-align: center;
+    position: relative;
+    top: 10px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     :hover {
       background: var(--primary-color);
@@ -58,6 +66,26 @@ const ImageUploadStyled = styled.label`
   .file-input {
     visibility: hidden;
   }
+`
+
+const ImagePlaceholder = styled.div`
+  background: var(--grey-color-light);
+  display: flex;
+  border-radius: 4px;
+  width: auto;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+`
+
+const ImageContainer = styled.img`
+  background: center url(${props => props.image});
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  width: 100%;
+  height: 300px;
 `
 
 const ImageIcon = styled(IoMdImages)`

@@ -16,7 +16,10 @@ FormPage.propTypes = {
 }
 
 export default function FormPage({ onSubmit }) {
-  const [previewImage, setPreviewImage] = useState({ imageUrl: '' })
+  const [previewImage, setPreviewImage] = useState({
+    imageUrl: '',
+    imageName: '',
+  })
   const [previewAudio, setPreviewAudio] = useState({
     audioUrl: '',
     audioName: '',
@@ -90,7 +93,7 @@ export default function FormPage({ onSubmit }) {
           .child(image.name)
           .getDownloadURL()
           .then(url => {
-            setPreviewImage({ imageUrl: url })
+            setPreviewImage({ imageUrl: url, imageName: image.name })
             setLoadProgress()
           })
       }
@@ -134,10 +137,12 @@ export default function FormPage({ onSubmit }) {
       learned: false,
       id: uuidv4(),
       imageSrc: previewImage && previewImage.imageUrl,
+      imageTitle: previewImage && previewImage.imageName,
       audioSrc: previewAudio && previewAudio.audioUrl,
+      audioTitle: previewAudio && previewAudio.audioName,
     })
     history.push('/')
-    setPreviewImage({ imageUrl: '' })
+    setPreviewImage({ imageUrl: '', imageName: '' })
     setPreviewAudio({ audioUrl: '', audioName: '' })
   }
 }

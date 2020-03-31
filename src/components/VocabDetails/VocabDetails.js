@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
 import AudioButton from '../AudioButton/AudioButton'
@@ -8,6 +8,7 @@ import Badge from '../Badge/Badge'
 import Button from '../Button/Button'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
 import DeleteButton from '../DeleteButton/DeleteButton'
+import DeleteConfirmation from '../DeleteConfirmation/DeleteConfirmation'
 import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
 
 VocabDetails.propTypes = {
@@ -35,6 +36,7 @@ export default function VocabDetails({
   isOpen,
   onRequestClose,
 }) {
+  const [deleteOverlayIsOpen, setDeleteOverlayIsOpen] = useState(false)
   const modalStyle = {
     content: {
       height: '100vh',
@@ -82,11 +84,23 @@ export default function VocabDetails({
           />
         </section>
         <section className="secondary-actions">
-          <DeleteButton />
+          <DeleteButton onClick={openDeleteOverlay} />
+          <DeleteConfirmation
+            isOpen={deleteOverlayIsOpen}
+            onCancel={handleCancel}
+          />
         </section>
       </VocabDetailsStyled>
     </Modal>
   )
+
+  function openDeleteOverlay() {
+    setDeleteOverlayIsOpen(true)
+  }
+
+  function handleCancel() {
+    setDeleteOverlayIsOpen(false)
+  }
 }
 
 const VocabDetailsStyled = styled.div`

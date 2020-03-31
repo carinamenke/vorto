@@ -1,10 +1,15 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components/macro'
 import { FiTrash2 } from 'react-icons/fi'
+import styled from 'styled-components/macro'
 
-export default function DeleteButton() {
+DeleteButton.propTypes = {
+  onClick: PropTypes.func,
+}
+
+export default function DeleteButton({ onClick }) {
   return (
-    <DeleteButtonStyled>
+    <DeleteButtonStyled onClick={onClick}>
       <FiTrash2 />
       Delete
     </DeleteButtonStyled>

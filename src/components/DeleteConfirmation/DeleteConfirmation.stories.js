@@ -15,5 +15,9 @@ export default {
 }
 
 export const Default_DeleteConfirmation = () => (
-  <DeleteConfirmation onClick={action('Delete vocab card')} />
+  <DeleteConfirmation
+    isOpen={true}
+    onCancel={action('Cancel vocab card deletion')}
+    onDelete={action('Delete vocab card')}
+  />
 )

@@ -10,6 +10,7 @@ ListPage.propTypes = {
   learnStatus: PropTypes.bool.isRequired,
   learnedVocabs: PropTypes.array.isRequired,
   toBeLearnedVocabs: PropTypes.array.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
 export default function ListPage({
@@ -19,6 +20,7 @@ export default function ListPage({
   onLearnStatusClick,
   learnedVocabs,
   toBeLearnedVocabs,
+  deleteVocab,
 }) {
   return (
     <>
@@ -32,6 +34,7 @@ export default function ListPage({
         vocabs={vocabs}
         onLearnStatusClick={onLearnStatusClick}
         learnStatus={learnStatus}
+        deleteVocab={deleteVocab}
       />
     </>
   )

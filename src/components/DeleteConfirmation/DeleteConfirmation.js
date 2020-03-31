@@ -7,9 +7,10 @@ import ClosingIcon from '../ClosingIcon/ClosingIcon'
 DeleteConfirmation.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
-export default function DeleteConfirmation({ isOpen, onCancel }) {
+export default function DeleteConfirmation({ isOpen, onCancel, onDelete }) {
   return (
     <BackgroundStyled isOpen={isOpen}>
       <ModalStyled>
@@ -23,7 +24,13 @@ export default function DeleteConfirmation({ isOpen, onCancel }) {
             type="button"
             onClick={onCancel}
           />
-          <Button label="Delete" width="40%" degree="primary" type="button" />
+          <Button
+            label="Delete"
+            width="40%"
+            degree="primary"
+            type="button"
+            onClick={onDelete}
+          />
         </div>
       </ModalStyled>
     </BackgroundStyled>

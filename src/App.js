@@ -37,6 +37,7 @@ export default function App() {
               learnStatus={learnStatus}
               learnedVocabs={learnedVocabs}
               toBeLearnedVocabs={toBeLearnedVocabs}
+              deleteVocab={deleteVocab}
             />
           </Route>
           <Route path="/create">
@@ -47,6 +48,7 @@ export default function App() {
               vocabs={vocabsByLearnStatus}
               onLearnStatusClick={handleLearnStatusClick}
               learnStatus={learnStatus}
+              deleteVocab={deleteVocab}
             ></SearchPage>
           </Route>
         </Switch>
@@ -59,6 +61,11 @@ export default function App() {
   function addVocab(newVocab) {
     const newVocabs = [newVocab, ...vocabs]
     setVocabs(newVocabs)
+  }
+
+  function deleteVocab(id) {
+    const index = vocabs.findIndex(vocab => vocab.id === id)
+    setVocabs([...vocabs.slice(0, index), ...vocabs.slice(index + 1)])
   }
 
   function handleLearnStatusClick(id) {

@@ -22,6 +22,7 @@ VocabDetails.propTypes = {
   onClick: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
 export default function VocabDetails({
@@ -35,6 +36,7 @@ export default function VocabDetails({
   onClick,
   isOpen,
   onRequestClose,
+  deleteVocab,
 }) {
   const [deleteOverlayIsOpen, setDeleteOverlayIsOpen] = useState(false)
   const modalStyle = {
@@ -88,6 +90,7 @@ export default function VocabDetails({
           <DeleteConfirmation
             isOpen={deleteOverlayIsOpen}
             onCancel={handleCancel}
+            onDelete={deleteVocab}
           />
         </section>
       </VocabDetailsStyled>

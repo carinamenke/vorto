@@ -13,6 +13,7 @@ Vocab.propTypes = {
   partOfSpeechCategory: PropTypes.string.isRequired,
   learnStatus: PropTypes.bool.isRequired,
   onLearnStatusClick: PropTypes.func.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
 export default function Vocab({
@@ -23,6 +24,7 @@ export default function Vocab({
   partOfSpeechCategory,
   learnStatus,
   onLearnStatusClick,
+  deleteVocab,
 }) {
   const [detailsAreOpen, setDetailsAreOpen] = useState(false)
   const body = useRef(document.body)
@@ -53,6 +55,7 @@ export default function Vocab({
         learnStatus={learnStatus}
         onLearnStatusClick={onLearnStatusClick}
         onClick={closeDetails}
+        deleteVocab={deleteVocab}
       />
     </>
   )

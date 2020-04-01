@@ -10,7 +10,7 @@ DeleteButton.propTypes = {
 export default function DeleteButton({ onClick }) {
   return (
     <DeleteButtonStyled onClick={onClick}>
-      <FiTrash2 />
+      <FiTrash2 className="icon" />
       Delete
     </DeleteButtonStyled>
   )
@@ -21,9 +21,13 @@ const DeleteButtonStyled = styled.button`
   background: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   color: var(--grey-color-mid2);
-  width: 90px;
+  width: 120px;
+
+  .icon {
+    margin-right: 2px;
+  }
 
   :hover {
     color: var(--grey-color-mid1);

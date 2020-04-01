@@ -101,6 +101,6 @@ const AppGrid = styled.div`
   height: 100vh;
 
   @media screen and (max-height: 450px) {
-    grid-template-rows: 50px 80px 250px 50px;
+    grid-template-rows: 50px 80px 300px 50px;
   }
 `

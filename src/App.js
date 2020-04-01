@@ -70,8 +70,12 @@ export default function App() {
     const toBeDeletedVocab = vocabs.find(vocab => vocab.id === id)
     const image = storage.ref(`images/${toBeDeletedVocab.imageTitle}`)
     const audio = storage.ref(`audio/${toBeDeletedVocab.audioTitle}`)
-    image.delete().catch(error => {})
-    audio.delete().catch(error => {})
+    if (toBeDeletedVocab.imageSrc) {
+      image.delete().catch(error => {})
+    }
+    if (toBeDeletedVocab.audioSrc) {
+      audio.delete().catch(error => {})
+    }
   }
 
   function handleLearnStatusClick(id) {

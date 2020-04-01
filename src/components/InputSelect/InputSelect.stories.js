@@ -1,6 +1,6 @@
+import { array, boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import InputSelect from './InputSelect'
-import { withKnobs, boolean, text, array, object } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/InputSelect',

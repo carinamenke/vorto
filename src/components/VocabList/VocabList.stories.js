@@ -1,6 +1,6 @@
+import { array, object, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import VocabList from './VocabList'
-import { withKnobs, array, object } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/VocabList',

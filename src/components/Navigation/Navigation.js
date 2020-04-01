@@ -29,6 +29,24 @@ const NavigationStyled = styled.nav`
   box-shadow: 0 -1px 18px 0 var(--grey-color-shadow-light);
 `
 
+const AddButtonStyled = styled.button`
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: solid 8px var(--background-color);
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grey-color-mid1);
+  color: var(--text-color-white);
+
+  :active {
+    background: var(--primary-color);
+  }
+`
+
 const LinkStyled = styled(NavLink)`
   display: flex;
   flex-grow: 1;
@@ -55,23 +73,5 @@ const LinkStyled = styled(NavLink)`
     .search-icon {
       color: var(--primary-color);
     }
-  }
-`
-
-const AddButtonStyled = styled.button`
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  border: solid 8px var(--background-color);
-  position: relative;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--grey-color-mid1);
-  color: var(--text-color-white);
-
-  :active {
-    background: var(--primary-color);
   }
 `

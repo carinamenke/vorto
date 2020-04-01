@@ -1,7 +1,7 @@
+import { action } from '@storybook/addon-actions'
+import { number, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import ImageUpload from './ImageUpload'
-import { action } from '@storybook/addon-actions'
-import { withKnobs, number } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/ImageUpload',

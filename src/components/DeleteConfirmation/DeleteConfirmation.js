@@ -12,7 +12,7 @@ DeleteConfirmation.propTypes = {
 
 export default function DeleteConfirmation({ isOpen, onCancel, onDelete }) {
   return (
-    <BackgroundStyled isOpen={isOpen}>
+    <BackgroundStyled isOpen={isOpen} data-cy="deletion-overlay">
       <ModalStyled>
         <ClosingIcon onClick={onCancel} color={'var(--grey-color-dark)'} />
         <p>Are you sure you want to delete this vocabulary card?</p>

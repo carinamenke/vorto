@@ -12,6 +12,7 @@ export default createGlobalStyle`
     font-size: 18px;
     line-height: 1.4;
     height: 100vh;
+    overscroll-behavior: none;
     color: var(--grey-color-dark);
   }
 

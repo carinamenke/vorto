@@ -37,8 +37,6 @@ const AddButtonStyled = styled.button`
   position: relative;
   bottom: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--grey-color-mid1);
   color: var(--text-color-white);
 
@@ -61,6 +59,7 @@ const LinkStyled = styled(NavLink)`
   .search-icon {
     width: 25px;
     height: 25px;
+    margin: auto;
   }
 
   .home-icon,

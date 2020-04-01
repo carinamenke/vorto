@@ -52,7 +52,7 @@ const BackgroundStyled = styled.div`
 const ModalStyled = styled.section`
   background-color: var(--background-color);
   position: relative;
-  margin: 50% auto;
+  margin: 200px auto;
   padding: 20px;
   width: 80%;
   text-align: center;

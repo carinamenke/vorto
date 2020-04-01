@@ -47,14 +47,19 @@ const FilterSectionStyled = styled.section`
 
 const FilterStyled = styled.button`
   border: none;
+  border-bottom: ${select(
+    'active',
+    'solid 2px var(--primary-color)',
+    'solid 2px transparent'
+  )};
   background: none;
+  margin-right: 15px;
+  padding: 0 0 2px;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: left;
   color: ${select('active', 'var(--primary-color)', 'var(--grey-color-mid1)')};
-  text-decoration: ${select('active', 'underline 2px', 'none')};
-  text-underline-position: ${select('active', 'under', 'none')};
 `
 
 const CounterStyled = styled.span`

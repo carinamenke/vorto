@@ -1,6 +1,6 @@
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import InputText from './InputText'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/InputText',

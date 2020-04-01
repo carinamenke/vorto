@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "vorto",
+  "name": "Web app to learn language vocabulary",
   "icons": [
     {
       "src": "favicon.ico",

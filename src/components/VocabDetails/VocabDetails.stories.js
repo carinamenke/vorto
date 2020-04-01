@@ -1,7 +1,7 @@
+import { action } from '@storybook/addon-actions'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import VocabDetails from './VocabDetails'
-import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 export default {
   title: 'Components/VocabDetails',

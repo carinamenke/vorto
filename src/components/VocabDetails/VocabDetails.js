@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
 import AudioButton from '../AudioButton/AudioButton'
 import Backlink from '../Backlink/Backlink'
 import Badge from '../Badge/Badge'
+import Button from '../Button/Button'
 import ClosingIcon from '../ClosingIcon/ClosingIcon'
+import DeleteButton from '../DeleteButton/DeleteButton'
+import DeleteConfirmation from '../DeleteConfirmation/DeleteConfirmation'
 import LearnStatusButton from '../LearnStatusButton/LearnStatusButton'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
 
 VocabDetails.propTypes = {
   imageSrc: PropTypes.string,
@@ -20,6 +22,7 @@ VocabDetails.propTypes = {
   onClick: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
 export default function VocabDetails({
@@ -33,7 +36,9 @@ export default function VocabDetails({
   onClick,
   isOpen,
   onRequestClose,
+  deleteVocab,
 }) {
+  const [deleteOverlayIsOpen, setDeleteOverlayIsOpen] = useState(false)
   const modalStyle = {
     content: {
       height: '100vh',
@@ -60,24 +65,45 @@ export default function VocabDetails({
           />
           <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
         </div>
-        <div className="content">
+        <section className="content">
           <h2 className="content-title">{wordTitle}</h2>
           <Badge label={partOfSpeechCategory} />
-        </div>
-        <div className="translation">
+        </section>
+        <section className="translation">
           <h1 className="translation-title">{translation}</h1>
           {audioSrc && <AudioButton audioSrc={audioSrc} />}
-        </div>
-        <div className="actions">
+        </section>
+        <section className="primary-actions">
           <LearnStatusButton
             onLearnStatusClick={onLearnStatusClick}
             learnStatus={learnStatus}
           />
-          <PrimaryButton label={'Close'} onClick={onClick} width="50%" />
-        </div>
+          <Button
+            label={'Close'}
+            onClick={onClick}
+            width="50%"
+            degree="primary"
+          />
+        </section>
+        <section className="secondary-actions">
+          <DeleteButton onClick={openDeleteOverlay} />
+          <DeleteConfirmation
+            isOpen={deleteOverlayIsOpen}
+            onCancel={handleCancel}
+            onDelete={deleteVocab}
+          />
+        </section>
       </VocabDetailsStyled>
     </Modal>
   )
+
+  function openDeleteOverlay() {
+    setDeleteOverlayIsOpen(true)
+  }
+
+  function handleCancel() {
+    setDeleteOverlayIsOpen(false)
+  }
 }
 
 const VocabDetailsStyled = styled.div`
@@ -135,8 +161,13 @@ const VocabDetailsStyled = styled.div`
     margin: 0;
   }
 
-  .actions {
+  .primary-actions {
     display: flex;
     margin: 10px 15px;
+  }
+
+  .secondary-actions {
+    display: flex;
+    justify-content: center;
   }
 `

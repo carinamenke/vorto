@@ -6,9 +6,10 @@ import Vocab from '../Vocab/Vocab'
 VocabList.propTypes = {
   vocabs: PropTypes.array.isRequired,
   onLearnStatusClick: PropTypes.func.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
-export default function VocabList({ vocabs, onLearnStatusClick }) {
+export default function VocabList({ vocabs, onLearnStatusClick, deleteVocab }) {
   return (
     <VocabListStyled>
       {vocabs.map(vocab => (
@@ -20,6 +21,7 @@ export default function VocabList({ vocabs, onLearnStatusClick }) {
           partOfSpeechCategory={vocab.partOfSpeechCategory}
           learnStatus={vocab.learned}
           onLearnStatusClick={() => onLearnStatusClick(vocab.id)}
+          deleteVocab={() => deleteVocab(vocab.id)}
           key={vocab.id}
         />
       ))}

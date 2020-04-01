@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import { storage } from './firebase'
 import { loadFromLocal, saveToLocal } from './common/utils'
 import Header from './components/Header/Header'
 import Navigation from './components/Navigation/Navigation'
@@ -37,6 +38,7 @@ export default function App() {
               learnStatus={learnStatus}
               learnedVocabs={learnedVocabs}
               toBeLearnedVocabs={toBeLearnedVocabs}
+              deleteVocab={deleteVocab}
             />
           </Route>
           <Route path="/create">
@@ -47,6 +49,7 @@ export default function App() {
               vocabs={vocabsByLearnStatus}
               onLearnStatusClick={handleLearnStatusClick}
               learnStatus={learnStatus}
+              deleteVocab={deleteVocab}
             ></SearchPage>
           </Route>
         </Switch>
@@ -59,6 +62,20 @@ export default function App() {
   function addVocab(newVocab) {
     const newVocabs = [newVocab, ...vocabs]
     setVocabs(newVocabs)
+  }
+
+  function deleteVocab(id) {
+    const index = vocabs.findIndex(vocab => vocab.id === id)
+    setVocabs([...vocabs.slice(0, index), ...vocabs.slice(index + 1)])
+    const toBeDeletedVocab = vocabs.find(vocab => vocab.id === id)
+    const image = storage.ref(`images/${toBeDeletedVocab.imageTitle}`)
+    const audio = storage.ref(`audio/${toBeDeletedVocab.audioTitle}`)
+    if (toBeDeletedVocab.imageSrc) {
+      image.delete().catch(error => {})
+    }
+    if (toBeDeletedVocab.audioSrc) {
+      audio.delete().catch(error => {})
+    }
   }
 
   function handleLearnStatusClick(id) {

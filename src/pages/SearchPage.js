@@ -7,12 +7,14 @@ SearchPage.propTypes = {
   vocabs: PropTypes.array.isRequired,
   onLearnStatusClick: PropTypes.func.isRequired,
   learnStatus: PropTypes.bool.isRequired,
+  deleteVocab: PropTypes.func.isRequired,
 }
 
 export default function SearchPage({
   vocabs,
   onLearnStatusClick,
   learnStatus,
+  deleteVocab,
 }) {
   const [searchInput, setSearchInput] = useState('')
   const [searchResult, setSearchResult] = useState([])
@@ -51,6 +53,7 @@ export default function SearchPage({
           vocabs={searchResult}
           onLearnStatusClick={onLearnStatusClick}
           learnStatus={learnStatus}
+          deleteVocab={deleteVocab}
         />
       )}
     </>

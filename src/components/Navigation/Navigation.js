@@ -57,8 +57,8 @@ const LinkStyled = styled(NavLink)`
   .home-icon,
   .add-icon,
   .search-icon {
-    width: 25px;
-    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
     margin: auto;
   }
 

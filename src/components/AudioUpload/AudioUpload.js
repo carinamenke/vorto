@@ -22,8 +22,8 @@ export default function AudioUpload({ onChange, previewAudio }) {
       </AudioUploadStyled>
       {previewAudio.audioUrl && (
         <span className="audio-upload-status">
-          &#10004; {previewAudio.audioName.slice(0, 15)}
-          {previewAudio.audioName.length > 15 && '...'} was selected.
+          &#10004; {previewAudio.audioName.slice(0, 20)}
+          {previewAudio.audioName.length > 20 && '...'} was selected.
         </span>
       )}
     </WrapperStyled>

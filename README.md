@@ -1,7 +1,7 @@
 # vorto app
 
 <div align="center">
-<img src="public/images/vorto_logo.png"  alt="vorto app" width="200" height="100">
+<img src="public/images/vorto_logo.png"  width="200" height="100">
 </div>
 
 The vorto web app allows you to create **a digital stack of vocabulary learning cards**. Expand your vocabulary for any foreign language with those words which are relevant for you.
@@ -17,7 +17,7 @@ I developed the app as my final project during the [neuefische coding bootcamp](
 
 ## Preview
 
-<img src="https://firebasestorage.googleapis.com/v0/b/neuefische-vorto.appspot.com/o/vorto-preview.gif?alt=media&token=58440d3b-29ae-401e-a2cc-650ba6358f71" width="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/neuefische-vorto.appspot.com/o/vorto_preview.png?alt=media&token=725e2239-e065-4222-8bfc-9da1d55e1de9">
 
 For more information have a look at the [live demo](https://neuefische-vorto.web.app/).
 

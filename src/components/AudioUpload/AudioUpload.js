@@ -22,7 +22,8 @@ export default function AudioUpload({ onChange, previewAudio }) {
       </AudioUploadStyled>
       {previewAudio.audioUrl && (
         <span className="audio-upload-status">
-          &#10004; {previewAudio.audioName} was selected.
+          &#10004; {previewAudio.audioName.slice(0, 20)}
+          {previewAudio.audioName.length > 20 && '...'} was selected.
         </span>
       )}
     </WrapperStyled>
@@ -34,6 +35,7 @@ const WrapperStyled = styled.div`
   font-size: 12px;
   display: flex;
   align-items: center;
+  max-width: 90vw;
 
   .audio-upload-status {
     color: var(--grey-color-dark);

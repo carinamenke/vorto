@@ -1,0 +1,14 @@
+{
+  "extends": ["plugin:prettier/recommended", "plugin:cypress/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "plugins": ["prettier", "cypress"]
+}

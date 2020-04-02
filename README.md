@@ -39,6 +39,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - react-testing-library
 - jest
 - cypress
+- eslint
 - prop-types
 - uuid
 

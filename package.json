@@ -26,7 +26,9 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "eslint": "eslint src/js/**/*.js",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +46,10 @@
     ]
   },
   "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-cypress": "2.10.3",
     "@storybook/addon-actions": "5.3.14",
     "@storybook/addon-backgrounds": "5.3.17",
     "@storybook/addon-docs": "5.3.14",
@@ -53,11 +59,11 @@
     "@storybook/addons": "5.3.14",
     "@storybook/preset-create-react-app": "2.0.0",
     "@storybook/react": "5.3.14",
-    "cypress": "4.1.0",
-    "cypress-file-upload": "4.0.4",
-    "prop-types": "15.7.2",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.4.1",
-    "@testing-library/user-event": "7.2.1"
+    "@testing-library/user-event": "7.2.1",
+    "cypress": "4.1.0",
+    "cypress-file-upload": "4.0.4",
+    "prop-types": "15.7.2"
   }
 }

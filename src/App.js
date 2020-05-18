@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { storage } from './firebase'
 import { loadFromLocal, saveToLocal } from './common/utils'
@@ -14,13 +14,12 @@ import data from './vocabs.json'
 Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
-  const defaultVocabs = data.vocabs ? data.vocabs : []
+  const defaultVocabs = data.vocabs || []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
-  const [learnStatus, setlearnStatus] = useState(false)
+  const [learnStatus, setLearnStatus] = useState(false)
   const learnedVocabs = vocabs.filter(vocab => vocab.learned)
   const toBeLearnedVocabs = vocabs.filter(vocab => !vocab.learned)
-  const vocabsByLearnStatus =
-    learnStatus === false ? toBeLearnedVocabs : learnedVocabs
+  const vocabsByLearnStatus = learnStatus ? learnedVocabs : toBeLearnedVocabs
 
   useEffect(() => {
     saveToLocal('vocabs', vocabs)
@@ -28,34 +27,32 @@ export default function App() {
 
   return (
     <AppGrid>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <ListPage
-              vocabs={vocabsByLearnStatus}
-              onLearnStatusClick={handleLearnStatusClick}
-              onClick={selectLearnStatus}
-              learnStatus={learnStatus}
-              learnedVocabs={learnedVocabs}
-              toBeLearnedVocabs={toBeLearnedVocabs}
-              deleteVocab={deleteVocab}
-            />
-          </Route>
-          <Route path="/create">
-            <FormPage onSubmit={addVocab} />
-          </Route>
-          <Route path="/search">
-            <SearchPage
-              vocabs={vocabsByLearnStatus}
-              onLearnStatusClick={handleLearnStatusClick}
-              learnStatus={learnStatus}
-              deleteVocab={deleteVocab}
-            ></SearchPage>
-          </Route>
-        </Switch>
-        <Header />
-        <Navigation />
-      </Router>
+      <Switch>
+        <Route exact path="/">
+          <ListPage
+            vocabs={vocabsByLearnStatus}
+            onLearnStatusClick={handleLearnStatusClick}
+            onClick={selectLearnStatus}
+            learnStatus={learnStatus}
+            learnedVocabs={learnedVocabs}
+            toBeLearnedVocabs={toBeLearnedVocabs}
+            deleteVocab={deleteVocab}
+          />
+        </Route>
+        <Route path="/create">
+          <FormPage onSubmit={addVocab} />
+        </Route>
+        <Route path="/search">
+          <SearchPage
+            vocabs={vocabsByLearnStatus}
+            onLearnStatusClick={handleLearnStatusClick}
+            learnStatus={learnStatus}
+            deleteVocab={deleteVocab}
+          ></SearchPage>
+        </Route>
+      </Switch>
+      <Header />
+      <Navigation />
     </AppGrid>
   )
 
@@ -91,7 +88,7 @@ export default function App() {
     ])
   }
   function selectLearnStatus(learnStatus) {
-    return setlearnStatus(learnStatus)
+    return setLearnStatus(learnStatus)
   }
 }
 

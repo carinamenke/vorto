@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import Modal from 'react-modal'
 import { BrowserRouter as Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import { storage } from './firebase'
 import { loadFromLocal, saveToLocal } from './common/utils'
 import Header from './components/Header/Header'
 import Navigation from './components/Navigation/Navigation'
+import { storage } from './firebase'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
 import SearchPage from './pages/SearchPage'
@@ -17,8 +17,13 @@ export default function App() {
   const defaultVocabs = data.vocabs || []
   const [vocabs, setVocabs] = useState(loadFromLocal('vocabs') || defaultVocabs)
   const [learnStatus, setLearnStatus] = useState(false)
-  const learnedVocabs = vocabs.filter(vocab => vocab.learned)
-  const toBeLearnedVocabs = vocabs.filter(vocab => !vocab.learned)
+  const learnedVocabs = useMemo(() => vocabs.filter(vocab => vocab.learned), [
+    vocabs,
+  ])
+  const toBeLearnedVocabs = useMemo(
+    () => vocabs.filter(vocab => !vocab.learned),
+    [vocabs]
+  )
   const vocabsByLearnStatus = learnStatus ? learnedVocabs : toBeLearnedVocabs
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid'
@@ -10,30 +10,32 @@ import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
 import { storage } from '../firebase'
+import usePreview from '../hooks/usePreview'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
 
 export default function FormPage({ onSubmit }) {
-  const [previewImage, setPreviewImage] = useState({
-    imageUrl: '',
-    imageName: '',
-  })
-  const [previewAudio, setPreviewAudio] = useState({
-    audioUrl: '',
-    audioName: '',
-  })
-  const [loadProgress, setLoadProgress] = useState()
+  const {
+    previewImage,
+    setPreviewImage,
+    previewAudio,
+    setPreviewAudio,
+    loadProgress,
+    setLoadProgress,
+  } = usePreview()
+
   const wordCategories = [
     { value: 'Noun', placeholder: 'Noun' },
     { value: 'Verb', placeholder: 'Verb' },
     { value: 'Adjective', placeholder: 'Adjective' },
   ]
+
   const history = useHistory()
 
   return (
-    <FormStyled action="" onSubmit={handleSubmit}>
+    <FormStyled onSubmit={handleSubmit}>
       <Headline text="Add a new Vocabulary" />
       <ImageUpload
         name="imageSrc"

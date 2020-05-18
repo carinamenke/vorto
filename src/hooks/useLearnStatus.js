@@ -23,6 +23,7 @@ export default function useLearnStatus(vocabs, setVocabs) {
       ...vocabs.slice(index + 1),
     ])
   }
+
   function selectLearnStatus(learnStatus) {
     return setLearnStatus(learnStatus)
   }

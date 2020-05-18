@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from 'react'
+import React from 'react'
 import Modal from 'react-modal'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Header from './components/Header/Header'
 import Navigation from './components/Navigation/Navigation'
+import useLearnStatus from './hooks/useLearnStatus'
 import useVocabs from './hooks/useVocabs'
 import FormPage from './pages/FormPage'
 import ListPage from './pages/ListPage'
@@ -13,16 +14,14 @@ Modal.setAppElement(document.getElementById('root'))
 
 export default function App() {
   const { vocabs, setVocabs, addVocab, deleteVocab } = useVocabs()
-
-  const [learnStatus, setLearnStatus] = useState(false)
-  const learnedVocabs = useMemo(() => vocabs.filter(vocab => vocab.learned), [
-    vocabs,
-  ])
-  const toBeLearnedVocabs = useMemo(
-    () => vocabs.filter(vocab => !vocab.learned),
-    [vocabs]
-  )
-  const vocabsByLearnStatus = learnStatus ? learnedVocabs : toBeLearnedVocabs
+  const {
+    learnStatus,
+    learnedVocabs,
+    toBeLearnedVocabs,
+    vocabsByLearnStatus,
+    handleLearnStatusClick,
+    selectLearnStatus,
+  } = useLearnStatus(vocabs, setVocabs)
 
   return (
     <AppGrid>
@@ -56,22 +55,6 @@ export default function App() {
       </Router>
     </AppGrid>
   )
-
-  function handleLearnStatusClick(id) {
-    const index = vocabs.findIndex(vocab => vocab.id === id)
-    const updatedVocab = {
-      ...vocabs[index],
-      learned: !vocabs[index].learned,
-    }
-    setVocabs([
-      updatedVocab,
-      ...vocabs.slice(0, index),
-      ...vocabs.slice(index + 1),
-    ])
-  }
-  function selectLearnStatus(learnStatus) {
-    return setLearnStatus(learnStatus)
-  }
 }
 
 const AppGrid = styled.div`

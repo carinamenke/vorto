@@ -9,8 +9,8 @@ import Headline from '../components/Headline/Headline'
 import ImageUpload from '../components/ImageUpload/ImageUpload'
 import InputSelect from '../components/InputSelect/InputSelect'
 import InputText from '../components/InputText/InputText'
-import { storage } from '../firebase'
 import usePreview from '../hooks/usePreview'
+import { uploadAudio, uploadImage } from './services'
 
 FormPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -76,54 +76,12 @@ export default function FormPage({ onSubmit }) {
 
   function handleImageUpload(event) {
     const image = event.target.files[0]
-    const metadata = {
-      name: image.name,
-    }
-    const uploadTask = storage.ref(`images/${image.name}`).put(image, metadata)
-    uploadTask.on(
-      'state_changed',
-      snapshot => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        setLoadProgress(progress)
-      },
-      error => {
-        alert('An error occurred, please try again.')
-      },
-      () => {
-        storage
-          .ref('images')
-          .child(image.name)
-          .getDownloadURL()
-          .then(url => {
-            setPreviewImage({ imageUrl: url, imageName: image.name })
-            setLoadProgress()
-          })
-      }
-    )
+    uploadImage(image, setLoadProgress, setPreviewImage)
   }
 
   function handleAudioUpload(event) {
     const audio = event.target.files[0]
-    const metadata = {
-      name: audio.name,
-    }
-    const uploadTask = storage.ref(`audio/${audio.name}`).put(audio, metadata)
-    uploadTask.on(
-      'state_changed',
-      snapshot => {},
-      error => {
-        alert('An error occurred, please try again.')
-      },
-      () => {
-        storage
-          .ref('audio')
-          .child(audio.name)
-          .getDownloadURL()
-          .then(url => {
-            setPreviewAudio({ audioUrl: url, audioName: audio.name })
-          })
-      }
-    )
+    uploadAudio(audio, setPreviewAudio)
   }
 
   function handleSubmit(event) {

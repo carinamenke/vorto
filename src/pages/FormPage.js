@@ -96,10 +96,10 @@ export default function FormPage({ onSubmit }) {
       partOfSpeechCategory: partOfSpeechCategory.value,
       learned: false,
       id: uuidv4(),
-      imageSrc: previewImage && previewImage.imageUrl,
-      imageTitle: previewImage && previewImage.imageName,
-      audioSrc: previewAudio && previewAudio.audioUrl,
-      audioTitle: previewAudio && previewAudio.audioName,
+      imageSrc: previewImage?.imageUrl,
+      imageTitle: previewImage?.imageName,
+      audioSrc: previewAudio?.audioUrl,
+      audioTitle: previewAudio?.audioName,
     })
     history.push('/')
     setPreviewImage({ imageUrl: '', imageName: '' })

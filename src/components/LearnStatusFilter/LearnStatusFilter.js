@@ -49,7 +49,7 @@ const FilterStyled = styled.button`
   border: none;
   border-bottom: ${select(
     'active',
-    'solid 2px var(--primary-color)',
+    'solid 2px var(--color-primary)',
     'solid 2px transparent'
   )};
   background: none;
@@ -59,7 +59,7 @@ const FilterStyled = styled.button`
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: left;
-  color: ${select('active', 'var(--primary-color)', 'var(--grey-color-mid1)')};
+  color: ${select('active', 'var(--color-primary)', 'var(--color-grey-mid1)')};
 `
 
 const CounterStyled = styled.span`

@@ -41,8 +41,8 @@ const ImageUploadStyled = styled.label`
   .file-input-label {
     border: none;
     border-radius: 4px;
-    background: var(--primary-color-light);
-    color: var(--primary-color-active);
+    background: var(--color-primary-light);
+    color: var(--color-primary-active);
     height: 35px;
     padding: 10px;
     position: relative;
@@ -53,13 +53,13 @@ const ImageUploadStyled = styled.label`
     justify-content: center;
 
     :hover {
-      background: var(--primary-color);
-      color: var(--text-color-white);
+      background: var(--color-primary);
+      color: var(--color-text-white);
     }
 
     :active {
-      background: var(--primary-color-hover);
-      color: var(--text-color-white);
+      background: var(--color-primary-hover);
+      color: var(--color-text-white);
     }
   }
 
@@ -69,7 +69,7 @@ const ImageUploadStyled = styled.label`
 `
 
 const ImagePlaceholder = styled.div`
-  background: var(--grey-color-light);
+  background: var(--color-grey-light);
   display: flex;
   border-radius: 4px;
   width: auto;

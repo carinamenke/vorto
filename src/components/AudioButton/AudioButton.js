@@ -25,14 +25,14 @@ export default function AudioButton({ audioSrc }) {
 
 const AudioButtonStyled = styled.button`
   display: flex;
-  border: solid var(--grey-color-dark) 1.5px;
+  border: solid var(--color-grey-dark) 1.5px;
   border-radius: 4px;
-  background: var(--background-color);
+  background: var(--color-background);
   padding: 5px 8px;
 
   .label,
   .icon {
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
   }
 
   .label {
@@ -41,17 +41,17 @@ const AudioButtonStyled = styled.button`
   }
 
   :hover {
-    background: var(--grey-color-mid1);
-    border: solid var(--grey-color-mid1) 1.5px;
+    background: var(--color-grey-mid1);
+    border: solid var(--color-grey-mid1) 1.5px;
 
     .label,
     .icon {
-      color: var(--text-color-white);
+      color: var(--color-text-white);
     }
   }
 
   :active {
-    background: var(--grey-color-mid2);
-    border: solid var(--grey-color-mid2) 1.5px;
+    background: var(--color-grey-mid2);
+    border: solid var(--color-grey-mid2) 1.5px;
   }
 `

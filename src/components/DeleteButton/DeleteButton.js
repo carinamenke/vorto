@@ -22,7 +22,7 @@ const DeleteButtonStyled = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--grey-color-mid2);
+  color: var(--color-grey-mid2);
   width: 120px;
 
   .icon {
@@ -30,10 +30,10 @@ const DeleteButtonStyled = styled.button`
   }
 
   :hover {
-    color: var(--grey-color-mid1);
+    color: var(--color-grey-mid1);
   }
 
   :active {
-    color: var(--primary-color);
+    color: var(--color-primary);
   }
 `

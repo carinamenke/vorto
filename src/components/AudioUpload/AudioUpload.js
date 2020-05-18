@@ -38,7 +38,7 @@ const WrapperStyled = styled.div`
   max-width: 90vw;
 
   .audio-upload-status {
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
     word-wrap: break-word;
     margin-left: 10px;
   }
@@ -47,21 +47,21 @@ const WrapperStyled = styled.div`
 const AudioUploadStyled = styled.label`
   border: none;
   border-radius: 4px;
-  background: var(--primary-color-light);
-  color: var(--primary-color-active);
+  background: var(--color-primary-light);
+  color: var(--color-primary-active);
   height: 35px;
   padding: 10px;
   width: 40%;
   text-align: center;
 
   :hover {
-    background: var(--primary-color);
-    color: var(--text-color-white);
+    background: var(--color-primary);
+    color: var(--color-text-white);
   }
 
   :active {
-    background: var(--primary-color-hover);
-    color: var(--text-color-white);
+    background: var(--color-primary-hover);
+    color: var(--color-text-white);
   }
 
   .file-input {

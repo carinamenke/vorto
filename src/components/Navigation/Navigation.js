@@ -26,24 +26,24 @@ export default function Navigation() {
 const NavigationStyled = styled.nav`
   grid-row: 4 / 5;
   display: flex;
-  box-shadow: 0 -1px 18px 0 var(--grey-color-shadow-light);
+  box-shadow: 0 -1px 18px 0 var(--color-grey-shadow-light);
 `
 
 const AddButtonStyled = styled.button`
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  border: solid 8px var(--background-color);
+  border: solid 8px var(--color-background);
   position: relative;
   bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--grey-color-mid1);
-  color: var(--text-color-white);
+  background: var(--color-grey-mid1);
+  color: var(--color-text-white);
 
   :active {
-    background: var(--primary-color);
+    background: var(--color-primary);
   }
 `
 
@@ -52,8 +52,8 @@ const LinkStyled = styled(NavLink)`
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  background: var(--background-color);
-  color: var(--text-color-white);
+  background: var(--color-background);
+  color: var(--color-text-white);
   text-decoration: none;
 
   .home-icon,
@@ -65,13 +65,13 @@ const LinkStyled = styled(NavLink)`
 
   .home-icon,
   .search-icon {
-    color: var(--grey-color-mid1);
+    color: var(--color-grey-mid1);
   }
 
   &.active {
     .home-icon,
     .search-icon {
-      color: var(--primary-color);
+      color: var(--color-primary);
     }
   }
 `

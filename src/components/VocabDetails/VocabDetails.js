@@ -61,9 +61,9 @@ export default function VocabDetails({
           <Backlink
             label="Back to collection"
             onClick={onClick}
-            color="var(--text-color-white)"
+            color="var(--color-text-white)"
           />
-          <ClosingIcon onClick={onClick} color="var(--text-color-white)" />
+          <ClosingIcon onClick={onClick} color="var(--color-text-white)" />
         </div>
         <section className="content">
           <h2 className="content-title">{wordTitle}</h2>
@@ -109,7 +109,7 @@ export default function VocabDetails({
 const VocabDetailsStyled = styled.div`
   display: flex;
   flex-direction: column;
-  background: var(--background-color);
+  background: var(--color-background);
   height: 100%;
   width: 100%;
   font-family: Helvetica, sans-serif;
@@ -122,15 +122,15 @@ const VocabDetailsStyled = styled.div`
     margin: 0;
     height: 60%;
     width: 100%;
-    border-bottom: solid 2px var(--grey-color-light);
+    border-bottom: solid 2px var(--color-grey-light);
   }
 
   .image-container-overlay {
     height: 100%;
     width: 100%;
     background: linear-gradient(
-      var(--image-gradient-color-dark),
-      var(--image-gradient-color-light)
+      var(--color-image-gradient-dark),
+      var(--color-image-gradient-light)
     );
   }
 
@@ -152,12 +152,12 @@ const VocabDetailsStyled = styled.div`
   }
 
   .content-title {
-    color: var(--grey-color-mid1);
+    color: var(--color-grey-mid1);
     font-size: 24px;
   }
 
   .translation-title {
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
     margin: 0;
   }
 

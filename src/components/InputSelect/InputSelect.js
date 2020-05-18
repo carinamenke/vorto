@@ -53,7 +53,7 @@ const InputSelectStyled = styled.label`
     padding: 10px;
     appearance: none;
     background: url('./icons/chevron-down.svg') no-repeat right
-      var(--grey-color-light);
+      var(--color-grey-light);
     background-position-x: right;
   }
 `

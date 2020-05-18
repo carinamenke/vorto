@@ -32,9 +32,9 @@ const ClosingIconStyled = styled.a`
   color: ${props => props.color};
 
   :visited {
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
   }
   :active {
-    color: var(--primary-color);
+    color: var(--color-primary);
   }
 `

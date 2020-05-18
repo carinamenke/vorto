@@ -21,33 +21,33 @@ export default function Button({ onClick, label, type, width, degree }) {
 const ButtonStyled = styled.button`
   background: ${props =>
     props.degree === 'primary'
-      ? 'var(--primary-color)'
-      : 'var(--primary-color-light)'};
+      ? 'var(--color-primary)'
+      : 'var(--color-primary-light)'};
   color: ${props =>
     props.degree === 'primary'
-      ? 'var(--text-color-white)'
-      : 'var(--primary-color-active)'};
+      ? 'var(--color-text-white)'
+      : 'var(--color-primary-active)'};
   border: none;
   border-radius: 4px;
   margin: 15px auto;
   padding: 7px;
   height: 35px;
   width: ${props => props.width};
-  box-shadow: 0 5px 4px -2px ${props => (props.degree === 'primary' ? 'var(--primary-color-light)' : 'var(--primary-color-shadow)')};
+  box-shadow: 0 5px 4px -2px ${props => (props.degree === 'primary' ? 'var(--color-primary-light)' : 'var(--color-primary-shadow)')};
   word-wrap: break-word;
 
   :hover {
     background: ${props =>
       props.degree === 'primary'
-        ? 'var(--primary-color-hover)'
-        : 'var(--primary-color-mid)'};
+        ? 'var(--color-primary-hover)'
+        : 'var(--color-primary-mid)'};
   }
 
   :active {
     background: ${props =>
       props.degree === 'primary'
-        ? 'var(--primary-color-active)'
-        : 'var(--primary-color)'};
-    color: var(--text-color-white);
+        ? 'var(--color-primary-active)'
+        : 'var(--color-primary)'};
+    color: var(--color-text-white);
   }
 `

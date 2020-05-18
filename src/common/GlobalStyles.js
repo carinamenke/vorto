@@ -7,13 +7,13 @@ export default createGlobalStyle`
 
   body {
     margin: 0 auto;
-    background: var(--background-color);
+    background: var(--color-background);
     font-family: sans-serif;
     font-size: 18px;
     line-height: 1.4;
     height: 100vh;
     overscroll-behavior: none;
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
   }
 
   input, button, textarea {
@@ -26,30 +26,30 @@ export default createGlobalStyle`
 
 
   :root {
-    --background-color: #fff;
+    --color-background: #fff;
 
-    --primary-color: #f08f8f;
-    --primary-color-hover: #DB7F7F;
-    --primary-color-active: #b26565;
-    --primary-color-light: #FFCBCB;
-    --primary-color-mid: #FFB7B7;
-    --primary-color-shadow: #FDE3E3;
+    --color-primary: #f08f8f;
+    --color-primary-hover: #DB7F7F;
+    --color-primary-active: #b26565;
+    --color-primary-light: #FFCBCB;
+    --color-primary-mid: #FFB7B7;
+    --color-primary-shadow: #FDE3E3;
 
 
-    --secondary-color: #f19e20;
-    --secondary-color-hover: #d1891a;
-    --secondary-color-active: #C17E19;
+    --color-secondary: #f19e20;
+    --color-secondary-hover: #d1891a;
+    --color-secondary-active: #C17E19;
 
-    --tertiary-color: #1e6781;
+    --color-tertiary: #1e6781;
     
-    --grey-color-light: #f6f6f6;
-    --grey-color-mid1: #ababab;
-    --grey-color-mid2: #928F8F;
-    --grey-color-dark: #424242;
-    --grey-color-shadow: rgba(200, 200, 200, 50);
-    --grey-color-shadow-light: rgba(240, 240, 240, 50);
-    --text-color-white: #fff;
-    --image-gradient-color-dark: rgba(0, 0, 0, 0.3);
-    --image-gradient-color-light: rgba(0, 0, 0, 0);
+    --color-grey-light: #f6f6f6;
+    --color-grey-mid1: #ababab;
+    --color-grey-mid2: #928F8F;
+    --color-grey-dark: #424242;
+    --color-grey-shadow: rgba(200, 200, 200, 50);
+    --color-grey-shadow-light: rgba(240, 240, 240, 50);
+    --color-text-white: #fff;
+    --color-image-gradient-dark: rgba(0, 0, 0, 0.3);
+    --color-image-gradient-light: rgba(0, 0, 0, 0);
   }
 `

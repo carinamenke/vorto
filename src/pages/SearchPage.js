@@ -20,7 +20,7 @@ export default function SearchPage({
   const [searchResult, setSearchResult] = useState([])
 
   useEffect(() => {
-    let allVocabs = vocabs.map(vocab => {
+    const allVocabs = vocabs.map(vocab => {
       return {
         ...vocab,
         wordTitle: vocab.wordTitle.toLowerCase(),

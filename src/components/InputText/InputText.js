@@ -51,7 +51,7 @@ const InputTextStyled = styled.label`
   .input {
     border: none;
     border-radius: 4px;
-    background: var(--grey-color-light);
+    background: var(--color-grey-light);
     height: 35px;
     padding: 10px;
   }

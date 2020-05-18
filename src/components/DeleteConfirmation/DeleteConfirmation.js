@@ -14,7 +14,7 @@ export default function DeleteConfirmation({ isOpen, onCancel, onDelete }) {
   return (
     <BackgroundStyled isOpen={isOpen} data-cy="deletion-overlay">
       <ModalStyled>
-        <ClosingIcon onClick={onCancel} color={'var(--grey-color-dark)'} />
+        <ClosingIcon onClick={onCancel} color={'var(--color-grey-dark)'} />
         <p>Are you sure you want to delete this vocabulary card?</p>
         <div className="actions">
           <Button
@@ -45,12 +45,12 @@ const BackgroundStyled = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--grey-color-mid1); /*fallback background color*/
-  background-color: var(--image-gradient-color-dark);
+  background-color: var(--color-grey-mid1); /*fallback background color*/
+  background-color: var(--color-image-gradient-dark);
 `
 
 const ModalStyled = styled.section`
-  background-color: var(--background-color);
+  background-color: var(--color-background);
   position: relative;
   margin: 200px auto;
   padding: 20px;

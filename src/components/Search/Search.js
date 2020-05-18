@@ -64,14 +64,14 @@ const SearchFieldStyled = styled.div`
   border: none;
   border-radius: 4px;
   height: 35px;
-  background: var(--grey-color-light);
+  background: var(--color-grey-light);
 
   .search-input {
     border: none;
     border-radius: 4px;
     height: 35px;
     flex-grow: 1;
-    background: var(--grey-color-light);
+    background: var(--color-grey-light);
     padding: 10px;
     margin-right: 10px;
     outline: none;
@@ -88,13 +88,13 @@ const ClearButtonStyled = styled.span`
   height: 20px;
   border: none;
   border-radius: 50%;
-  background: var(--grey-color-mid1);
-  color: var(--text-color-white);
+  background: var(--color-grey-mid1);
+  color: var(--color-text-white);
   display: flex;
   align-items: center;
   justify-content: center;
 
   :active {
-    background: var(--grey-color-mid2);
+    background: var(--color-grey-mid2);
   }
 `

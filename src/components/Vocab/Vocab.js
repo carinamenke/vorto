@@ -77,10 +77,10 @@ const VocabStyled = styled.section`
   margin-right: 20px;
   display: flex;
   flex-direction: column;
-  background: var(--background-color);
+  background: var(--color-background);
   height: auto;
   border-radius: 11px;
-  box-shadow: 0 9px 16px -5px var(--grey-color-shadow);
+  box-shadow: 0 9px 16px -5px var(--color-grey-shadow);
   font-family: Helvetica, sans-serif;
   scroll-snap-align: center;
 
@@ -92,7 +92,7 @@ const VocabStyled = styled.section`
     height: 300px;
     width: 100%;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 2px var(--grey-color-light);
+    border-bottom: solid 2px var(--color-grey-light);
   }
 
   .content {
@@ -105,7 +105,7 @@ const VocabStyled = styled.section`
   }
 
   .content-title {
-    color: var(--grey-color-dark);
+    color: var(--color-grey-dark);
     margin: 0;
     font-size: 24px;
     word-wrap: break-word;

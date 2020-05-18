@@ -32,16 +32,16 @@ export default function LearnStatusButton({
 
 const ToggleButtonStyled = styled.button`
   background: ${props =>
-    props.active ? 'var(--grey-color-mid1)' : 'var(--primary-color-light)'};
+    props.active ? 'var(--color-grey-mid1)' : 'var(--color-primary-light)'};
   color: ${props =>
-    props.active ? 'var(--text-color-white)' : 'var(--primary-color-active)'};
+    props.active ? 'var(--color-text-white)' : 'var(--color-primary-active)'};
   border: none;
   border-radius: 4px;
   padding: 7px;
   margin: 15px 10px 15px auto;
   height: 35px;
   width: 50%;
-  box-shadow: 0 5px 4px -2px ${props => (props.active ? 'var(--grey-color-shadow)' : 'var(--primary-color-shadow)')};
+  box-shadow: 0 5px 4px -2px ${props => (props.active ? 'var(--color-grey-shadow)' : 'var(--color-primary-shadow)')};
   word-wrap: break-word;
   display: flex;
   justify-content: center;
@@ -53,12 +53,12 @@ const ToggleButtonStyled = styled.button`
 
   :hover {
     background: ${props =>
-      props.active ? 'var(--grey-color-mid2)' : 'var(--primary-color-mid)'};
+      props.active ? 'var(--color-grey-mid2)' : 'var(--color-primary-mid)'};
   }
 
   :active {
     background: ${props =>
-      props.active ? 'var(--grey-color-dark)' : 'var(--primary-color)'};
-    color: var(--text-color-white);
+      props.active ? 'var(--color-grey-dark)' : 'var(--color-primary)'};
+    color: var(--color-text-white);
   }
 `

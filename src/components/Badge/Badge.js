@@ -7,11 +7,11 @@ export default function Badge({ label }) {
 
 function selectColour(props) {
   if (props.label === 'Noun') {
-    return 'var(--secondary-color)'
+    return 'var(--color-secondary)'
   } else if (props.label === 'Verb') {
-    return 'var(--primary-color)'
+    return 'var(--color-primary)'
   } else {
-    return 'var(--tertiary-color)'
+    return 'var(--color-tertiary)'
   }
 }
 

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Search from '../components/Search/Search'
 import VocabList from '../components/VocabList/VocabList'
+import useSearch from '../hooks/useSearch'
 
 SearchPage.propTypes = {
   vocabs: PropTypes.array.isRequired,
@@ -16,35 +17,9 @@ export default function SearchPage({
   learnStatus,
   deleteVocab,
 }) {
-  const [searchInput, setSearchInput] = useState('')
-  const [searchResult, setSearchResult] = useState([])
-
-  useEffect(() => {
-    let allVocabs = vocabs.map(vocab => {
-      return {
-        ...vocab,
-        wordTitle: vocab.wordTitle.toLowerCase(),
-        translation: vocab.translation.toLowerCase(),
-      }
-    })
-    if (searchInput !== '') {
-      let filteredVocabs = []
-      filteredVocabs = allVocabs.filter(
-        vocab =>
-          vocab.wordTitle.includes(searchInput.toLowerCase()) ||
-          vocab.translation.includes(searchInput.toLowerCase())
-      )
-      // ensures that displayed wordTitle and translation in the search results are not all lower case:
-      let filteredVocabIDs = filteredVocabs.map(item => item.id)
-      setSearchResult(
-        vocabs.filter(function(vocab) {
-          return filteredVocabIDs.includes(vocab.id)
-        })
-      )
-    } else {
-      setSearchResult([])
-    }
-  }, [searchInput, vocabs])
+  const { searchInput, searchResult, handleSearch, handleReset } = useSearch(
+    vocabs
+  )
 
   return (
     <>
@@ -64,14 +39,4 @@ export default function SearchPage({
       )}
     </>
   )
-
-  function handleSearch(event) {
-    setSearchInput(event.target.value)
-  }
-
-  function handleReset(event) {
-    const inputField = event.target
-    inputField.focus()
-    return setSearchInput('')
-  }
 }

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
 TextInput.propTypes = {
@@ -19,6 +19,8 @@ export default function TextInput({
   maxLength,
   placeholder,
 }) {
+  const [patternValidity, setPatternValidity] = useState(true)
+
   return (
     <TextInputStyled>
       <div className="input-label">
@@ -32,10 +34,25 @@ export default function TextInput({
         minLength={minLength}
         maxLength={maxLength}
         placeholder={placeholder}
+        pattern="[A-zÀ-ž\s'-]+"
         className="input"
+        onChange={checkValidity}
       />
+      {!patternValidity && (
+        <span className="pattern-error-msg">
+          Please only enter letters, hyphens or apostrophes.
+        </span>
+      )}
     </TextInputStyled>
   )
+
+  function checkValidity(event) {
+    if (event.target.validity.patternMismatch) {
+      setPatternValidity(false)
+    } else {
+      setPatternValidity(true)
+    }
+  }
 }
 
 const TextInputStyled = styled.label`
@@ -54,5 +71,10 @@ const TextInputStyled = styled.label`
     background: var(--color-grey-light);
     height: 35px;
     padding: 10px;
+  }
+
+  .pattern-error-msg {
+    margin-top: 1px;
+    color: var(--color-error);
   }
 `

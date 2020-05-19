@@ -41,6 +41,9 @@ export default createGlobalStyle`
     --color-secondary-active: #C17E19;
 
     --color-tertiary: #1e6781;
+
+    --color-error:  #fe3636 ;
+    --color-success:  #088000  ;
     
     --color-grey-light: #f6f6f6;
     --color-grey-mid1: #ababab;

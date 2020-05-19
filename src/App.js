@@ -2,13 +2,13 @@ import React from 'react'
 import Modal from 'react-modal'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import Header from './components/Header/Header'
-import Navigation from './components/Navigation/Navigation'
+import Header from './common/Header'
+import Navigation from './common/Navigation'
 import useLearnStatus from './hooks/useLearnStatus'
 import useVocabs from './hooks/useVocabs'
-import FormPage from './pages/FormPage'
-import ListPage from './pages/ListPage'
-import SearchPage from './pages/SearchPage'
+import FormPage from './form/FormPage'
+import ListPage from './list/ListPage'
+import SearchPage from './search/SearchPage'
 
 Modal.setAppElement(document.getElementById('root'))
 

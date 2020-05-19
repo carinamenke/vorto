@@ -23,10 +23,10 @@ export default function useVocabs() {
     const image = storage.ref(`images/${toBeDeletedVocab.imageTitle}`)
     const audio = storage.ref(`audio/${toBeDeletedVocab.audioTitle}`)
     if (toBeDeletedVocab.imageSrc) {
-      image.delete().catch(error => {})
+      image.delete().catch(error => {}) //for now no error message necessary
     }
     if (toBeDeletedVocab.audioSrc) {
-      audio.delete().catch(error => {})
+      audio.delete().catch(error => {}) //for now no error message necessary
     }
   }
 

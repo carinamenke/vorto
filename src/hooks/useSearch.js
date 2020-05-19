@@ -5,7 +5,7 @@ export default function useSearch(vocabs) {
   const [searchResult, setSearchResult] = useState([])
 
   useEffect(() => {
-    let allVocabs = vocabs.map(vocab => {
+    const allVocabs = vocabs.map(vocab => {
       return {
         ...vocab,
         wordTitle: vocab.wordTitle.toLowerCase(),
@@ -20,7 +20,7 @@ export default function useSearch(vocabs) {
           vocab.translation.includes(searchInput.toLowerCase())
       )
       // ensures that displayed wordTitle and translation in the search results are not all lower case:
-      let filteredVocabIDs = filteredVocabs.map(item => item.id)
+      const filteredVocabIDs = filteredVocabs.map(item => item.id)
       setSearchResult(
         vocabs.filter(function(vocab) {
           return filteredVocabIDs.includes(vocab.id)

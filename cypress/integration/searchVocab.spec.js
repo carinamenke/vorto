@@ -6,7 +6,7 @@ describe('Search for a vocab card', () => {
 
     cy.get('input[name="q"]').type('tHe plATe')
 
-    cy.get('.content-title').contains('the plate')
+    cy.get('.content-title').contains('The plate')
   })
 
   it('displays no search results when the search input is cleared', () => {

@@ -43,7 +43,7 @@ export default function App() {
           </Route>
           <Route path="/search">
             <SearchPage
-              vocabs={vocabsByLearnStatus}
+              vocabs={vocabs}
               onLearnStatusClick={handleLearnStatusClick}
               learnStatus={learnStatus}
               deleteVocab={deleteVocab}

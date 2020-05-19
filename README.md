@@ -9,7 +9,6 @@ The vorto web app allows you to create **a digital stack of vocabulary learning 
 - Create vocabulary cards including images and audio files
 - Manage your vocabulary learning progress by moving those words that you have successfully learned to a separate stack
 - Search for vocabulary
-- Set up collections to group vocabs based on topic areas
 
 I developed the app as my final project during the [neuefische coding bootcamp](https://www.neuefische.de/) beginning of 2020 in Hamburg, Germany.
 

@@ -21,13 +21,10 @@ export default function LearnStatusFilter({
 }) {
   return (
     <FilterSectionStyled>
-      <FilterStyled
-        active={learnStatus === false}
-        onClick={() => onClick(false)}
-      >
+      <FilterStyled active={!learnStatus} onClick={() => onClick(false)}>
         To be learned<CounterStyled>({toBeLearnedVocabs.length})</CounterStyled>
       </FilterStyled>
-      <FilterStyled active={learnStatus === true} onClick={() => onClick(true)}>
+      <FilterStyled active={learnStatus} onClick={() => onClick(true)}>
         Learned<CounterStyled>({learnedVocabs.length})</CounterStyled>
       </FilterStyled>
     </FilterSectionStyled>

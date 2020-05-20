@@ -4,7 +4,9 @@ import styled from 'styled-components/macro'
 export default function Header() {
   return (
     <HeaderStyled>
-      <img src="./images/vorto_logo.png" alt="vorto" className="brand-logo" />
+      <a href="/">
+        <img src="./images/vorto_logo.png" alt="vorto" className="brand-logo" />
+      </a>
     </HeaderStyled>
   )
 }

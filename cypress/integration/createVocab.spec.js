@@ -20,6 +20,6 @@ describe('Create a vocab card', () => {
 
     cy.get('.content > span').contains('Noun')
 
-    cy.get('a.closing-icon[color="var(--text-color-white)"]').click()
+    cy.get('a.closing-icon[color="var(--color-text-white)"]').click()
   })
 })

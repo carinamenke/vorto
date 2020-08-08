@@ -8,6 +8,8 @@
     "@babel/core": "7.8.6",
     "@babel/preset-env": "7.8.6",
     "firebase": "7.12.0",
+    "lodash": "4.17.19",
+    "prismjs": "1.21.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "3.9.0",

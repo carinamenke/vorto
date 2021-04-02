@@ -33,7 +33,7 @@ const BacklinkStyled = styled.a`
   font-size: 14px;
   text-decoration: none;
   cursor: default;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
   :visited {
     color: var(--color-grey-dark);

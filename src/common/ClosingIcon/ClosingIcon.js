@@ -29,7 +29,7 @@ const ClosingIconStyled = styled.a`
   width: 20px;
   height: 20px;
   cursor: default;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
   :visited {
     color: var(--color-grey-dark);

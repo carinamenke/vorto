@@ -38,7 +38,7 @@ export default function DeleteConfirmation({ isOpen, onCancel, onDelete }) {
 }
 
 const BackgroundStyled = styled.div`
-  display: ${props => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
   position: fixed;
   z-index: 1;
   left: 0;

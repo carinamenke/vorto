@@ -19,11 +19,11 @@ export default function Button({ onClick, label, type, width, degree }) {
 }
 
 const ButtonStyled = styled.button`
-  background: ${props =>
+  background: ${(props) =>
     props.degree === 'primary'
       ? 'var(--color-primary)'
       : 'var(--color-primary-light)'};
-  color: ${props =>
+  color: ${(props) =>
     props.degree === 'primary'
       ? 'var(--color-text-white)'
       : 'var(--color-primary-active)'};
@@ -32,19 +32,19 @@ const ButtonStyled = styled.button`
   margin: 15px auto;
   padding: 7px;
   height: 35px;
-  width: ${props => props.width};
-  box-shadow: 0 5px 4px -2px ${props => (props.degree === 'primary' ? 'var(--color-primary-light)' : 'var(--color-primary-shadow)')};
+  width: ${(props) => props.width};
+  box-shadow: 0 5px 4px -2px ${(props) => (props.degree === 'primary' ? 'var(--color-primary-light)' : 'var(--color-primary-shadow)')};
   word-wrap: break-word;
 
   :hover {
-    background: ${props =>
+    background: ${(props) =>
       props.degree === 'primary'
         ? 'var(--color-primary-hover)'
         : 'var(--color-primary-mid)'};
   }
 
   :active {
-    background: ${props =>
+    background: ${(props) =>
       props.degree === 'primary'
         ? 'var(--color-primary-active)'
         : 'var(--color-primary)'};

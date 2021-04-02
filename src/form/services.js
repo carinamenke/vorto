@@ -7,11 +7,11 @@ export function uploadImage(image, setLoadProgress, setPreviewImage) {
   const uploadTask = storage.ref(`images/${image.name}`).put(image, metadata)
   uploadTask.on(
     'state_changed',
-    snapshot => {
+    (snapshot) => {
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
       setLoadProgress(progress)
     },
-    error => {
+    (error) => {
       alert('An error occurred, please try again.')
     },
     () => {
@@ -19,7 +19,7 @@ export function uploadImage(image, setLoadProgress, setPreviewImage) {
         .ref('images')
         .child(image.name)
         .getDownloadURL()
-        .then(url => {
+        .then((url) => {
           setPreviewImage({ imageUrl: url, imageName: image.name })
           setLoadProgress()
         })
@@ -34,8 +34,8 @@ export function uploadAudio(audio, setPreviewAudio) {
   const uploadTask = storage.ref(`audio/${audio.name}`).put(audio, metadata)
   uploadTask.on(
     'state_changed',
-    snapshot => {},
-    error => {
+    (snapshot) => {},
+    (error) => {
       alert('An error occurred, please try again.')
     },
     () => {
@@ -43,7 +43,7 @@ export function uploadAudio(audio, setPreviewAudio) {
         .ref('audio')
         .child(audio.name)
         .getDownloadURL()
-        .then(url => {
+        .then((url) => {
           setPreviewAudio({ audioUrl: url, audioName: audio.name })
         })
     }

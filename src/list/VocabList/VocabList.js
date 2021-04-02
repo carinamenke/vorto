@@ -12,7 +12,7 @@ VocabList.propTypes = {
 export default function VocabList({ vocabs, onLearnStatusClick, deleteVocab }) {
   return (
     <VocabListStyled>
-      {vocabs.map(vocab => (
+      {vocabs.map((vocab) => (
         <VocabCard
           imageSrc={vocab.imageSrc}
           audioSrc={vocab.audioSrc}

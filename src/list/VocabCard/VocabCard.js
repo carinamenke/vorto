@@ -86,7 +86,7 @@ const VocabStyled = styled.section`
 
   .image-container {
     background: center
-      url(${props =>
+      url(${(props) =>
         props.imageSrc ? props.imageSrc : './images/default.png'});
     background-size: cover;
     height: 300px;

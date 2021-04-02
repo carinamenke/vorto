@@ -116,7 +116,7 @@ const VocabDetailsStyled = styled.div`
 
   .image-container {
     background: center
-      url(${props =>
+      url(${(props) =>
         props.imageSrc ? props.imageSrc : './images/default.png'});
     background-size: cover;
     margin: 0;

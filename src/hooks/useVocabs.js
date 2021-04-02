@@ -17,16 +17,16 @@ export default function useVocabs() {
   }
 
   function deleteVocab(id) {
-    const index = vocabs.findIndex(vocab => vocab.id === id)
+    const index = vocabs.findIndex((vocab) => vocab.id === id)
     setVocabs([...vocabs.slice(0, index), ...vocabs.slice(index + 1)])
-    const toBeDeletedVocab = vocabs.find(vocab => vocab.id === id)
+    const toBeDeletedVocab = vocabs.find((vocab) => vocab.id === id)
     const image = storage.ref(`images/${toBeDeletedVocab.imageTitle}`)
     const audio = storage.ref(`audio/${toBeDeletedVocab.audioTitle}`)
     if (toBeDeletedVocab.imageSrc) {
-      image.delete().catch(error => {}) //for now no error message necessary
+      image.delete().catch((error) => {}) //for now no error message necessary
     }
     if (toBeDeletedVocab.audioSrc) {
-      audio.delete().catch(error => {}) //for now no error message necessary
+      audio.delete().catch((error) => {}) //for now no error message necessary
     }
   }
 

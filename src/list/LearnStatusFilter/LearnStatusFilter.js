@@ -32,7 +32,7 @@ export default function LearnStatusFilter({
 }
 
 function select(propName, first, second) {
-  return props => (props[propName] ? first : second)
+  return (props) => (props[propName] ? first : second)
 }
 
 const FilterSectionStyled = styled.section`

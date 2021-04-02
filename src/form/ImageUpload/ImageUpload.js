@@ -79,7 +79,7 @@ const ImagePlaceholder = styled.div`
 `
 
 const ImageContainer = styled.img`
-  background: center url(${props => props.image});
+  background: center url(${(props) => props.image});
   object-fit: cover;
   display: flex;
   flex-direction: column;

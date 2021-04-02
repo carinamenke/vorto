@@ -26,7 +26,7 @@ export default function SelectInput({
       </div>
       <select name={name} required={required} className="input">
         <option value="">{placeholder}</option>
-        {options.map(option => (
+        {options.map((option) => (
           <option key={uuidv4(option)} value={option.value}>
             {option.placeholder}
           </option>
